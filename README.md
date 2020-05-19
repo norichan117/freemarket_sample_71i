@@ -17,6 +17,7 @@
 - has_one :customer
 - has_one :card
 
+
 ## itemテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -40,6 +41,7 @@
 - belongs_to :category
 - has_one :customer
 
+
 ## customerテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -55,6 +57,7 @@
 - belongs_to :user
 - belongs_to :item
 
+
 ## cardテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -64,10 +67,11 @@
 ### Association
 - belongs_to :user
 
+
 ## categoryテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|null: false, unique: true|
+|id|string|null: false, unique: true|
 |category_name|string|
 
 ### Association
