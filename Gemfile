@@ -53,3 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails'
+
+gem 'minitest', '~> 5.8'
+
+gem 'font-awesome-sass'
