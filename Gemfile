@@ -58,3 +58,7 @@ gem 'minitest', '~> 5.8'
 
 gem 'font-awesome-sass'
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
