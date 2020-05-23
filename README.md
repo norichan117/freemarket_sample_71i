@@ -55,6 +55,8 @@
 |user_id|string|foreign_key: true|
 |deliver_family_name|string|
 |deliver_first_name|string|
+|deliver_family_name_kana|string|
+|deliver_first_name_kana|string|
 |deliver_yubin_bango|string|
 |deliver_todofuken|string|
 |deliver_shichoson|string|
