@@ -4,61 +4,71 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false unique: true|
-|first_name|string|null: false|
-|family_name|string|null: false|
+|nickname|string|null: false|
 |email|string|null: false, unique: true|
-|nickname|string|null: false, unique: true|
 |password|string|null: false|
+|family_name|string|null: false|
+|first_name|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
 |birthday|date|null: false|
-|card_id|integer|foreign_key: true|
+
 
 ### Association
 - has_many :items
-- has_one :customer
-- has_one :card
+- has_many :tradings
+- has_one :addres
+- has_many :cards
 
 
 ## itemテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|item_name|string|
 |user_id|integer|foreign_key: true|
-|category_id|integer|foreign_key: true|
+|item_name|string|
 |item_info|string|
-|price|integer|
+|category_id|integer|foreign_key: true|
+|brand_id|integer|foreign_key: true|
+|condition|string|
 |image1|string|
 |image2|string|
 |image3|string|
-|postage|integer|
+|postage_burden|string|
 |shipping_area|string|
-|days_to_ship|integer|
-|customer_id|integer|foreign_key: true|
-|closed_flag|integer|
+|days_to_ship|string|
+|price|integer|
+|trading_id|integer|foreign_key: true|
+
 
 ### Association
 - belongs_to :user
 - belongs_to :category
-- has_one :customer
+- belongs_to :brand
+- belongs_to :trading
 
 
-## customerテーブル
+## tradingテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |user_id|string|foreign_key: true|
-|yubin_bango|string|
-|todofuken|string|
-|shichoson|string|
-|banchi|string|
-|tel_no|integer|
+|deliver_family_name|string|
+|deliver_first_name|string|
+|deliver_yubin_bango|string|
+|deliver_todofuken|string|
+|deliver_shichoson|string|
+|deliver_banchi|string|
+|deliver_building|string|
+|deliber_tel_no|integer|
+|trading_card|integer|
 
 ### Association
 - belongs_to :user
-- belongs_to :item
+- has_one :item
 
 
-## cardテーブル
+## user_cardテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
@@ -67,12 +77,34 @@
 ### Association
 - belongs_to :user
 
+## user_addresテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|user_id|string|foreign_key: true|
+|user_yubin_bango|string|
+|user_todofuken|string|
+|user_shichoson|string|
+|user_banchi|string|
+|user_tel_no|string|
+
+### Association
+- belongs_to :user
 
 ## categoryテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|string|null: false, unique: true|
 |category_name|string|
+
+### Association
+- has_many :items
+
+## brandテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string|null: false, unique: true|
+|brand_name|string|
 
 ### Association
 - has_many :items
