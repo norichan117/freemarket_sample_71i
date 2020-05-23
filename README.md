@@ -62,7 +62,7 @@
 |deliver_shichoson|string|
 |deliver_banchi|string|
 |deliver_building|string|
-|deliber_tel_no|integer|
+|deliver_tel_no|integer|
 |trading_card|integer|
 
 ### Association
