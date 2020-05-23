@@ -17,8 +17,8 @@
 ### Association
 - has_many :items
 - has_many :tradings
-- has_one :addres
-- has_many :cards
+- has_one :user_addres
+- has_one :user_card
 
 
 ## itemテーブル
