@@ -88,6 +88,7 @@
 |user_todofuken|string|
 |user_shichoson|string|
 |user_banchi|string|
+|user_building|string|
 |user_tel_no|string|
 
 ### Association
