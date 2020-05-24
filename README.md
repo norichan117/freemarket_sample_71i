@@ -17,7 +17,7 @@
 ### Association
 - has_many :items
 - has_many :tradings
-- has_one :user_addres
+- has_one :user_address
 - has_one :user_card
 
 
@@ -79,7 +79,7 @@
 ### Association
 - belongs_to :user
 
-## user_addresテーブル
+## user_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
