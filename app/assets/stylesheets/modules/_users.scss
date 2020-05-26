@@ -107,15 +107,12 @@
           
           
         input[type=radio] {
-          display: none;
+          // display: none;
           }
           input#tab1[type=radio]:checked ~ .main_l-side_todo_tab_label1 {
             background-color: #ffffff;
-            border-top: 2px solid #ffffff 
+            border-top: 2px solid #ffffff
             }
-            input#tab1[type=radio]:checked ~ #list1 {
-              display: none;
-              }
           input#tab2[type=radio]:checked ~ .main_l-side_todo_tab_label2 {
             background-color: #ffffff;
             border-top: 2px solid #ffffff
@@ -199,16 +196,11 @@
           padding: 18px 16px;
           font-size: 20px;
         }
+        &_tab {
+          height: 320px;
+          background-color: blue;
+        }
       }
-      }
-    }
-  .content {
-    width: 100%;
-    height: 359.33px;
-    &_image {
-      width: 100%;
-      height: 359.33px;
-
-    }
-  }
-}
+    } 
+  } 
+} 

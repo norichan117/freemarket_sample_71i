@@ -113,7 +113,7 @@
         %label.main_l-side_todo_tab_label2{ for: "tab2" } やることリスト
       .main_l-side_todo_tabcontent
         .main_l-side_todo_tabcontent_menu1
-          %ul#list1{class: 'main_l-side_todo_tabcontent_menu1_messages' }
+          %ul{class: 'main_l-side_todo_tabcontent_menu1_messages', for: "tab1"}
             %li{class: 'main_l-side_todo_tabcontent_menu1_messages_body' }<
               = link_to '#', class: 'main_l-side_todo_tabcontent_menu1_messages_body_link' do
                 お買い得情報！！
@@ -129,7 +129,18 @@
     .main_l-side_contaier
       %h2{class: "main_l-side_contaier_title"} 購入した商品
       .main_l-side_contaier_tab
-        %input#tab1{ type: "radio", name: "tab_btn", checked: "checked" }
-        %input#tab2{ type: "radio", name: "tab_btn" }
-        %label.main_l-side_contaier_tab_label1{ for: "tab1" } 取引中
-        %label.main_l-side_comtaier_tab_label2{ for: "tab2" } 過去の取引
+        .main_l-side_contaier_tab_name
+          %input#tab3{ type: "radio", name: "tab_btn", checked: "checked" }
+          %label.main_l-side_contaier_tab_name_label3{ for: "tab3" } 取引中
+       
+
+
+
+
+
+
+
+
+
+
+       
