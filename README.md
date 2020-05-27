@@ -28,6 +28,7 @@
 |user_id|integer|foreign_key: true|
 |item_name|string|
 |item_info|string|
+<<<<<<< Updated upstream
 |category_id|integer|foreign_key: true|
 |brand_id|integer|foreign_key: true|
 |condition|string|
@@ -35,6 +36,10 @@
 |image2|string|
 |image3|string|
 |postage_burden|string|
+=======
+|price|integer|
+|postage|integer|
+>>>>>>> Stashed changes
 |shipping_area|string|
 |days_to_ship|string|
 |price|integer|
@@ -44,9 +49,23 @@
 ### Association
 - belongs_to :user
 - belongs_to :category
+<<<<<<< Updated upstream
 - belongs_to :brand
 - belongs_to :trading
+=======
+- has_one :customer
+- has_many :images
+>>>>>>> Stashed changes
 
+## imageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|item_id|integer|foreign_key: true|
+|item_image|string|
+
+### Association
+- belongs_to :item
 
 ## tradingテーブル
 |Column|Type|Options|
