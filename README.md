@@ -32,7 +32,6 @@
 |brand_id|integer|foreign_key: true|
 |condition|string|
 |postage_burden|string|
-|postage|integer|
 |shipping_area|string|
 |days_to_ship|string|
 |price|integer|
