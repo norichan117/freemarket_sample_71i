@@ -13,13 +13,11 @@
 |first_name_kana|string|null: false|
 |birthday|date|null: false|
 
-
 ### Association
 - has_many :items
 - has_many :tradings
 - has_one :user_address
 - has_one :user_card
-
 
 ## itemテーブル
 |Column|Type|Options|
@@ -28,34 +26,23 @@
 |user_id|integer|foreign_key: true|
 |item_name|string|
 |item_info|string|
-<<<<<<< Updated upstream
 |category_id|integer|foreign_key: true|
 |brand_id|integer|foreign_key: true|
 |condition|string|
-|image1|string|
-|image2|string|
-|image3|string|
-|postage_burden|string|
-=======
 |price|integer|
-|postage|integer|
->>>>>>> Stashed changes
+|pay_postage|integer|
 |shipping_area|string|
 |days_to_ship|string|
 |price|integer|
 |trading_id|integer|foreign_key: true|
 
-
 ### Association
 - belongs_to :user
 - belongs_to :category
-<<<<<<< Updated upstream
 - belongs_to :brand
 - belongs_to :trading
-=======
 - has_one :customer
 - has_many :images
->>>>>>> Stashed changes
 
 ## imageテーブル
 |Column|Type|Options|
@@ -87,7 +74,6 @@
 ### Association
 - belongs_to :user
 - has_one :item
-
 
 ## user_cardテーブル
 |Column|Type|Options|
