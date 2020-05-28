@@ -1,0 +1,19 @@
+.pcHeader
+  .header-Inner
+    .main-Header
+      = link_to image_tag(src= "/assets/logo.png", class: "icon")
+      .searchBox
+        .form
+          <input class="form__input" placeholder="キーワードから探す">
+          = link_to image_tag(src= "/assets/icon-search 1.png", class: "form__submit")
+    .nav
+      .listsLeft
+        .listsLeft__first
+          <a class="catBtn" href="#">カテゴリー</a>
+        .listsLeft__item
+          <a class="brandBtn" href="#">ブランド</a>
+      .listsRight
+        .listsRight__login
+          <a class="login" href="#">ログイン</a>
+        .listsRight__new
+          <a class="new" href="#">新規会員登録</a>
