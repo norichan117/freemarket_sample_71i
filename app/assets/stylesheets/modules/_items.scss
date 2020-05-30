@@ -940,10 +940,10 @@
         display: flex;
         justify-content: center;
         margin: 20px auto 0;
-        .linkIcon__aBtn {
+        &__aBtn {
           width: 180px;
         }
-        .linkIcon__gBtn {
+        &__gBtn {
           width: 180px;
         }
       }
