@@ -68,13 +68,13 @@
               color: #ffb340;
             }
             .catBtn:hover + .display {
-              display: inline;
+              display: block;
             }
             .display, .result{
               display: none;
             }
             .display:hover {
-              display: inline;
+              display: block;
             }
               .category {
                 z-index: 2;
