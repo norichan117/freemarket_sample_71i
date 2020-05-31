@@ -55,7 +55,7 @@
           &__first {
             text-decoration: none;
             padding: 0;
-            .catBtn{
+            .catBtn {
               color: #333;
               text-decoration: none;
               line-height: 32px;
@@ -1111,5 +1111,8 @@
     &__icon {
       width: 60%;
     }
+  }
+  .purchaseBtn:hover {
+    opacity: 0.9;
   }
 }
