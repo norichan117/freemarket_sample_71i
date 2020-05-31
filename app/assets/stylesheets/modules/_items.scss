@@ -2,9 +2,9 @@
   box-sizing: border-box;
   text-decoration: none;
 
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   .pcHeader {
     padding: 0 60px;
-    background-color: #ffffff;
 
     .header-Inner {
       max-width: 1040px;
@@ -31,12 +31,14 @@
             width: 100%;
             display: flex;
             margin-bottom: 5px;
-            .form__input {
+
+            &__input {
               width: calc(100% - 26px);
               height: 36px;
               padding: 0 0 0 5px;
             }
-            .form__submit {
+
+            &__submit {
               width: 36px;
               border: 0;
               cursor: pointer;
@@ -119,7 +121,7 @@
       }
     }
   }
-  .main {
+  .mainscreen {
     background: #f8f8f8;
     .mainVisual {
       width: 100%;
@@ -707,7 +709,6 @@
                 text-align: left;
               }
               .details {
-
                 .ul {
                   font-size: 16px;
                   display: flex;
@@ -862,10 +863,10 @@
         display: flex;
         justify-content: center;
         margin: 20px auto 0;
-        .linkIcon__aBtn {
+        &__aBtn {
           width: 180px;
         }
-        .linkIcon__gBtn {
+        &__gBtn {
           width: 180px;
         }
       }
@@ -1034,4 +1035,4 @@
       width: 60%;
     }
   }
-} 
+}
