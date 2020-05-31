@@ -40,16 +40,22 @@
   .main {
     display: flex;
     height: 1400px;
-    width: 1000px;
+    width: 100%;
     margin: 40px auto 0;
     background-color: #F5F5F5;
 
-    &_r-side {
-      width: 280px;
-      height: 1300px;
-      margin: 0 40px 0 0;
+    &_contaier {
+      width: 1020px;
+      height: 1301px;
+      margin: 40px 210px 0 210px;
 
-      &_list {
+      &_r-side {
+        width: 280px;
+        height: 1300px;
+        margin: 0 40px 0 0;
+        float: left;
+
+        &_list {
 
         &_nav {
           width: 280px;
@@ -59,6 +65,11 @@
           font-size: 14px;
           position: relative;
           display: inline-block;
+
+          &:hover {
+            opacity: 0.75;
+            background-color: rgb(233, 233, 233);
+          }
           
 
           &_mypage {
@@ -93,91 +104,98 @@
             }
           }
         }
+        }
+
+        &_title {
+          margin: 40px 0 0;
+        }
       }
 
-      &_title {
-        margin: 40px 0 0;
-      }
-    }
-
-    &_l-side {
-      width: 700px;
-
-      &_user-icon {
-        height: 200px;
+      &_l-side {
         width: 700px;
-        background-color: gray;
-      }
+        float: right;
 
-      &_todo {
-        height: 420px;
-        background-color: #ffffff;
-        margin-bottom: 150px;
+        &_user-icon {
+          height: 200px;
+          width: 700px;
+          background-color: gray;
+        }
 
-        &_tab {
-          height: 74px;
-          background-color: white;
-          
-          &_label {
-            display: flex;
+        &_todo {
+          height: 420px;
+          background-color: #ffffff;
+          margin-bottom: 150px;
 
-            &_item {
-              display: inline-block;
-              height: 74px;
-              width: 350px;
-              background-color: #F5F5F5;
-              text-align: center;
-              padding: 20px;
-              font-size: 20px;
-              cursor:pointer;
+          &_tab {
+            height: 74px;
+            background-color: white;
+            
+            &_label {
+              display: flex;
 
-              &:hover {
-                opacity: 0.75;
+              &_item {
+                display: inline-block;
+                height: 74px;
+                width: 350px;
+                background-color: #F5F5F5;
+                text-align: center;
+                padding: 20px;
+                font-size: 20px;
+                cursor:pointer;
+
+                &:hover {
+                  opacity: 0.75;
+                }
+
+              &.is-active {
+                background-color: #ffffff;
               }
-
-            &.is-active {
-              background-color: #ffffff;
-            }
+              }
             }
           }
-        }
-        
-        &_tabcontent {
-          height: 346px;
-          &_menu1 {
-            
-            &_messages {
+          
+          &_tabcontent {
+            height: 346px;
+            &_menu1 {
               
-              &_body {
-                min-height: 86px;
-                padding: 15px;
-                border-bottom: 1px solid #eee;
-                display: none;
+              &_messages {
+                
+                &_body {
+                  min-height: 86px;
+                  padding: 15px;
+                  border-bottom: 1px solid #eee;
+                  display: none;
 
-              &.is-show {
-                display: block;
-              }
-                &_link {
-                  text-decoration: none;
+                &.is-show {
+                  display: block;
+                }
+                  &_link {
+                    text-decoration: none;
+                  }
                 }
               }
             }
           }
-        }
-        &_button {
-          height: 90px;
-          background-color: #ffffff;
-          width: 700px;
-          border-top: 1px solid #eee;
-          padding: 15px;
-          &_link {
-            text-decoration: none;
-            display: block;
-            text-align: center;
-            background-color: #F5F5F5;
-            height: 60px;
-            line-height: 60px;
-            color: black;
+          &_button {
+            height: 90px;
+            background-color: #ffffff;
+            width: 700px;
+            border-top: 1px solid #eee;
+            padding: 15px;
+
+            &:hover {
+              opacity: 0.75;
+            }
+
+            &_link {
+              text-decoration: none;
+              display: block;
+              text-align: center;
+              background-color: #F5F5F5;
+              height: 60px;
+              line-height: 60px;
+              color: black;
+            }
           }
         }
       }
