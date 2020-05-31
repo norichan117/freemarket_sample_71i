@@ -68,4 +68,5 @@ gem 'minitest', '~> 5.8'
 gem 'font-awesome-sass'
 
 gem 'fog-aws'
+gem 'jquery-rails'
 
