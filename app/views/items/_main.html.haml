@@ -1,4 +1,4 @@
-.mainscreen
+.main
   .mainVisual
     .content
       .content__subtitle
@@ -8,9 +8,9 @@
         フリマアプリです
       .content__btn
         .aBtn
-          = image_tag(src="/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class: "inkIcon__aBtn")
+          <img class="linkIcon__aBtn" src="/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg">
         .gBtn
-          = image_tag(src="/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class: "linkIcon__gBtn")
+          <img class="linkIcon__gBtn" src="/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg">
   .topIntroduction
     .subtitle
       FURIMAが選ばれる3つの理由
@@ -85,8 +85,7 @@
     <h2 class="head">ピックアップカテゴリー</h2>
     .productBox
       .productHead
-        = link_to "#", class: "title" do
-          新規投稿商品
+        <a href="#"><h3 class="title">新規投稿商品</h3></a>
       .productLists
         .productList
           .productList--img
@@ -134,8 +133,7 @@
       ピックアップブランド
     .productBox
       .productHead
-        = link_to "#", class: "title" do
-          アーカイバ
+        <a href="#"><h4 class="title">アーカイバ</h4></a>
       .productLists
         .productList
           .productList--img
