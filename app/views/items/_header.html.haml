@@ -9,7 +9,7 @@
     .nav
       .listsLeft
         .listsLeft__first
-          .catBtn
+          = link_to "#", class: "catBtn" do
             カテゴリー
           .display
             .category
@@ -42,8 +42,7 @@
                   = link_to "#" do
                     その他
         .listsLeft__item
-          .brandBtn
-            ブランド
+          <a class="brandBtn" href="#">ブランド</a>
           .display
             .category
               .ul
