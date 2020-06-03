@@ -1,0 +1,30 @@
+.account-input-box {
+  width: 700px;
+  height: 1311px;
+  margin: auto;
+  &__head {
+    font-size: 22px;
+    padding: 32px;
+    text-align: center;
+  }
+  &__body {
+    padding: 40px 40px 64px;
+    &__forms{
+      max-width: 343px;
+      margin: 0 auto;
+      .field {
+        &__label{
+        }
+        &__input{
+        }
+      }
+
+    }
+    &__btn-part{
+      max-width: 343px;
+      margin: 0 auto;
+
+    }
+
+  }
+}
