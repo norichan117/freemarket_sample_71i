@@ -1,10 +1,10 @@
 .registration-new
-  .registration-new__container
-    .registration-new__container__single_header
-      %h1.registration-new__container__single_header__logo-part
+  .registration-new-container
+    %header.registration-new-header
+      %h1.registration-new-header__logo-part
         %a(href= root_path)
           = image_tag src="logo.png", size: "193x49"
-    .registration-new__container__single_main
+    %main.registration-new-main
       .account-input-box
         .account-input-box__head
           %h2 会員情報入力
@@ -78,4 +78,25 @@
             .account-input-box__body__btn-part
               .registration-new-btn
                 = f.submit "登録", class: 'registration-new-btn'
-    .registration-new__container__single_footer
+              .account-input-box__body__btn-part-text1
+                %p= link_to '本人情報確認について','#' ,class: 'btn-part-link'
+              .account-input-box__body__btn-part-text2
+                %p
+                  This site is protected by reCAPTCHA and the Google 
+                  =link_to 'Privacy Policy','#' ,class: 'btn-part-link'
+                  and 
+                  =link_to 'Terms of Service','#' ,class: 'btn-part-link'
+                  apply.
+    %footer.registration-new-footer
+      %small
+        %nav.registration-new-footer__nav
+          %ul.registration-new-footer__nav__ul
+            %li= link_to 'プライバシーポリシー','', class: 'registration-new-footer__nav__ul__li'
+            %li= link_to 'フリマ利用規約', '', class: 'registration-new-footer__nav__ul__li'
+            %li= link_to '特定商取引に関する表記','', class: 'registration-new-footer__nav__ul__li'
+        %a.footer-logolink
+          = image_tag src="logo-white.png", size: "223x65"
+        %p.footer-p
+          © Gasiwatani, Inc.
+
+          
