@@ -232,10 +232,25 @@
           display: flex;
           margin: 24px 0 0 0;
           .aBtn {
+            width: 180px;
             margin-right: 10px;
+            .linkIcon_aBtn {
+              width: 100%;
+              vertical-align: bottom;
+            }
+          }
+          .aBtn:hover {
+            opacity: 0.7;
           }
           .gBtn {
             width: 180px;
+            .linkIcon_gBtn{
+              width: 100%;
+              vertical-align: bottom;
+            }
+          }
+          .gBtn:hover {
+            opacity: 0.7;
           }
         }
       }
@@ -940,11 +955,19 @@
         display: flex;
         justify-content: center;
         margin: 20px auto 0;
-        &__aBtn {
-          width: 180px;
+        a {
+          margin-right: 10px;
+          .icon_Btn {
+            width: 180px;
+          }
         }
-        &__gBtn {
-          width: 180px;
+        a {
+          .icon_gBtn {
+            width: 180px;
+          }
+        }
+        a:hover {
+          opacity: 0.7;
         }
       }
     }
