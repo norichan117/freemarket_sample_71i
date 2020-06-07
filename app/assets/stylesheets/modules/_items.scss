@@ -927,15 +927,15 @@
     .inner {
       color: #fff;
       text-align: center;
-      .inner__title {
+      &__title {
         font-size: 24px;
         font-weight: bold;
         line-height: 1.4;
       }
-      .inner__text {
+      &__text {
         font-size: 35px;
       }
-      .inner__icon {
+      &__icon {
         width: 100%;
         display: flex;
         justify-content: center;
