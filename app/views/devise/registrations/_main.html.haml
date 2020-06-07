@@ -39,9 +39,9 @@
             %p.form-info
               ※ 英字と数字の両方を含めて設定してください
           .field
-            %h3.form-info2__head
+            %h3.form-info2-title
               本人確認
-            %p.form-info2__body
+            %p.form-info2-text
               安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
           .field
@@ -65,8 +65,9 @@
               = f.label :生年月日, class: 'field-label__name'
               %span.form-require
                 必須
-            .field-input
-              = f.text_field :birthday, autofocus: true, class: 'field-input__box'
+            .field-input-birthday
+              != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'field-input__box', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+              -# = f.text_field :birthday, autofocus: true, class: 'field-input__box'
             %p.form-info
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .account-input-box__body__btn-part

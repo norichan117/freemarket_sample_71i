@@ -68,15 +68,36 @@
               color: #888;
               line-height: 1.5;
             }
-            .form-info2__head {
+            .form-info2-title {
               font-size: 16px;
               font-weight: 700;
             }
-            .form-info2__body {
+            .form-info2-text {
               margin-top: 8px;
             }
             .password-part{
               
+            }
+            .field-input-birthday{
+              .year {
+                margin: 8px 2px 0 0;
+                padding: 0 10px;
+                height: 48px;
+                width: 76px;
+              }
+              .month {
+                margin: 8px 2px 0 5px;
+                padding: 0 10px;
+                height: 48px;
+                width: 76px;
+
+              }
+              .day {
+                margin: 8px 0 0 5px;
+                padding: 0 10px;
+                height: 48px;
+                width: 76px;
+              }
             }
           }
           &__btn-part{
