@@ -1,7 +1,8 @@
 .pcHeader
   .header-Inner
     .main-Header
-      = link_to image_tag(src= "/assets/logo.png", class: "icon")
+      -# = link_to image_tag(src= "logo.png", class: "icon")
+      = link_to image_tag 'logo.png', class: "icon"
       .searchBox
         .form
           <input class="form__input" placeholder="キーワードから探す">
