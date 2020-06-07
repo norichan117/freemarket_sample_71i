@@ -7,9 +7,16 @@
           .itembox__name
             product2
           .itembox__body
-            %ul
-              %li
-                = image_tag(src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', class: "itembox__body__item")
+            %ul.itembox_item
+              %li.itembox_item_main
+                = image_tag(src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', class: "itembox_item_img")
+                %ul.itembox_item_sub
+                  %li.itembox_item_sub_list
+                    = image_tag(src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', class: "itembox_item_sub_list")
+                  %li.itembox_item_sub_list
+                    = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png", class: "itembox_item_sub_list")
+                  %li.itembox_item_sub_list
+                    = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png", class: "itembox_item_sub_list")
           .itembox__price
             <span class=price>¥20000</span>
             .itembox__price__detail
@@ -28,6 +35,11 @@
                 %th
                   カテゴリー
                 %td
+                  = link_to "メンズ", "#" 
+                  %br/
+                  = link_to "ジャケット/アウター" 
+                  %br/
+                  = link_to "ノーカラージャケット"
               %tr
                 %th
                   ブランド
@@ -40,18 +52,22 @@
                 %th
                   商品の状態
                 %td
+                  新品/未使用
               %tr
                 %th
                   配送料の負担
                 %td
+                  着払い（購入者負担）
               %tr
                 %th
                   発送元の地域
                 %td
+                  = link_to "青森県", "#"
               %tr
                 %th
                   発想日の目安
                 %td
+                  1-2日で発送
           .optionalarea
             %ul
               = link_to '#', class: "likebtn" do
@@ -65,10 +81,12 @@
           .commentcontents
           .new-comment
             <textarea required="required" id="comment_body" style="padding: 10px; width: 100%; min-height: 104px;"></textarea>
-          .noticemsg
-            相手のことを考え丁寧なコメントを心がけましょう。<br>
+          %p.noticemsg
+            相手のことを考え丁寧なコメントを心がけましょう。
+            %br/
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          .commentbtn
+          %br/
+          %button{type: "submit", class: "commentbtn"}
             <i class="fa fa-comment">コメントする</i>
       %ul.links
         %li.link-left
