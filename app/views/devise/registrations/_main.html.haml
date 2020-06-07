@@ -1,0 +1,83 @@
+%main.registration-new-main
+  .account-input-box
+    .account-input-box__head
+      %h2 会員情報入力
+    .account-input-box__body
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        .account-input-box__body__forms
+          .field#field-top
+            .field-label
+              = f.label :ニックネーム, class: 'field-label__name'
+              %span.form-require
+                必須
+            .field-input
+              = f.text_field :nickname, autofocus: true, class: 'field-input__box'
+          .field
+            .field-label
+              = f.label :メールアドレス, class: 'field-label__name'
+              %span.form-require
+                必須
+            .field-input
+              = f.email_field :email, class: 'field-input__box'
+
+          .password-part
+            .field
+              .field-label
+                = f.label :パスワード, class: 'field-label__name'
+                %span.form-require
+                  必須
+              .field-input
+                = f.password_field :password, autocomplete: "off", class: 'field-input__box'
+            .field
+              .field-label
+                = f.label :パスワード, class: 'field-label__name'
+                %span.form-require
+                  必須
+              .field-input
+                = f.password_field :password_confirmation, autocomplete: "off", class: 'field-input__box'
+            %p.form-info
+              ※ 英字と数字の両方を含めて設定してください
+          .field
+            %h3.form-info2__head
+              本人確認
+            %p.form-info2__body
+              安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+          .field
+            .field-label
+              = f.label :お名前（全角）, class: 'field-label__name'
+              %span.form-require
+                必須
+            .field-input
+              = f.text_field :family_name, autofocus: true, class: 'field-input__box family-name'
+              = f.text_field :first_name, autofocus: true, class: 'field-input__box'
+          .field
+            .field-label
+              = f.label :お名前カナ, class: 'field-label__name'
+              %span.form-require
+                必須
+            .field-input
+              = f.text_field :family_name_kana, autofocus: true, class: 'field-input__box family-name'
+              = f.text_field :first_name_kana, autofocus: true, class: 'field-input__box'
+          .field
+            .field-label
+              = f.label :生年月日, class: 'field-label__name'
+              %span.form-require
+                必須
+            .field-input
+              = f.text_field :birthday, autofocus: true, class: 'field-input__box'
+            %p.form-info
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .account-input-box__body__btn-part
+          .registration-new-btn
+            = f.submit "登録", class: 'registration-new-btn'
+          .account-input-box__body__btn-part-text1
+            %p= link_to '本人情報確認について','#' ,class: 'btn-part-link'
+          .account-input-box__body__btn-part-text2
+            %p
+              This site is protected by reCAPTCHA and the Moogle 
+              =link_to 'Privacy Policy','#' ,class: 'btn-part-link'
+              and 
+              =link_to 'Terms of Service','#' ,class: 'btn-part-link'
+              apply.
