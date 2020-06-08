@@ -71,13 +71,13 @@
             .catBtn:hover + .display {
               display: block;
             }
-            ul.display, .result{
+            .display, .result{
               display: none;
             }
-            ul.display:hover {
+            .display:hover {
               display: block;
             }
-            li.category {
+            .category {
               z-index: 2;
               position: absolute;
               background-color: #fff;
@@ -88,21 +88,21 @@
                 display: flex;
                 flex-direction: column;
                 position: relative;
-                ul.category_list {
+                .category_list {
                   text-decoration: none;
                   line-height: 32px;
                   background-position: center right;
                   background-repeat: no-repeat;
                   background-size: 18px;
                   padding-right: 30px;
-                  .category_list_item {
+                  &_item {
                     color: #333;
                     display: block;
                     width: 240px;
                     padding: 3px 8px 3px 5px;
                     border-bottom: 1px solid #f8f8f8;
                   }
-                  .category_list_item:hover {
+                  &_item:hover {
                     color: #ffb340;
                   }
                 }
@@ -135,32 +135,32 @@
             .display:hover {
               display: inline;
             }
-              .category {
+              .category2 {
                 z-index: 2;
                 position: absolute;
                 background-color: #fff;
                 width: 240px;
                 top: 40px;
-                .ul {
+                &_tree {
                   background-color: #fff;
                   display: flex;
                   flex-direction: column;
                   position: relative;
-                  .li {
+                  .category2_list  {
                     text-decoration: none;
                     line-height: 32px;
                     background-position: center right;
                     background-repeat: no-repeat;
                     background-size: 18px;
                     padding-right: 30px;
-                    a {
+                    &_item {
                       color: #333;
                       display: block;
                       width: 240px;
                       padding: 3px 8px 3px 5px;
                       border-bottom: 1px solid #f8f8f8;
                     }
-                    a:hover {
+                    &_item:hover {
                       color: #ffb340;
                     }
                   }
