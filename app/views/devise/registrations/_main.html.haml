@@ -3,7 +3,7 @@
     .account-input-box__head
       %h2 会員情報入力
     .account-input-box__body
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = form_for(@user, url: user_registration_path) do  |f|
         = devise_error_messages!
         .account-input-box__body__forms
           .field#field-top
