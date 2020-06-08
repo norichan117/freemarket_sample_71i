@@ -63,6 +63,7 @@
               background-repeat: no-repeat;
               background-size: 18px;
               padding-right: 30px;
+              padding-bottom: 15px;
             }
             .catBtn:hover {
               color: #ffb340;
@@ -70,43 +71,43 @@
             .catBtn:hover + .display {
               display: block;
             }
-            .display, .result{
+            ul.display, .result{
               display: none;
             }
-            .display:hover {
+            ul.display:hover {
               display: block;
             }
-              .category {
-                z-index: 2;
-                position: absolute;
+            li.category {
+              z-index: 2;
+              position: absolute;
+              background-color: #fff;
+              width: 240px;
+              top: 40px;
+              .category_tree {
                 background-color: #fff;
-                width: 240px;
-                top: 40px;
-                .ul {
-                  background-color: #fff;
-                  display: flex;
-                  flex-direction: column;
-                  position: relative;
-                  .li {
-                    text-decoration: none;
-                    line-height: 32px;
-                    background-position: center right;
-                    background-repeat: no-repeat;
-                    background-size: 18px;
-                    padding-right: 30px;
-                    a {
-                      color: #333;
-                      display: block;
-                      width: 240px;
-                      padding: 3px 8px 3px 5px;
-                      border-bottom: 1px solid #f8f8f8;
-                    }
-                    a:hover {
-                      color: #ffb340;
-                    }
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                ul.category_list {
+                  text-decoration: none;
+                  line-height: 32px;
+                  background-position: center right;
+                  background-repeat: no-repeat;
+                  background-size: 18px;
+                  padding-right: 30px;
+                  .category_list_item {
+                    color: #333;
+                    display: block;
+                    width: 240px;
+                    padding: 3px 8px 3px 5px;
+                    border-bottom: 1px solid #f8f8f8;
+                  }
+                  .category_list_item:hover {
+                    color: #ffb340;
                   }
                 }
               }
+            }
           }
           &__item {
             text-decoration: none;
@@ -120,6 +121,7 @@
               background-repeat: no-repeat;
               background-size: 18px;
               padding-right: 30px;
+              padding-bottom: 15px;
             }
             .brandBtn:hover {
               color: #ffb340;
@@ -626,7 +628,7 @@
             }
           }
           .productList:hover {
-            background-color: #fff;
+            opacity: 0.7;
           }
           .productList2 {
             width: 220px;
@@ -683,6 +685,9 @@
               }
             }
           }
+          .productList2:hover {
+            opacity: 0.7;
+          }
           .productList3 {
             width: 220px;
             display: inline-block;
@@ -737,6 +742,9 @@
                 }
               }
             }
+          }
+          .productList3:hover {
+            opacity: 0.7;
           }
         }
       }
@@ -820,6 +828,9 @@
               }
             }
           }
+          .productList:hover {
+            opacity: 0.7;
+          }
           .productList2 {
             width: 220px;
             display: inline-block;
@@ -874,6 +885,9 @@
               }
             }
           }
+          .productList2:hover {
+            opacity: 0.7;
+          }
           .productList3 {
             width: 220px;
             display: inline-block;
@@ -927,6 +941,9 @@
                 }
               }
             }
+          }
+          .productList3:hover {
+            opacity: 0.7;
           }
         }
       }
@@ -991,30 +1008,30 @@
           font-size: 16px;
           font-weight: bold;
         }
-        .ul {
+        .content__help {
           list-style: none;
-          .li:hover {
+          &__list:hover {
             text-decoration: underline;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
@@ -1032,30 +1049,30 @@
           font-size: 16px;
           font-weight: bold;
         }
-        .ul {
+        .content2__help {
           list-style: none;
-          .li:hover {
+          &__list:hover {
             text-decoration: underline;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
@@ -1073,30 +1090,30 @@
           font-size: 16px;
           font-weight: bold;
         }
-        .ul {
+        .content3__help {
           list-style: none;
-          .li:hover {
+          &__list:hover {
             text-decoration: underline;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
