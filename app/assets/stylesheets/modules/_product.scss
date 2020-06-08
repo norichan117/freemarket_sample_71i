@@ -8,7 +8,7 @@
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
     position: relative;
     padding: 0 60px;
-    ul {
+    .breadCrumbs_list {
       padding: 17px 0 16px;
       width: 100%;
       max-width: 1040px;
@@ -17,13 +17,13 @@
       li {
         padding: 0 10px 0 0;
         float: left;
-        a {
+        .breadCrumbs_list_item {
           text-decoration: none;
           color: #333;
         }
       }
     }
-    ul:after {
+    .breadCrumbs_list:after {
       display: block;
       content: "";
       clear: both;
