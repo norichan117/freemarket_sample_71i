@@ -63,6 +63,7 @@
               background-repeat: no-repeat;
               background-size: 18px;
               padding-right: 30px;
+              padding-bottom: 15px;
             }
             .catBtn:hover {
               color: #ffb340;
@@ -76,37 +77,37 @@
             .display:hover {
               display: block;
             }
-              .category {
-                z-index: 2;
-                position: absolute;
+            .category {
+              z-index: 2;
+              position: absolute;
+              background-color: #fff;
+              width: 240px;
+              top: 40px;
+              .category_tree {
                 background-color: #fff;
-                width: 240px;
-                top: 40px;
-                .ul {
-                  background-color: #fff;
-                  display: flex;
-                  flex-direction: column;
-                  position: relative;
-                  .li {
-                    text-decoration: none;
-                    line-height: 32px;
-                    background-position: center right;
-                    background-repeat: no-repeat;
-                    background-size: 18px;
-                    padding-right: 30px;
-                    a {
-                      color: #333;
-                      display: block;
-                      width: 240px;
-                      padding: 3px 8px 3px 5px;
-                      border-bottom: 1px solid #f8f8f8;
-                    }
-                    a:hover {
-                      color: #ffb340;
-                    }
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                .category_list {
+                  text-decoration: none;
+                  line-height: 32px;
+                  background-position: center right;
+                  background-repeat: no-repeat;
+                  background-size: 18px;
+                  padding-right: 30px;
+                  &_item {
+                    color: #333;
+                    display: block;
+                    width: 240px;
+                    padding: 3px 8px 3px 5px;
+                    border-bottom: 1px solid #f8f8f8;
+                  }
+                  &_item:hover {
+                    color: #ffb340;
                   }
                 }
               }
+            }
           }
           &__item {
             text-decoration: none;
@@ -120,6 +121,7 @@
               background-repeat: no-repeat;
               background-size: 18px;
               padding-right: 30px;
+              padding-bottom: 15px;
             }
             .brandBtn:hover {
               color: #ffb340;
@@ -133,32 +135,32 @@
             .display:hover {
               display: inline;
             }
-              .category {
+              .category2 {
                 z-index: 2;
                 position: absolute;
                 background-color: #fff;
                 width: 240px;
                 top: 40px;
-                .ul {
+                &_tree {
                   background-color: #fff;
                   display: flex;
                   flex-direction: column;
                   position: relative;
-                  .li {
+                  .category2_list  {
                     text-decoration: none;
                     line-height: 32px;
                     background-position: center right;
                     background-repeat: no-repeat;
                     background-size: 18px;
                     padding-right: 30px;
-                    a {
+                    &_item {
                       color: #333;
                       display: block;
                       width: 240px;
                       padding: 3px 8px 3px 5px;
                       border-bottom: 1px solid #f8f8f8;
                     }
-                    a:hover {
+                    &_item:hover {
                       color: #ffb340;
                     }
                   }
@@ -232,10 +234,25 @@
           display: flex;
           margin: 24px 0 0 0;
           .aBtn {
+            width: 180px;
             margin-right: 10px;
+            .linkIcon_aBtn {
+              width: 100%;
+              vertical-align: bottom;
+            }
+          }
+          .aBtn:hover {
+            opacity: 0.7;
           }
           .gBtn {
             width: 180px;
+            .linkIcon_gBtn{
+              width: 100%;
+              vertical-align: bottom;
+            }
+          }
+          .gBtn:hover {
+            opacity: 0.7;
           }
         }
       }
@@ -611,7 +628,7 @@
             }
           }
           .productList:hover {
-            background-color: #fff;
+            opacity: 0.7;
           }
           .productList2 {
             width: 220px;
@@ -668,6 +685,9 @@
               }
             }
           }
+          .productList2:hover {
+            opacity: 0.7;
+          }
           .productList3 {
             width: 220px;
             display: inline-block;
@@ -722,6 +742,9 @@
                 }
               }
             }
+          }
+          .productList3:hover {
+            opacity: 0.7;
           }
         }
       }
@@ -805,6 +828,9 @@
               }
             }
           }
+          .productList:hover {
+            opacity: 0.7;
+          }
           .productList2 {
             width: 220px;
             display: inline-block;
@@ -858,6 +884,9 @@
                 }
               }
             }
+          }
+          .productList2:hover {
+            opacity: 0.7;
           }
           .productList3 {
             width: 220px;
@@ -913,6 +942,9 @@
               }
             }
           }
+          .productList3:hover {
+            opacity: 0.7;
+          }
         }
       }
     }
@@ -927,24 +959,32 @@
     .inner {
       color: #fff;
       text-align: center;
-      .inner__title {
+      &__title {
         font-size: 24px;
         font-weight: bold;
         line-height: 1.4;
       }
-      .inner__text {
+      &__text {
         font-size: 35px;
       }
-      .inner__icon {
+      &__icon {
         width: 100%;
         display: flex;
         justify-content: center;
         margin: 20px auto 0;
-        &__aBtn {
-          width: 180px;
+        a {
+          margin-right: 10px;
+          .icon_Btn {
+            width: 180px;
+          }
         }
-        &__gBtn {
-          width: 180px;
+        a {
+          .icon_gBtn {
+            width: 180px;
+          }
+        }
+        a:hover {
+          opacity: 0.7;
         }
       }
     }
@@ -968,30 +1008,30 @@
           font-size: 16px;
           font-weight: bold;
         }
-        .ul {
+        .content__help {
           list-style: none;
-          .li:hover {
+          &__list:hover {
             text-decoration: underline;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
@@ -1009,30 +1049,30 @@
           font-size: 16px;
           font-weight: bold;
         }
-        .ul {
+        .content2__help {
           list-style: none;
-          .li:hover {
+          &__list:hover {
             text-decoration: underline;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
@@ -1050,30 +1090,30 @@
           font-size: 16px;
           font-weight: bold;
         }
-        .ul {
+        .content3__help {
           list-style: none;
-          .li:hover {
+          &__list:hover {
             text-decoration: underline;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;
             line-height: 32px;
           }
-          .li {
+          &__list {
             color: #fff;
             text-decoration: none;
             font-size: 12px;

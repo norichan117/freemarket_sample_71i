@@ -1,76 +1,49 @@
 .pcHeader
   .header-Inner
     .main-Header
-      = link_to image_tag(src= "/assets/logo.png", class: "icon")
+      = link_to image_tag("logo.png", class: "icon")
       .searchBox
         .form
           <input class="form__input" placeholder="キーワードから探す">
-          = link_to image_tag(src= "/assets/icon-search 1.png", class: "form__submit")
+          = link_to image_tag("icon-search 1.png", class: "form__submit")
     .nav
       .listsLeft
         .listsLeft__first
-          = link_to "#", class: "catBtn" do
-            カテゴリー
+          = link_to 'カテゴリー', '', class: 'catBtn'
           .display
             .category
-              .ul
-                .li
-                  = link_to "#" do
-                    レディース
-                  = link_to "#" do
-                    メンズ
-                  = link_to "#" do
-                    ベビー・キッズ
-                  = link_to "#" do
-                    インテリア・住まい・小物
-                  = link_to "#" do
-                    本・音楽・ゲーム
-                  = link_to "#" do
-                    おもちゃ・ホビー・グッズ
-                  = link_to "#" do
-                    コスメ・香水・美容
-                  = link_to "#" do
-                    家電・スマホ・カメラ
-                  = link_to "#" do
-                    スポーツ・レジャー
-                  = link_to "#" do
-                    ハンドメイド
-                  = link_to "#" do
-                    チケット
-                  = link_to "#" do
-                    自動車・オートバイ
-                  = link_to "#" do
-                    その他
+              .category_tree
+                %ul.category_list
+                  %li= link_to 'レディース', '#', class: 'category_list_item'
+                  %li= link_to 'メンズ', '#', class: 'category_list_item'
+                  %li= link_to 'ベビー・キッズ', '#', class: 'category_list_item'
+                  %li= link_to '本・音楽・ゲーム', '#', class: 'category_list_item'
+                  %li= link_to 'おもちゃ・ホビー・グッズ', '#', class: 'category_list_item'
+                  %li= link_to 'コスメ・香水・美容', '#', class: 'category_list_item'
+                  %li= link_to '家電・スマホ・カメラ', '#', class: 'category_list_item'
+                  %li= link_to 'スポーツ・レジャー', '#', class: 'category_list_item'
+                  %li= link_to 'ハンドメイド', '#', class: 'category_list_item'
+                  %li= link_to 'チケット', '#', class: 'category_list_item'
+                  %li= link_to '自動車・オートバイ', '#', class: 'category_list_item'
+                  %li= link_to 'その他', '#', class: 'category_list_item'
         .listsLeft__item
-          <a class="brandBtn" href="#">ブランド</a>
+          =link_to "ブランド", "", class: "brandBtn"
           .display
-            .category
-              .ul
-                .li
-                  = link_to "#" do
-                    1
-                  = link_to "#" do
-                    2
-                  = link_to "#" do
-                    3
-                  = link_to "#" do
-                    4
-                  = link_to "#" do
-                    5
-                  = link_to "#" do
-                    6
-                  = link_to "#" do
-                    7
-                  = link_to "#" do
-                    8
-                  = link_to "#" do
-                    9
-                  = link_to "#" do
-                    10
+            .category2
+              .category2_tree
+                %ul.category2_list
+                  %li= link_to '1', '#', class: 'category2_list_item'
+                  %li= link_to '2', '#', class: 'category2_list_item'
+                  %li= link_to '3', '#', class: 'category2_list_item'
+                  %li= link_to '4', '#', class: 'category2_list_item'
+                  %li= link_to '5', '#', class: 'category2_list_item'
+                  %li= link_to '6', '#', class: 'category2_list_item'
+                  %li= link_to '7', '#', class: 'category2_list_item'
+                  %li= link_to '8', '#', class: 'category2_list_item'
+                  %li= link_to '9', '#', class: 'category2_list_item'
+                  %li= link_to '10', '#', class: 'category2_list_item'
       .listsRight
         .listsRight__login
-          = link_to "#", class: "login" do
-            ログイン
+          = link_to "ログイン", "#", class: "login"
         .listsRight__new
-          = link_to "#", class: "new" do
-            新規会員登録
+          = link_to "新規会員登録", "#", class: "new" 
