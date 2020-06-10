@@ -45,7 +45,7 @@
       .listsRight
         .listsRight__login
           -if user_signed_in?
-            = link_to "ログアウト","/users/current_user/edit", class: "login"
+            = link_to "ログアウト",edit_user_path(current_user), class: "login"
           -else
             = link_to "ログイン", new_user_session_path, class: "login"
         .listsRight__new
