@@ -4,6 +4,6 @@ Rails.application.routes.draw do
    }
   root "categorys#index"
   resources :users, only: [:index, :edit]
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show, :new]
   resources :categorys, only: [:index, :show]
 end
