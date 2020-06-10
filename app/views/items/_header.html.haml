@@ -68,9 +68,14 @@
                   = link_to "#" do
                     10
       .listsRight
-        .listsRight__login
-          = link_to "#", class: "login" do
-            ログイン
-        .listsRight__new
-          = link_to "#", class: "new" do
-            新規会員登録
+        -if user_signed_in?
+          .listsRight__logout
+            = link_to "ログアウト", "#", class: "logout"
+          .listsRight__post
+            = link_to  "投稿する", "#", class: "post"
+        -else
+          .listsRight__login
+            = link_to "ログイン", "/users/sign_in", class: "login"
+          .listsRight__new
+            = link_to "新規会員登録", "/users/sign_in", class: "new" 
+
