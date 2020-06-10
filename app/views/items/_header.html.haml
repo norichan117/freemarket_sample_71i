@@ -43,7 +43,14 @@
                   %li= link_to '9', '#', class: 'category2_list_item'
                   %li= link_to '10', '#', class: 'category2_list_item'
       .listsRight
-        .listsRight__login
-          = link_to "ログイン", "#", class: "login"
-        .listsRight__new
-          = link_to "新規会員登録", "#", class: "new" 
+        -if user_signed_in?
+          .listsRight__logout
+            = link_to "ログアウト", "#", class: "logout"
+          .listsRight__post
+            = link_to  "投稿する", "#", class: "post"
+        -else
+          .listsRight__login
+            = link_to "ログイン", "/users/sign_in", class: "login"
+          .listsRight__new
+            = link_to "新規会員登録", "/users/sign_in", class: "new" 
+
