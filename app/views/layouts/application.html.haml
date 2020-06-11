@@ -12,3 +12,8 @@
   - else
     = render 'categorys/header'
     = yield
+
+
+  -if devise_controller?
+  - else
+    = render 'categorys/footer'
