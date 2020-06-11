@@ -9,7 +9,7 @@
           .itembox__body
             %ul.itembox_item
               %li.itembox_item_main
-                = image_tag(src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', class: "itembox_item_img")
+                =@image. image_tag(src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', class: "itembox_item_img")
                 %ul.itembox_item_sub
                   %li.itembox_item_sub_list
                     = image_tag(src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', class: "itembox_item_sub_list")
@@ -18,74 +18,41 @@
                   %li.itembox_item_sub_list
                     = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png", class: "itembox_item_sub_list")
           .itembox__price
-            <span class=price>¥20000</span>
+            .price= @item.price
             .itembox__price__detail
               <span>(税込)</span>
               <span>送料込み</span>
           .itembox__detail
             = @item.item_info
-          %table{class: "table"}
-            %tbody{class: "table__box"} 
-              %tr{class: "tr"} 
-                %th{class: "th"}
+          %table.table
+            %tbody.table__box
+              %tr.tr
+                %th.th
                   出品者
-                %td{class: "td"} 
-                  hoge
+                %td.td=@item.user.nickname
               %tr
                 %th カテゴリー
                 %td
                   =link_to @item.category.category_name
                   %br/
-                  = link_to "ジャケット/アウター" 
+                  =link_to @item.category.category_name
                   %br/
-                  = link_to "ノーカラージャケット"
+                  =link_to @item.category.category_name
               %tr
                 %th ブランド
-                %td
-              %tr
-                -# %th 商品のサイズ
-                %td
+                %td=@item.brand_id
               %tr
                 %th 商品の状態
-                %td 新品/未使用
+                %td= @item.condition
               %tr
                 %th 配送料の負担
-                %td 着払い（購入者負担）
+                %td=@item.postage_burden
               %tr
                 %th 発送元の地域
-                %td= link_to "青森県", "#"
+                %td=link_to @item.shipping_area
               %tr
                 %th 発想日の目安
-                %td 1-2日で発送
-          .optionalarea
-            %ul
-              = link_to '#', class: "likebtn" do
-                %li.likebtn-left
-                  <i class="fa fa-star">お気に入り 0</i>
-            %ul
-              = link_to '#', class: "optionalbtn" do
-                %li.optionalbtn-right
-                  <i class="fa fa-flag">不適切な商品の通報</i>
-        .commentbox
-          .commentcontents
-          .new-comment
-            <textarea required="required" id="comment_body" style="padding: 10px; width: 100%; min-height: 104px;"></textarea>
-          %p.noticemsg
-            相手のことを考え丁寧なコメントを心がけましょう。
-            %br/
-            不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          %br/
-          %button{type: "submit", class: "commentbtn"}
-            <i class="fa fa-comment">コメントする</i>
-      %ul.links
-        %li.link-left
-          = link_to '#', class: "a" do
-            = icon('fas', 'angle-left', class: "fa")
-            前の商品
-        %li.link-right
-          = link_to '#', class: "a" do
-            後ろの商品
-            = icon('fas', 'angle-right', class: "fa")
-      .relateditems
-        = link_to '#', class: "a" do
-          メンズをもっと見る
+                %td= @item.days_to_ship
+          .commentbox
+            %button{type: "submit", class: "commentbtn"}
+              %p.fa 購入画面に進む
