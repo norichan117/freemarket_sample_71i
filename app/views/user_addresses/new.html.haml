@@ -1,0 +1,12 @@
+%section.user_address
+  %h2
+    発送元お届け先情報登録
+    = form_for(@user_address, url: "") do  |f|
+      = f.text_field :user_yubin_bango
+      = f.text_field :user_todofuken
+      = f.text_field :user_shichoson
+      = f.text_field :user_banchi
+      = f.text_field :user_building
+      = f.text_field :user_tel_no
+      = f.submit
+
