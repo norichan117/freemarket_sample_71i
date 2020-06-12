@@ -7,7 +7,6 @@ class CreateUserAddresses < ActiveRecord::Migration[5.0]
       t.string :user_shichoson
       t.string :user_banchi
       t.string :user_building
-      t.string :user_tel_no
       t.timestamps
     end
   end
