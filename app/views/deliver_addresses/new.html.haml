@@ -1,0 +1,41 @@
+%section.deliver_address
+  %h2
+    発送元お届け先情報登録
+    = form_for(@deliver_address, url: "", html: { class: "deliver_address__form" }) do  |f|
+      .deliver_address__form__container
+        .form_group
+          %label.form_group__label
+          %span.form_group__require
+          = f.text_field :deliver_family_name
+          = f.text_field :deliver_first_name
+        .form_group
+          %label.form_group__label
+          %span.form_group__require
+          = f.text_field :deliver_family_name_kana
+          = f.text_field :deliver_first_name_kana
+        .form_group
+          %label.form_group__label
+          %span.form_group__require
+          = f.text_field :deliver_yubin_bango
+        .form_group
+          %label.form_group__label
+          %span.form_group__require
+          = f.text_field :deliver_todofuken
+        .form_group
+          %label.form_group__label
+          %span.form_group__require
+          = f.text_field :deliver_shichoson
+        .form_group
+          %label.form_group__label
+          %span.form_group__require
+          = f.text_field :deliver_banchi
+        .form_group
+          %label.form_group__label
+          %span.form_group__require
+          = f.text_field :deliver_building
+        .form_group
+          %label.form_group__ser_label
+          %span.form_group__require
+          = f.text_field :deliver_tel_no
+        = f.submit
+
