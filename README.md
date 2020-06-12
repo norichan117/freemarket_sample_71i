@@ -60,17 +60,18 @@
 |------|----|-------|
 |id|integer|null: false, unique: true|
 |user_id|string|foreign_key: true|
-|deliver_family_name|string|
-|deliver_first_name|string|
-|deliver_family_name_kana|string|
-|deliver_first_name_kana|string|
-|deliver_yubin_bango|string|
-|deliver_todofuken|string|
-|deliver_shichoson|string|
-|deliver_banchi|string|
-|deliver_building|string|
-|deliver_tel_no|integer|
-|trading_card|integer|
+|trading_family_name|string|
+|trading_first_name|string|
+|trading_family_name_kana|string|
+|trading_first_name_kana|string|
+|trading_yubin_bango|string|
+|trading_todofuken|string|
+|trading_shichoson|string|
+|trading_banchi|string|
+|trading_building|string|
+|trading_tel_no|string|
+|trading_card-id|integer|
+|trading_customer-id|integer|
 
 ### Association
 - belongs_to :user
@@ -92,13 +93,28 @@
 |Column|Type|Options|
 |------|----|-------|
 |id|integer|null: false, unique: true|
-|user_id|string|foreign_key: true|
+|user_id|integer|foreign_key: true|
 |user_yubin_bango|string|
 |user_todofuken|string|
 |user_shichoson|string|
 |user_banchi|string|
 |user_building|string|
-|user_tel_no|string|
+
+## deliver_addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|user_id|string|foreign_key: true|
+|deliver_family_name|string|
+|deliver_first_name|string|
+|deliver_family_name_kana|string|
+|deliver_first_name_kana|string|
+|deliver_yubin_bango|string|
+|deliver_todofuken|string|
+|deliver_shichoson|string|
+|deliver_banchi|string|
+|deliver_building|string|
+|deliver_tel_no|string|
 
 ### Association
 - belongs_to :user
