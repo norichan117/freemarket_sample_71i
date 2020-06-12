@@ -37,7 +37,6 @@ describe User do
 
     # 6
     it "is invalid without a family_name" do
-      user = create(:user)
       user = build(:user, family_name: nil)
       user.valid?
       expect(user.errors[:family_name]).to include("can't be blank")
@@ -45,7 +44,6 @@ describe User do
 
     # 7
     it "is invalid without a first_name" do
-      user = create(:user)
       user = build(:user, first_name: nil)
       user.valid?
       expect(user.errors[:first_name]).to include("can't be blank")
@@ -53,7 +51,6 @@ describe User do
 
     # 8
     it "is invalid without a family_name_kana" do
-      user = create(:user)
       user = build(:user, family_name_kana: nil)
       user.valid?
       expect(user.errors[:family_name_kana]).to include("can't be blank")
@@ -61,7 +58,6 @@ describe User do
 
     # 9
     it "is invalid without a first_name_kana" do
-      user = create(:user)
       user = build(:user, first_name_kana: nil)
       user.valid?
       expect(user.errors[:first_name_kana]).to include("can't be blank")
@@ -69,19 +65,26 @@ describe User do
 
     # 10
     it "is invalid without a birthday" do
-      user = create(:user)
       user = build(:user, birthday: nil)
       user.valid?
       expect(user.errors[:birthday]).to include("can't be blank")
     end
 
     # 11
+    it "is invalid with a password has been taken" do
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("has already been taken")
+    end
+
+    # 12
     it "is valid with a password of 7 characters" do
       user = build(:user, password: "0000000", password_confirmation: "0000000")
       expect(user).to be_valid
     end
 
-    # 12
+    # 13
     it "is invalid with a password of 6 characters"" do
       user = build(:user, password: "000000", password_confirmation: "000000")
       user.valid?
