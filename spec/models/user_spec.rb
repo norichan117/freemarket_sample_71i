@@ -85,7 +85,7 @@ describe User do
     end
 
     # 13
-    it "is invalid with a password of 6 characters"" do
+    it "is invalid with a password of 6 characters" do
       user = build(:user, password: "000000", password_confirmation: "000000")
       user.valid?
       expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
