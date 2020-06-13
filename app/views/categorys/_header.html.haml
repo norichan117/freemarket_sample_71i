@@ -1,0 +1,56 @@
+.pcHeader
+  .header-Inner
+    .main-Header
+      = link_to image_tag("logo.png", class: "icon")
+      .searchBox
+        .form
+          <input class="form__input" placeholder="キーワードから探す">
+          = link_to image_tag("icon-search 1.png", class: "form__submit")
+    .nav
+      .listsLeft
+        .listsLeft__first
+          = link_to 'カテゴリー', '', class: 'catBtn'
+          .display
+            .category
+              .category_tree
+                %ul.category_list
+                  %li= link_to 'レディース', '#', class: 'category_list_item'
+                  %li= link_to 'メンズ', '#', class: 'category_list_item'
+                  %li= link_to 'ベビー・キッズ', '#', class: 'category_list_item'
+                  %li= link_to '本・音楽・ゲーム', '#', class: 'category_list_item'
+                  %li= link_to 'おもちゃ・ホビー・グッズ', '#', class: 'category_list_item'
+                  %li= link_to 'コスメ・香水・美容', '#', class: 'category_list_item'
+                  %li= link_to '家電・スマホ・カメラ', '#', class: 'category_list_item'
+                  %li= link_to 'スポーツ・レジャー', '#', class: 'category_list_item'
+                  %li= link_to 'ハンドメイド', '#', class: 'category_list_item'
+                  %li= link_to 'チケット', '#', class: 'category_list_item'
+                  %li= link_to '自動車・オートバイ', '#', class: 'category_list_item'
+                  %li= link_to 'その他', '#', class: 'category_list_item'
+        .listsLeft__item
+          =link_to "ブランド", "", class: "brandBtn"
+          .display
+            .category2
+              .category2_tree
+                %ul.category2_list
+                  %li= link_to '1', '#', class: 'category2_list_item'
+                  %li= link_to '2', '#', class: 'category2_list_item'
+                  %li= link_to '3', '#', class: 'category2_list_item'
+                  %li= link_to '4', '#', class: 'category2_list_item'
+                  %li= link_to '5', '#', class: 'category2_list_item'
+                  %li= link_to '6', '#', class: 'category2_list_item'
+                  %li= link_to '7', '#', class: 'category2_list_item'
+                  %li= link_to '8', '#', class: 'category2_list_item'
+                  %li= link_to '9', '#', class: 'category2_list_item'
+                  %li= link_to '10', '#', class: 'category2_list_item'
+      .listsRight
+        .listsRight__login
+          -if user_signed_in?
+            = link_to "ログアウト",edit_user_path(current_user), class: "login"
+          -else
+            = link_to "ログイン", new_user_session_path, class: "login"
+        .listsRight__new
+          -if user_signed_in?
+            %p.new #{current_user.nickname}
+          -else 
+            = link_to "新規会員登録", new_user_registration_path, class: "new"
+

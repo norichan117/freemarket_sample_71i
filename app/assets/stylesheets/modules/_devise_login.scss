@@ -1,9 +1,9 @@
 
 .session-new {
-  height: 100vh;
   background: #f5f5f5;
   padding: 0 0 220px;
   font-size: 14px;
+  position: relative;
   &-header {
     height: 128px;
     text-align: center;
@@ -13,7 +13,7 @@
     }
   }
   &-main {
-    height: calc(100vh - 348px) ;
+    // height: calc(100vh - 348px) ;
     margin: 0 auto;
     .login-panel {
       height: 100%;
