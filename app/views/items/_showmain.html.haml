@@ -1,0 +1,55 @@
+.showmain
+  .showmain--product
+    .contentleft
+    .contentright
+      .topcontent
+        .itembox
+          .itembox__name
+            product2
+          .itembox__body
+            %ul.itembox_item
+              %li.itembox_item_main
+                = image_tag(@image.item_image, class: "itembox_item_img")
+          .itembox__price
+            .price=@item.price
+            .itembox__price__detail
+              <span>(税込)</span>
+              <span>送料込み</span>
+          .itembox__detail
+            = @item.item_info
+          %table.table
+            %tbody.table__box
+              %tr.tr
+                %th.th
+                  出品者
+                %td.td=@item.user.nickname
+              %tr
+                %th カテゴリー
+                %td
+                  =link_to @item.category.category_name
+                  %br/
+                  =link_to @item.category.category_name
+                  %br/
+                  =link_to @item.category.category_name
+              %tr
+                %th ブランド
+                %td=@item.brand_id
+              %tr
+                %th 商品の状態
+                %td= @item.condition
+              %tr
+                %th 配送料の負担
+                %td=@item.postage_burden
+              %tr
+                %th 発送元の地域
+                %td=link_to @item.shipping_area
+              %tr
+                %th 発想日の目安
+                %td= @item.days_to_ship
+          .commentbox
+            - if devise_controller?
+              %button.commentbtn
+                = link_to "購入画面に進む", "#", class: "buybtn"
+            - else 
+              %button.commentbtn
+                = link_to "購入画面", "#", class: "buybtn"

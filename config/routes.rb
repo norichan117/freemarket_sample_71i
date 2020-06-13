@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root "items#index"
-  resources :users, only: [:index, :edit]
-  resources :items, only: [:index]
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations'
+   }
+  root "categorys#index"
+  resources :users, only: [:show, :edit]
+  resources :items, only: [:index, :show, :new]
+  resources :categorys, only: [:index, :show]
+  resources :user_addresses, only:[:new, :create, :edit]
+  resources :deliver_addresses, only:[:new, :create, :edit]
 end

@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  .showmain {
+    background: #f8f8f8;
+    .showmain--product {
+      padding: 40px;
+      margin: 0 auto;
+      .contentleft {
+
+      }
+      .contentright {
+        width: 700px;
+        margin: 0 auto;
+        .topcontent {
+          .itembox {
+            background-color: #fff;
+            padding: 24px 40px 40px;
+            .itembox__name {
+              text-align: center;
+              font-weight: bold;
+              font-size: 24px;
+            }
+            .itembox__body {
+              margin: 16px 0 0;
+              ul.itembox_item {
+                display: flex;
+                position: relative;
+                li.itembox_item_main {
+                  display: flex;
+                  flex-direction: column;
+                  width: 560px;
+                  align-items: center;
+                  margin: 0 auto;
+                  .itembox_item_img {
+                    object-fit: cover;
+                    height: 346px;
+                  }
+                }
+              }
+            }
+            .itembox__price {
+              margin: 24px 0 24px;
+              text-align: center;
+              display: flex;
+              flex-direction: column;
+              .price {
+                font-size: 46px;
+                font-weight: bold;
+                margin: 0 10px 0 0;
+              }
+              .itembox__price__detail{
+                font-size: 16px;
+                span {
+                  
+                }
+              }
+            }
+            .itembox__detail {
+              line-height: 1.5;
+              font-size: 18px;
+              margin-bottom: 30px;
+            }
+            .table {
+              margin-bottom: 20px;
+              width: 100%;
+              .table__box {
+                height: 375px;
+                border-collapse: collapse;
+                border: 1px solid #f8f8f8;
+                tr {
+                  th {
+                    width: 20%;
+                    background-color: #eee;
+                    font-weight: 400;
+                    padding: 8px;
+                    border: 1px solid #dedede;
+                    font-size: 14px;
+                    text-align: center;
+                  }
+                  td {
+                    width: 61%;
+                    padding: 15px 15px;
+                    border: 1px solid #dedede;
+                    font-size: 14px;
+                    a {
+                      text-decoration: none;
+                      color: #3CCACE;
+                    }
+                  }
+                }
+              }
+            }
+            .commentbox {
+              width: 100%;
+              padding: 24px;
+              text-align: center;
+              .commentbtn {
+                line-height: 48px;
+                background: #3CCACE;
+                border: 1px solid #3CCACE;
+                color: #fff;
+                width: 60%;
+                font-size: 18px;
+                border-radius: 100px;
+                .buybtn {
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

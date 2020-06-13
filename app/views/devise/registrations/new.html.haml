@@ -1,52 +1,6 @@
-.account-input-box
-  .account-input-box__head
-    %h5 会員情報入力
-  .account-input-box__body
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = devise_error_messages!
-      .account-input-box__body__forms
-        .field
-          .field-label
-            = f.label :ニックネーム
-          .field-input
-            = f.text_field :nickname, autofocus: true
-        .field
-          .field-label
-            = f.label :メールアドレス
-          .field-input
-            = f.email_field :email
-        .field
-          .field-label
-            = f.label :パスワード
-            %i (英数字8文字以上)
-          .field-input
-            = f.password_field :password, autocomplete: "off"
-        .field
-          .field-label
-            = f.label :password_confirmation
-          .field-input
-            = f.password_field :password_confirmation, autocomplete: "off"
+.registration-new
+  .registration-new-container
+    =render "header"
+    =render "main"      
+    =render "footer"
 
-        .field
-          .field-label
-            = f.label :お名前（全角）
-          .field-input
-            = f.text_field :family_name, autofocus: true
-          .field-input
-            = f.text_field :first_name, autofocus: true
-
-        .field
-          .field-label
-            = f.label :お名前カナ
-          .field-input
-            = f.text_field :family_name_kana, autofocus: true
-          .field-input
-            = f.text_field :first_name_kana, autofocus: true
-        .field
-          .field-label
-            = f.label :生年月日
-          .field-input
-            = f.text_field :birthday, autofocus: true
-      .account-input-box__body__btn-part
-        .actions
-          = f.submit "Create Account", class: 'btn'

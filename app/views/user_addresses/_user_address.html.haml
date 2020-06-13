@@ -1,0 +1,47 @@
+
+.user_address-right
+  %section.user_address
+    %h2.user_address__title 本人情報の登録
+    = form_for(@user_address, html: { class: "user_address__form" }) do  |f|
+      .user_address__form__container
+        %div
+          %p.customerform__info-1
+            お客さまの本人情報をご登録ください。
+            %br 
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.customerform__info-2= link_to "本人確認書類のアップロードについて", "#" ,class: ".customerform__info-2"
+        .form_group
+          %label.form_group__label お名前
+          %p.customerform__info-3 #{current_user.family_name} #{current_user.first_name}
+        .form_group
+          %label.form_group__label お名前カナ
+          %p.customerform__info-3 #{current_user.family_name_kana} #{current_user.first_name_kana}
+        .form_group
+          %label.form_group__label 生年月日
+          %p.customerform__info-3 #{current_user.birthday}
+        .form_group
+          %label.form_group__label 郵便番号
+          %span.form_group__notrequire 任意
+          = f.text_field :user_yubin_bango, class: "form_group__field"
+        .form_group
+          %label.form_group__label 都道府県
+          %span.form_group__notrequire 任意
+          = f.text_field :user_todofuken, class: "form_group__field"
+        .form_group
+          %label.form_group__label 市町村
+          %span.form_group__notrequire 任意
+          = f.text_field :user_shichoson, class: "form_group__field"
+        .form_group
+          %label.form_group__label 番地
+          %span.form_group__notrequire 任意
+          = f.text_field :user_banchi, class: "form_group__field"
+        .form_group
+          %label.form_group__label 建物名
+          %span.form_group__notrequire 任意
+          = f.text_field :user_building, class: "form_group__field"
+        = f.submit "登録", class: "address-new-btn"
+        .form_group_text_right
+          %p.customerform__info-4
+            =link_to "本人情報の登録について", ""
+
+

@@ -10,5 +10,12 @@ class User < ApplicationRecord
   validates :family_name_kana, presence: true
   validates :first_name_kana, presence: true
   validates :birthday, presence: true
+
   
+  has_many :items
+  has_many :tradings
+  has_one :user_address
+  has_one :deliver_address
+  has_one :user_card
+
 end

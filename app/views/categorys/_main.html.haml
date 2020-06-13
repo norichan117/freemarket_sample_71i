@@ -8,9 +8,9 @@
         フリマアプリです
       .content__btn
         .aBtn
-          = image_tag(src="/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class: "inkIcon__aBtn")
+          = image_tag("app.svg", class: "linkIcon_aBtn")
         .gBtn
-          = image_tag(src="/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class: "linkIcon__gBtn")
+          = image_tag("google.svg", class: "linkIcon_gBtn")
   .topIntroduction
     .subtitle
       FURIMAが選ばれる3つの理由
@@ -18,7 +18,7 @@
     .lists
       .list
         .list__pict
-          = image_tag(src= "/assets/pict-reason-01.jpg", class: "list__pict__img")
+          = image_tag("pict-reason-01.jpg", class: "list__pict__img")
           <span class="number">1</span>
         .list__text
           <span class="time">3分</span>
@@ -27,7 +27,7 @@
           スマホで入力するだけで簡単に出品できる！
       .list2
         .list2__pict
-          = image_tag(src= "/assets/pict-reason-02.jpg", class: "list2__pict__img")
+          = image_tag("pict-reason-02.jpg", class: "list2__pict__img")
           <span class="number">2</span>
         .list2__text
           <span class="simple">シンプル</span>
@@ -36,7 +36,7 @@
           めんどくさい入力は必要なく、検索も購入もスムーズ！
       .list3
         .list3__pict
-          = image_tag(src= "/assets/pict-reason-03.jpg", class: "list3__pict__img")
+          = image_tag("pict-reason-03.jpg", class: "list3__pict__img")
           <span class="number">3</span>
         .list3__text
           手数料
@@ -61,22 +61,19 @@
       .after
     .items
       .item
-        .item__img
-          = image_tag(src= "/assets/icon-01.png", class: "item__img")
+        = image_tag("icon-01.png", class: "item__img")
         .item__subtitle
           簡単に売り買いできる
         .item__detail
           スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
       .item2
-        .item2__img
-          = image_tag(src= "/assets/icon-03.png", class: "item2__img")
+        = image_tag("icon-03.png", class: "item2__img")
         .item2__subtitle
           売上金は即日振込に対応
         .item2__detail
           午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
       .item3
-        .item3__img
-          = image_tag(src= "/assets/icon-04.png", class: "item3__img")
+        = image_tag("icon-04.png", class: "item3__img")
         .item3__subtitle
           様々な支払いに対応
         .item3__detail
@@ -85,12 +82,11 @@
     <h2 class="head">ピックアップカテゴリー</h2>
     .productBox
       .productHead
-        = link_to "#", class: "title" do
-          新規投稿商品
+        = link_to "新規投稿商品", "#", class: "title"
       .productLists
-        .productList
+        = link_to "/items/show", class: "productList" do
           .productList--img
-            = link_to image_tag(src= "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "productList--img__img")
+            = image_tag(src= "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "productList--img__img")
           .productList__body
             .name
               product3
@@ -101,10 +97,9 @@
                 <i class="fa fa-star likeIcon">0</i>
               .p
                 (税込)
-        .productList2
+        = link_to "#", class: "productList2" do
           .productList2--img
-            .productList2--img__img
-              = link_to image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "productList2--img__img")
+            = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "productList2--img__img")
           .productList2__body
             .name
               product2
@@ -115,10 +110,9 @@
                 <i class="fa fa-star likeIcon">0</i>
               .p
                 (税込)
-        .productList3
+        = link_to "#", class: "productList3" do
           .productList3--img
-            .productList3--img__img
-              = link_to image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", class: "productList3--img__img")
+            = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", class: "productList3--img__img")
           .productList3__body
             .name
               product1
@@ -137,10 +131,9 @@
         = link_to "#", class: "title" do
           アーカイバ
       .productLists
-        .productList
+        = link_to "#", class: "productList" do
           .productList--img
-            .productList--img__img
-              = link_to image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "productList--img__img")
+            = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "productList--img__img")
           .productList__body
             .name
               product3
@@ -151,11 +144,9 @@
                 <i class="fa fa-star likeIcon">0</i>
               .p
                 (税込)
-                
-        .productList2
+        = link_to "#", class: "productList2" do
           .productList2--img
-            .productList2--img__img
-              = link_to image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "productList2--img__img")
+            = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "productList2--img__img")
           .productList__body
             .name
               product2
@@ -166,10 +157,9 @@
                 <i class="fa fa-star likeIcon">0</i>
               .p
                 (税込)
-        .productList3
+        = link_to "#", class: "productList3" do
           .productList3--img
-            .productList3--img__img
-              = link_to image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", class: "productList3--img__img")
+            = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", class: "productList3--img__img")
           .productList__body
             .name
               product1
