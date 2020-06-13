@@ -1,27 +1,3 @@
-%section.user_address
-  %h2
-    本人情報の登録
-    = form_for(@user_address, url: "", html: { class: "user_address__form" }) do  |f|
-      .user_address__form__container
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :user_yubin_bango
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :user_todofuken
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :user_shichoson
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :user_banchi
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :user_building
-        = f.submit
-
+%main.user_address_new
+  =render "mypage_side"
+  =render "user_address"
