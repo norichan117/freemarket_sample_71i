@@ -36,21 +36,6 @@
                   .itembox_item_img {
                     object-fit: cover;
                     height: 346px;
-                    width: 100%;
-                  }
-                  ul.itembox_item_sub {
-                    display: flex;
-                    justify-content: center;
-                    margin-top: 10px;
-                    li.itembox_item_sub_list {
-                      width: 25%;
-                      margin: 0 10px 0 0;
-                      .itembox_item_sub_list {
-                        object-fit: cover;
-                        height: 87px;
-                        width: 100%;
-                      }
-                    }
                   }
                 }
               }
@@ -108,8 +93,8 @@
               }
             }
             .commentbox {
+              width: 100%;
               padding: 24px;
-              background-color: #fff;
               text-align: center;
               .commentbtn {
                 line-height: 48px;
@@ -119,6 +104,9 @@
                 width: 60%;
                 font-size: 18px;
                 border-radius: 100px;
+                .buybtn {
+                  color: #fff;
+                }
               }
             }
           }

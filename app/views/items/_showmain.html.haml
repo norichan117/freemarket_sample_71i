@@ -9,16 +9,9 @@
           .itembox__body
             %ul.itembox_item
               %li.itembox_item_main
-                =@image. image_tag(src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', class: "itembox_item_img")
-                %ul.itembox_item_sub
-                  %li.itembox_item_sub_list
-                    = image_tag(src='https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', class: "itembox_item_sub_list")
-                  %li.itembox_item_sub_list
-                    = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/11/a005.png", class: "itembox_item_sub_list")
-                  %li.itembox_item_sub_list
-                    = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/12/a006.png", class: "itembox_item_sub_list")
+                = image_tag(@image.item_image, class: "itembox_item_img")
           .itembox__price
-            .price= @item.price
+            .price=@item.price
             .itembox__price__detail
               <span>(税込)</span>
               <span>送料込み</span>
@@ -54,5 +47,9 @@
                 %th 発想日の目安
                 %td= @item.days_to_ship
           .commentbox
-            %button{type: "submit", class: "commentbtn"}
-              %p.fa 購入画面に進む
+            - if devise_controller?
+              %button.commentbtn
+                = link_to "購入画面に進む", "#", class: "buybtn"
+            - else 
+              %button.commentbtn
+                = link_to "購入画面", "#", class: "buybtn"
