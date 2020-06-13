@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations'
    }
   root "categorys#index"
-  resources :users, only: [:index, :edit]
+  resources :users, only: [:show, :edit]
   resources :items, only: [:index, :show, :new]
   resources :categorys, only: [:index, :show]
   resources :user_addresses, only:[:new, :create, :edit]
