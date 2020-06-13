@@ -3,6 +3,7 @@ class DeliverAddressesController < ApplicationController
     @deliver_address = DeliverAddress.new
     # @deliver_address = DeliverAddress.where(user_id: current_user)
   end
+  
   def create
     DeliverAddress.create(deliver_address_params)
   end
