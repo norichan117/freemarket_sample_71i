@@ -2,34 +2,6 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
-  .breadCrumbs {
-    width: 100%;
-    border-top: 1px solid #eee;
-    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
-    position: relative;
-    padding: 0 60px;
-    .breadCrumbs_list {
-      padding: 17px 0 16px;
-      width: 100%;
-      max-width: 1040px;
-      font-size: 14px;
-      margin: 0 auto;
-      li {
-        padding: 0 10px 0 0;
-        float: left;
-        .breadCrumbs_list_item {
-          text-decoration: none;
-          color: #333;
-        }
-      }
-    }
-    .breadCrumbs_list:after {
-      display: block;
-      content: "";
-      clear: both;
-    }
-  }
-   
   .showmain {
     background: #f8f8f8;
     .showmain--product {
@@ -64,21 +36,6 @@
                   .itembox_item_img {
                     object-fit: cover;
                     height: 346px;
-                    width: 100%;
-                  }
-                  ul.itembox_item_sub {
-                    display: flex;
-                    justify-content: center;
-                    margin-top: 10px;
-                    li.itembox_item_sub_list {
-                      width: 25%;
-                      margin: 0 10px 0 0;
-                      .itembox_item_sub_list {
-                        object-fit: cover;
-                        height: 87px;
-                        width: 100%;
-                      }
-                    }
                   }
                 }
               }
@@ -135,148 +92,24 @@
                 }
               }
             }
-            .optionalarea {
-              display: flex;
-              justify-content: space-between;
-              ul {
-                margin: 10px 0 0;
-                display: flex;
-                .likebtn {
-                  li.likebtn-left {
-                    margin-right: auto;
-                    padding: 6px 10px;
-                    border-radius: 40px;
-                    color: #3CCACE;
-                    border: 1px solid #ffb340;
-                    .fa {
-                      display: inline-block;
-                      font-size: inherit;
-                      text-rendering: auto;
-                      -webkit-font-smoothing: antialiased;
-                    }
-                  }
-                }
-                .likebtn:hover {
-                  opacity: 0.7;
-                }
-              }
-              ul {
-                margin: 10px 0 0;
-                display: flex;
-                .optionalbtn {
-                  padding: 6px 10px;
-                  display: inline-block;
-                  border-radius: 4px;
-                  color: #333;
-                  border: 1px solid #333;
-                  text-decoration: none;
-                  li.optionalbtn-right {
-                    font-size: 14px;
-                    .fa {
-                      display: inline-block;
-                      font-size: inherit;
-                      text-rendering: auto;
-                      -webkit-font-smoothing: antialiased;
-                    }
-                  }
-                }
-                .optionalbtn:hover {
-                  opacity: 0.7;
-                }
-              }
-            }
-          }
-          .commentbox {
-            padding: 24px;
-            background-color: #fff;
-            margin: 10px 0;
-            text-align: center;
-            .commentcontents {
-              list-style: none;
-            }
-            .new-comment {
+            .commentbox {
               width: 100%;
-              min-height: 104px;
-              padding: 10px;
-              .comment-body {
-                width: 100%;
-                min-height: 104px;
-                padding: 10px;
-              }
-            }
-            .noticemsg {
-              padding: 8px;
-              font-size: 14px;
-              background-color: #f8f8f8;
-              margin: 10px 0;
-              text-align: left;
-            }
-            .commentbtn {
-              line-height: 48px;
-              background: #3CCACE;
-              border: 1px solid #3CCACE;
-              color: #fff;
-              width: 60%;
-              font-size: 18px;
-              border-radius: 100px;
-              .fa {
-                display: inline-block;
-                font-size: inherit;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
+              padding: 24px;
+              text-align: center;
+              .commentbtn {
+                line-height: 48px;
+                background: #3CCACE;
+                border: 1px solid #3CCACE;
+                color: #fff;
+                width: 60%;
+                font-size: 18px;
+                border-radius: 100px;
+                .buybtn {
+                  color: #fff;
+                }
               }
             }
           }
-        }
-        .links {
-          list-style: none;
-          .link-left {
-            float: left;
-            a {
-              text-decoration: none;
-              color: #3CCACE;
-              .fa {
-                display: inline-block;
-                font-size: inherit;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-              }
-            }
-          }
-          .link-right {
-            float: right;
-            a {
-              text-decoration: none;
-              color: #3CCACE;
-              .fa {
-                display: inline-block;
-                font-size: inherit;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-              }
-            }
-          }
-        }
-        .links:after {
-          display: block;
-          content: "";
-          clear: both;
-        }
-        .relateditems {
-          a {
-            display: block;
-            margin: 24px 0 8px;
-            color: #3CCACE;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 22px;
-            position: relative;
-          }
-        }
-        .relateditems:after {
-          display: block;
-          content: "";
-          clear: both;
         }
       }
     }
