@@ -1,41 +1,40 @@
 %section.deliver_address
-  %h2
-    発送元お届け先情報登録
-    = form_for(@deliver_address, url: "", html: { class: "deliver_address__form" }) do  |f|
-      .deliver_address__form__container
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :deliver_family_name
-          = f.text_field :deliver_first_name
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :deliver_family_name_kana
-          = f.text_field :deliver_first_name_kana
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :deliver_yubin_bango
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :deliver_todofuken
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :deliver_shichoson
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :deliver_banchi
-        .form_group
-          %label.form_group__label
-          %span.form_group__require
-          = f.text_field :deliver_building
-        .form_group
-          %label.form_group__ser_label
-          %span.form_group__require
-          = f.text_field :deliver_tel_no
-        = f.submit
+  %h2.deliver_address__title 発送元お届け先情報登録
+  = form_for(@deliver_address, html: { class: "deliver_address__form" }) do  |f|
+    .deliver_address__form__container
+      .form_group.form_group-first
+        %label.form_group__label お名前
+        %span.form_group__require 必須
+        = f.text_field :deliver_family_name, class: "form_group__field"
+        = f.text_field :deliver_first_name, class: "form_group__field"
+      .form_group
+        %label.form_group__label お名前カナ
+        %span.form_group__require 必須
+        = f.text_field :deliver_family_name_kana, class: "form_group__field"
+        = f.text_field :deliver_first_name_kana, class: "form_group__field"
+      .form_group
+        %label.form_group__label 郵便番号
+        %span.form_group__require 必須
+        = f.text_field :deliver_yubin_bango, class: "form_group__field"
+      .form_group
+        %label.form_group__label 都道府県
+        %span.form_group__require 必須
+        = f.text_field :deliver_todofuken, class: "form_group__field"
+      .form_group
+        %label.form_group__label 市町村
+        %span.form_group__require 必須
+        = f.text_field :deliver_shichoson, class: "form_group__field"
+      .form_group
+        %label.form_group__label 番地
+        %span.form_group__require 必須
+        = f.text_field :deliver_banchi, class: "form_group__field"
+      .form_group
+        %label.form_group__label 建物名
+        %span.form_group__require.form_group__notrequire 任意
+        = f.text_field :deliver_building, class: "form_group__field"
+      .form_group
+        %label.form_group__ser_label 電話
+        %span.form_group__require.form_group__notrequire 任意
+        = f.text_field :deliver_tel_no, class: "form_group__field"
+      = f.submit "登録", class: "address-new-btn"
 
