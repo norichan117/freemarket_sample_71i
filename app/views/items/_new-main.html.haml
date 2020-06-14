@@ -1,152 +1,72 @@
-.main
-  .main_contaier
-    .main_contaier_r-side
-      %ul.mai_contaiern_r-side_list 
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_mypage" do
-            マイページ
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_mypage_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            お知らせ
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            やることリスト
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            いいね！一覧
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            出品する
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            下書き一覧
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            出品した商品-出品中
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            出品した商品-取引中
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            出品した商品-売却済み
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            購入した商品-取引中
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            購入した商品-過去の取引
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            ニュース一覧
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            評価一覧
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            ガイド
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            お問い合わせ
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-      %h3.main_contaier_r-side_title
-        メルペイ
-      %ul.main_contaier_r-side_list 
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            売上・振込申請
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            ポイント
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-      %h3.main_contaier_r-side_title
-        設定
-      %ul.main_contaier_r-side_list
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            プロフィール
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            発送元・お届け先住所変更
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            支払い方法
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            メール/パスワード
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            本人情報
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            電話番号の確認
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-        %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
-            ログアウト
-            = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
-    .main_contaier_l-side
-      %img(src="/assets/backgraund.png" alt="image" class="main_contaier_l-side_user-icon")/
-      .main_contaier_l-side_todo
-        .main_contaier_l-side_todo_tab
-          %ul.main_contaier_l-side_todo_tab_label
-            %li.main_contaier_l-side_todo_tab_label_item.is-active お知らせ
-            %li.main_contaier_l-side_todo_tab_label_itemやることリスト
-        .main_contaier_l-side_todo_tabcontent
-          .main_contaier_l-side_todo_tabcontent_menu1
-            %ul.main_contaier_l-side_todo_tabcontent_menu1_messages
-              %li.main_contaier_l-side_todo_tabcontent_menu1_messages_body.is-show<
-                = link_to '#', class: 'main_contaier_l-side_todo_tabcontent_menu1_messages_body_link' do
-                  お買い得情報！！
-              %li.main_contaier_l-side_todo_tabcontent_menu1_messages_body<
-                = link_to '#', class: 'main_contaier_l-side_todo_tabcontent_menu1_messages_body_link' do
-                  クレジットカード登録
-        .main_contaier_l-side_todo_button
-          =link_to '#', class: "main_contaier_l-side_todo_button_link" do
-            一覧を見る
-          
-              
-      .main_contaier_l-side_todo
-        .main_contaier_l-side_todo_tab
-          %ul.main_contaier_l-side_todo_tab_label
-            %li.main_contaier_l-side_todo_tab_label_item.is-active 取引中
-            %li.main_contaier_l-side_todo_tab_label_item 過去の取引
-        .main_contaier_l-side_todo_tabcontent
-          .main_contaier_l-side_todo_tabcontent_menu1
-            %ul.main_contaier_l-side_todo_tabcontent_menu1_messages
-              %li.main_contaier_l-side_todo_tabcontent_menu1_messages_body.is-show<
-                = link_to '#', class: 'main_contaier_l-side_todo_tabcontent_menu1_messages_body_link' do
-                  プラズマテレビ
-              %li.main_contaier_l-side_todo_tabcontent_menu1_messages_body<
-                = link_to '#', class: 'main_contaier_l-side_todo_tabcontent_menu1_messages_body_link' do
-                  mac book air 11inc
-
-
-
-
-
-
-
-
-
-
-       
+.new-main
+  .new-photoboxes
+    .new-photoboxes__first
+      1番目
+    .new-photoboxes__second
+      2番目
+    .new-photoboxes__third
+      3番目
+    .new-photoboxes__fourth
+      4番目
+  .item-name
+    .item-name__title
+      商品名 ※必須
+    .item-name__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-name__form', placeholder: '40文字まで'
+  .item-detail
+    .item-detail__title
+      商品説明 ※必須
+    .item-detail__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-detail__form', placeholder: '40文字まで'
+  .item-category
+    .item-category__title
+      カテゴリ ※必須
+    .item-category__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-category__form', placeholder: '40文字まで'
+  .item-brand
+    .item-brand__title
+      ブランド
+    .item-brand__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-brand__form', placeholder: '40文字まで'
+  .item-condition
+    .item-condition__title
+      商品状態 ※必須
+    .item-condition__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-condition__form', placeholder: '40文字まで'
+  .item-delivery-fee
+    .item-delivery-fee__title
+      配送料の負担 ※必須
+    .item-delivery-fee__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-delivery-fee__form', placeholder: '40文字まで'
+  .item-shipping-method
+    .item-shipping-method__title
+      配送方法 ※必須
+    .item-shipping-method__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-shipping-method__form', placeholder: '40文字まで'
+  .item-days
+    .item-days__title
+      発送日の目安 ※必須
+    .item-days__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-days__form', placeholder: '40文字まで'
+  .item-area
+    .item-area__title
+      発送元の地域 ※必須
+    .item-area__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-area__form', placeholder: '40文字まで'
+  .item-price
+    .item-price__title
+      商品価格 ※必須
+    .item-price__form
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'item-price__form', placeholder: '40文字まで'
+  %button#confirm.btn.btn-large.btn-default{"data-reactid" => ".0.4.k.0.0.0"} 確認する
+    
