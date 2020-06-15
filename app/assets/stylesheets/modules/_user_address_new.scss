@@ -11,6 +11,65 @@
     .mypage_side {
       width: 280px;
       margin: 0 40px 0 0;
+      .main_contaier_r-side {
+        width: 280px;
+        height: 1300px;
+        margin: 0 40px 0 0;
+        float: left;
+
+        &_list {
+  
+          &_nav {
+            width: 280px;
+            height: 48px;
+            background-color: white;
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            position: relative;
+            display: inline-block;
+    
+            &:hover {
+              opacity: 0.75;
+              background-color: rgb(233, 233, 233);
+            }
+            
+    
+            &_mypage {
+              text-decoration: none;
+              display: block;
+              cursor:pointer;
+              height: 48px;
+              width: 240px;
+              padding: 14px;
+              color: black;
+              &_icon {
+                position: absolute;
+                right: 20px;
+                bottom: 15px;
+              }
+            }
+    
+            &_item {
+              text-decoration: none;
+              display: block;
+              cursor:pointer;
+              height: 48px;
+              width: 240px;
+              padding: 14px;
+              color: black;
+              &_icon {
+                position: absolute;
+                right: 20px;
+                bottom: 15px;
+              }
+            }
+          }
+        }
+  
+        &_title {
+          margin: 40px 0 0;
+        }
+      }
     }
     .user_address-right {
       width: 700px;
@@ -97,7 +156,8 @@
           }
         }
       }
-
     }
   }
 }
+
+
