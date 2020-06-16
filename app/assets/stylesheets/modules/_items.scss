@@ -101,6 +101,18 @@
                     width: 240px;
                     padding: 3px 8px 3px 5px;
                     border-bottom: 1px solid #f8f8f8;
+                    .category_list_item_sub {
+                      display: flex;
+                      .category_list_item_sub_item {
+                        min-height: 480px;
+                        background-color: #fff;
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                        top: 0;
+                        left: 240px;
+                      }
+                    }
                   }
                   &_item:hover {
                     color: #ffb340;

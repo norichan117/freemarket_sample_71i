@@ -16,22 +16,10 @@
                 %ul.category_list
                   - @parents.each do |parent|
                     .category_list_item=parent.category_name
-                    - parent.children.each do |child|
-                      .category_list_item=child.category_name
-                      - child.children.each do |grandchild|
-                        .category_list_item=grandchild.category_name
-                  -# %li= link_to 'レディース', '#', class: 'category_list_item'
-                  -# %li= link_to 'メンズ', '#', class: 'category_list_item'
-                  -# %li= link_to 'ベビー・キッズ', '#', class: 'category_list_item'
-                  -# %li= link_to '本・音楽・ゲーム', '#', class: 'category_list_item'
-                  -# %li= link_to 'おもちゃ・ホビー・グッズ', '#', class: 'category_list_item'
-                  -# %li= link_to 'コスメ・香水・美容', '#', class: 'category_list_item'
-                  -# %li= link_to '家電・スマホ・カメラ', '#', class: 'category_list_item'
-                  -# %li= link_to 'スポーツ・レジャー', '#', class: 'category_list_item'
-                  -# %li= link_to 'ハンドメイド', '#', class: 'category_list_item'
-                  -# %li= link_to 'チケット', '#', class: 'category_list_item'
-                  -# %li= link_to '自動車・オートバイ', '#', class: 'category_list_item'
-                  -# %li= link_to 'その他', '#', class: 'category_list_item'
+                      - parent.children.each do |child|
+                        .category_list_item_sub=child.category_name
+                          - child.children.each do |grandchild|
+                            .category_list_item_sub_item=grandchild.category_name
         .listsLeft__item
           =link_to "ブランド", "", class: "brandBtn"
           .display
