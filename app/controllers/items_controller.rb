@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   def index
     abc = Category.find(1)
     @categories = abc.subtree
-    binding.pry
+binding.pry
   end
 
   def show
