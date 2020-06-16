@@ -4,6 +4,18 @@
       .content_main
         .title_box
           %h2.title_box-title トップの商品一覧
-          %ul.sub_list
+          %ul.list_box
             - @categories.each do |category|
-              =category.category_name
+              =link_to category_path(category) do
+                %li.category_list
+                  = category.category_name
+        .item_lists
+          - @items.each do |item|
+            .item_list
+              %figure.itemlist-image
+                = image_tag item.item_image, size: "220x150"
+                
+              
+
+              
+
