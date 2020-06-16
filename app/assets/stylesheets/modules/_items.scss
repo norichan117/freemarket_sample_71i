@@ -95,27 +95,51 @@
                   background-repeat: no-repeat;
                   background-size: 18px;
                   padding-right: 30px;
-                  &_item {
+                  &_main {
                     color: #333;
                     display: block;
                     width: 240px;
                     padding: 3px 8px 3px 5px;
                     border-bottom: 1px solid #f8f8f8;
-                    .category_list_item_sub {
-                      display: flex;
-                      .category_list_item_sub_item {
-                        min-height: 480px;
-                        background-color: #fff;
-                        display: flex;
-                        flex-direction: column;
-                        position: absolute;
-                        top: 0;
-                        left: 240px;
-                      }
-                    }
+                  }
+                  &_main:hover {
+                    color: #ffb340;
+                  }
+                  &_sub {
+                    min-height: 480px;
+                    background-color: #fff;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 0;
+                    left: 240px;
+                    display: block;
+                    width: 240px;
+                    padding: 3px 8px 3px 5px;
+                    border-bottom: 1px solid #f8f8f8;
+                  }
+                  &_sub:hover {
+                    color: #ffb340;
+                  }
+                  &_sub + .display {
+                    display: block;
+                  }
+                  &_item {
+                    min-height: 480px;
+                    background-color: #fff;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 0;
+                    left: 480px;
+                    display: block;
+                    width: 240px;
+                    padding: 3px 8px 3px 5px;
+                    border-bottom: 1px solid #f8f8f8;
                   }
                   &_item:hover {
                     color: #ffb340;
+                  }
+                  &_item + .display {
+                    display: block;
                   }
                 }
               }
