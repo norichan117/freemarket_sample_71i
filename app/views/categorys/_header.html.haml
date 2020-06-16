@@ -15,9 +15,11 @@
               .category_tree
                 %ul.category_list
                   - @parents.each do |parent|
-                    = link_to parent.category_name, item_path, class: "category_list_main"
+                    = link_to parent.category_name, "#", class: "category_list_main"
+
                     - parent.children.each do |child|
-                      .category_list_sub=child.category_name
+                      =child.category_name
+
                       - child.children.each do |grandchild|
                         .category_list_item=grandchild.category_name
         .listsLeft__item
