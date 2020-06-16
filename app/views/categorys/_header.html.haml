@@ -15,11 +15,11 @@
               .category_tree
                 %ul.category_list
                   - @parents.each do |parent|
-                    .category_list_item=parent.category_name
-                      - parent.children.each do |child|
-                        .category_list_item_sub=child.category_name
-                          - child.children.each do |grandchild|
-                            .category_list_item_sub_item=grandchild.category_name
+                    .category_list_main=parent.category_name
+                    - parent.children.each do |child|
+                      .category_list_sub=child.category_name
+                      - child.children.each do |grandchild|
+                        .category_list_item=grandchild.category_name
         .listsLeft__item
           =link_to "ブランド", "", class: "brandBtn"
           .display
