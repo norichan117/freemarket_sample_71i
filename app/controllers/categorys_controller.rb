@@ -6,13 +6,11 @@ class CategorysController < ApplicationController
   end
 
   def show
-
-
     @categories  = Category.find(2).subtree
     # @categories  = Category.find(params[:id]).subtree
     # @items = @categories.items
     category_ids = (Category.find(2).descendant_ids)<<params[:id]
-    @items = Item.where(category_id: category_ids).includes(:image)
+    @items = Item.where(category_id: category_ids)
 
   end
 end

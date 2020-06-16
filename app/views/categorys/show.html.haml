@@ -13,8 +13,8 @@
           - @items.each do |item|
             .item_list
               %figure.itemlist-image
-                = image_tag item.item_image, size: "220x150"
-                
+                = Image.find_by(item_id: item).item_image
+
               
 
               
