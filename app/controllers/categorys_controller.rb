@@ -4,4 +4,10 @@ class CategorysController < ApplicationController
     @category = Category.all
     @brand = Brand.all
   end
+
+  def show
+    abc = Category.find(params[:id])
+    @categories = abc.subtree
+
+  end
 end
