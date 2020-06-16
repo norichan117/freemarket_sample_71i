@@ -1,2 +1,9 @@
-- @categories.each do |ccc|
-  =ccc.category_name
+%main.show_categories_main
+  .show_main
+    .content_main
+      .content_main
+        .title_box
+          %h2.title_box-title トップの商品一覧
+          %ul.sub_list
+            - @categories.each do |category|
+              =category.category_name

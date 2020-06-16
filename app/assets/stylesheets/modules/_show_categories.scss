@@ -1,0 +1,27 @@
+.show_categories_main {
+  background-color: #f8f8f8;
+  .show_main{
+    padding: 40px;
+    margin: 0 auto;
+    .content_main {
+      width: 700px;
+      margin: 0 auto;
+      .title_box {
+        &-title {
+          border-radius: 5px 5px 0 0;
+          padding: 16px 10px 8px;
+          background-color: #3CCACE;
+          color: #fff;
+          text-align: center;
+          font-weight: bold;
+          font-size: 22px;
+        }
+        .sub_list {
+          
+        }
+      }
+    }
+  }
+
+}
+
