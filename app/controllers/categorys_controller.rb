@@ -6,8 +6,10 @@ class CategorysController < ApplicationController
   end
 
   def show
-    abc = Category.find(params[:id])
-    @categories = abc.subtree
-
+    @categories  = Category.find(1)
+    @items = @categories.items
+binding.pry
+    @categories  = Category.find(params[:id]).subtree
+    @items = @categories.items
   end
 end
