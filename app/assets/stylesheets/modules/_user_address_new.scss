@@ -88,6 +88,19 @@
           &__container {
             max-width: 343px;
             margin: 0 auto;
+            .flash_box {
+              color: #fff;
+              background-color: #ea352d;
+              font-weight: 400px;
+              margin-top: 32px;
+              width: 100%;
+              text-align: center;
+              line-height: 48px;
+              border-radius: 4px;
+              font-size: 14px;
+              border: 1px solid #ea352d;
+
+            }
             .customerform__info-1 {
               margin: 8px 0 0;
               line-height: 1.5;
@@ -130,7 +143,7 @@
           }
           .address-new-btn {
             color: #fff;
-            background-color: #ea352d;
+            background-color: $furima;
             font-weight: 400px;
             margin-top: 32px;
             width: 100%;
@@ -138,7 +151,7 @@
             line-height: 48px;
             border-radius: 4px;
             font-size: 14px;
-            border: 1px solid #ea352d;
+            border: 1px solid $furima;
           }
           .form_group_text_right{
             margin-top: 40px;
