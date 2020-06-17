@@ -6,7 +6,7 @@
           %h2.title_box-title トップの商品一覧
           %ul.list_box
             - @categories.each do |category|
-              =link_to category_path(category) do
+              =link_to category_path(category), class: "category_list_link"do
                 %li.category_list
                   = category.category_name
         .item_lists
