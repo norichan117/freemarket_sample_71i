@@ -1,10 +1,9 @@
 class ItemsController < ApplicationController
 
   def show
-    # @item = Item.find(params[:id])
-    @item = Item.find(1)
-    @user = User.find(1)
-    @image = Image.find(1)
+    @item = Item.find(params[:id])
+    # @user = User.find(1) 
+    @image = Image.find(@item.id)
+
   end
-  
 end
