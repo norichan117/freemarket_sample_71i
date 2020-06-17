@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20200615173103) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id"
     t.string   "item_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
