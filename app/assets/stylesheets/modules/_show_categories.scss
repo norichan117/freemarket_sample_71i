@@ -38,7 +38,6 @@
         overflow: auto;
         width: 720px;
         .item_list {
-
           float: left;
           width: calc(100% / 3);
           margin: 0 0 10px;
@@ -49,14 +48,12 @@
             position: relative;
             background-color: #fff;
             .item_list-image {
-
               width: 220px;
               height: 150px;
               position: relative;
               overflow: hidden;
               margin: 0;
               z-index: auto;
-
             }
             .item_list--body{
               background-color: white;
@@ -86,13 +83,9 @@
               }
             }
           }
-
         }
-        
-
       }
     }
   }
-
 }
 

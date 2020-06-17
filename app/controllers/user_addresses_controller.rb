@@ -4,7 +4,14 @@ class UserAddressesController < ApplicationController
   end
 
   def create
-    UserAddress.create(user_address_params)
+    user = UserAddress.new(user_address_params)
+    if user.save
+      flash[:notice] = "連絡先を登録しました"
+      redirect_to new_user_address_path
+    else
+      flash.now[:alert] = '〇〇ください。'
+      render action: :new
+    end
   end
 
   def edit
