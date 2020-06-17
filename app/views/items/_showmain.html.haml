@@ -9,7 +9,8 @@
           .itembox__body
             %ul.itembox_item
               %li.itembox_item_main
-                = image_tag(@image.item_image, class: "itembox_item_img")
+                = image_tag src= Image.find_by(item_id: @item).item_image, class: "itembox_item_img"
+                -# = image_tag(@image.item_image, class: "itembox_item_img")
           .itembox__price
             .price= "¥#{@item.price}"
             .itembox__price__detail
