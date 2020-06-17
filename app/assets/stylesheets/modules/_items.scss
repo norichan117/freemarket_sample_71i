@@ -123,6 +123,12 @@
                   &_sub + .display {
                     display: block;
                   }
+                  .display, .result{
+                    display: none;
+                  }
+                  &_main:hover {
+                    display: block;
+                  }
                   &_item {
                     min-height: 480px;
                     background-color: #fff;
