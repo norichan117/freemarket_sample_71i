@@ -6,11 +6,13 @@ class CategorysController < ApplicationController
   end
 
   def show
-    @categories  = Category.find(2).subtree
-    # @categories  = Category.find(params[:id]).subtree
-    # @items = @categories.items
-    category_ids = (Category.find(2).descendant_ids)<<params[:id]
-    @items = Item.where(category_id: category_ids)
+    @categories  = Category.find(params[:id]).subtree.order([:id])
+    @items = Item.where(category_id: @categories.select("id"))
+
+    # @categories  = Category.find(2).subtree
+    # テスト用
+
+   # @items = @categories.items ダメ
 
   end
 end
