@@ -1,7 +1,7 @@
 .user_address-right
   %section.user_address
     %h2.user_address__title 本人情報の登録
-    = form_for(@user_address, html: { class: "user_address__form" }) do  |f|
+    = form_for @user_address, class: "user_address__form" do  |f|
       .user_address__form__container
         %div
           -if flash[:notice]
