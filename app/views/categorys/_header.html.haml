@@ -22,6 +22,10 @@
                       -#   .category_list_item=grandchild.category_name
                   -#   - parent.children.each do |child|
                   -#     = child.category_name
+                  %br
+                    - parent.children.each do |child|
+                      =link_to category_path(child) do
+                        = child.category_name
         .listsLeft__item
           =link_to "ブランド", "", class: "brandBtn"
           .display
