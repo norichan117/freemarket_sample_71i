@@ -26,15 +26,16 @@
                   -#     = child.category_name
 
                   - @parents.each do |parent|
-                    %li.category_list_main 
+                    %ul.category_list_main 
                       =parent.category_name
                     - parent.children.each do |child|
-                      =link_to category_path(child) do
-                        %li.category_list_sub
+                      =link_to category_path(child), class: "category_list_sub" do
+                        %li
                           =child.category_name
-                        -# - child.children.each do |grandchild|
-                        -#   =link_to category_path(grandchild) do
-                        -#     = grandchild.category_name
+                      - child.children.each do |grandchild|
+                        =link_to category_path(grandchild) do
+                          %li.category_list_item
+                            =grandchild.category_name
         .listsLeft__item
           =link_to "ブランド", "", class: "brandBtn"
           .display
