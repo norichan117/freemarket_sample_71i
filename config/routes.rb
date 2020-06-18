@@ -4,11 +4,10 @@ Rails.application.routes.draw do
     :sessions => 'users/sessions'
    }
   root "categorys#index"
-  resources :users, only: [:show, :edit] do
-    resources :user_addresses, only:[:new, :create, :edit]
-    resources :deliver_addresses, only:[:new, :create, :edit]
-  end
+  resources :users, only: [:show, :edit]
   resources :items, only: [:index, :show, :new, :edit]
   resources :categorys, only: [:index, :show]
+  resources :user_addresses, only:[:new, :create, :edit]
+  resources :deliver_addresses, only:[:new, :create, :edit]
   resources :tradings, onry:[:new, :create]
 end
