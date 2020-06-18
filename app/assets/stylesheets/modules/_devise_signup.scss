@@ -1,6 +1,6 @@
 .registration-new {
   font-size: 14px;
-  background: #f5f5f5;
+  background: $back;
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   position: relative;
   &-container {
@@ -22,7 +22,7 @@
           padding: 32px;
           text-align: center;
           font-weight: bold;
-          border-bottom: 1px solid #f5f5f5;
+          border-bottom: 1px solid $back;
           h2 {
             font-size: 22px;
             font-weight: 700;
@@ -30,7 +30,7 @@
         }
         &__body {
           padding: 24px 16px 40px;
-          border-top: 1px solid #f5f5f5;
+          border-top: 1px solid $back;
           &__forms{
             max-width: 343px;
             margin: 0 auto;
@@ -44,7 +44,7 @@
               }
               .form-require{
                 color: #fff;
-                background-color: #ea352d;
+                background-color: $red;
                 border-radius: 2px;
                 margin-left: 8px;
                 padding: 2px 4px;
@@ -82,12 +82,16 @@
             }
             .field-input-birthday{
               .year {
+                border: 1px solid #ccc;
+                border-radius: 4px;
                 margin: 8px 2px 0 0;
                 padding: 0 10px;
                 height: 48px;
                 width: 76px;
               }
               .month {
+                border: 1px solid #ccc;
+                border-radius: 4px;
                 margin: 8px 2px 0 5px;
                 padding: 0 10px;
                 height: 48px;
@@ -95,6 +99,8 @@
 
               }
               .day {
+                border: 1px solid #ccc;
+                border-radius: 4px;
                 margin: 8px 0 0 5px;
                 padding: 0 10px;
                 height: 48px;
@@ -108,11 +114,11 @@
             .registration-new-btn {
               width: 100%;
               color: #fff;
-              background-color: rgb(234, 53, 45);
+              background-color: $furima;
               line-height: 48px;
               font-size: 14px;
               border-radius: 4px;
-              border: 1px solid #ea352d;
+              border: 1px solid $furima;
             }
             &-text1 {
               margin-top: 40px;
@@ -126,7 +132,7 @@
             &-text2 {
               margin-top: 24px;
               padding: 8px 16px;
-              background-color: #f5f5f5;
+              background-color: $back;
               p {
                 color: #888888;
                 font-size: 12px;

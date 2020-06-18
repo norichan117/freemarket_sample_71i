@@ -9,7 +9,8 @@
           .itembox__body
             %ul.itembox_item
               %li.itembox_item_main
-                = image_tag(@image.item_image, class: "itembox_item_img")
+                = image_tag src= Image.find_by(item_id: @item).item_image, class: "itembox_item_img"
+                -# = image_tag(@image.item_image, class: "itembox_item_img")
           .itembox__price
             .price= "¥#{@item.price}"
             .itembox__price__detail
@@ -43,7 +44,7 @@
                 %th 発想日の目安
                 %td= @item.days_to_ship
           .commentbox
-            - if @item.user_id = current_user
+            - if @item.user_id == current_user.id
               %button.commentbtn
                 = link_to "編集画面に進む", edit_item_path(@item), class: "buybtn"
             - else 
