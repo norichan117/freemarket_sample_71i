@@ -14,18 +14,27 @@
             .category
               .category_tree
                 .category_list
-                  - @parents.each do |parent|
-                    = link_to parent.category_name, category_path(parent.id), class: "category_list_main"
-                    -# - parent.children.each do |child|
-                      -# .category_list_sub=child.category_name
-                      -# - child.children.each do |grandchild|
-                      -#   .category_list_item=grandchild.category_name
+                  -# - @parents.each do |parent|
+                  -#   .category_list_main=parent.category_name
+                  -#   - parent.children.each do |child|
+                  -#     .category_list_sub=child.category_name
+                  -#     - child.children.each do |grandchild|
+                  -#       .category_list_item=grandchild.category_name
+                  -# - @parents.each do |parent|
+                  -#   = link_to parent.category_name, category_path(parent.id), class: "category_list_main"
                   -#   - parent.children.each do |child|
                   -#     = child.category_name
-                  %br
+
+                  - @parents.each do |parent|
+                    %li.category_list_main 
+                      =parent.category_name
                     - parent.children.each do |child|
                       =link_to category_path(child) do
-                        = child.category_name
+                        %li.category_list_sub
+                          =child.category_name
+                        -# - child.children.each do |grandchild|
+                        -#   =link_to category_path(grandchild) do
+                        -#     = grandchild.category_name
         .listsLeft__item
           =link_to "ブランド", "", class: "brandBtn"
           .display

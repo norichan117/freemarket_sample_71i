@@ -1,8 +1,8 @@
 class CategorysController < ApplicationController
   def index
-    @parents = Category.all.order("id ASC").limit(13)
-    @category = Category.all
-    @brand = Brand.all
+    # @parents = Category.where(ancestry: nil).limit(13)
+    @parents = Category.all.order("id").limit(13)
+    # @brand = Brand.allexity
   end
 
   def show

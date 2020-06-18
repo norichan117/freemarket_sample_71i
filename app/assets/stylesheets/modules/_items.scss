@@ -83,6 +83,7 @@
               background-color: #fff;
               width: 240px;
               top: 40px;
+              // display: none;
               .category_tree {
                 background-color: #fff;
                 display: flex;
@@ -101,21 +102,21 @@
                     width: 240px;
                     padding: 3px 8px 3px 5px;
                     border-bottom: 1px solid #f8f8f8;
+                    position: absolute;
                   }
                   &_main:hover {
                     color: #ffb340;
                   }
                   &_sub {
-                    min-height: 480px;
                     background-color: #fff;
                     flex-direction: column;
-                    position: absolute;
                     top: 0;
                     left: 240px;
                     display: block;
                     width: 240px;
                     padding: 3px 8px 3px 5px;
                     border-bottom: 1px solid #f8f8f8;
+                    position: relative;
                   }
                   &_sub:hover {
                     color: #ffb340;
@@ -992,7 +993,7 @@
     }
   }
   .appBanner {
-    // background-image: url(/assets/bg-appBanner-pict.jpg);
+    background-image: url(/assets/bg-appBanner-pict.jpg);
     // background-image: image-url("bg-mainVisual-pict_pc.jpg");
     padding: 100px 40px;
     position: relative;
