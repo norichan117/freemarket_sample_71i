@@ -22,6 +22,22 @@
                       -#   .category_list_item=grandchild.category_name
                   -#   - parent.children.each do |child|
                   -#     = child.category_name
+
+                  .point
+                    - @parents.each do |parent|
+                      %ul.category_list_main 
+                        =parent.category_name
+                        - parent.children.each do |child|
+                          %li 
+                            %ul.category_list_sub
+                              =link_to category_path(child) do
+                                =child.category_name
+                                - child.children.each do |grandchild|
+                                  =link_to category_path(grandchild) do
+                                    %li.category_list_item
+                                      =grandchild.category_name
+
+
         .listsLeft__item
           =link_to "ブランド", "", class: "brandBtn"
           .display

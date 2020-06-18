@@ -79,7 +79,6 @@
             }
             .category {
               z-index: 2;
-              position: absolute;
               background-color: #fff;
               width: 240px;
               top: 40px;
@@ -88,6 +87,7 @@
                 display: flex;
                 flex-direction: column;
                 position: relative;
+
                 .category_list {
                   text-decoration: none;
                   line-height: 32px;
@@ -95,52 +95,58 @@
                   background-repeat: no-repeat;
                   background-size: 18px;
                   padding-right: 30px;
+
                   &_main {
+                    height: 50px;
                     color: #333;
                     display: block;
                     width: 240px;
                     padding: 3px 8px 3px 5px;
                     border-bottom: 1px solid #f8f8f8;
-                  }
-                  &_main:hover {
-                    color: #ffb340;
-                  }
-                  &_sub {
-                    min-height: 480px;
-                    background-color: #fff;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 0;
-                    left: 240px;
-                    display: block;
-                    width: 240px;
-                    padding: 3px 8px 3px 5px;
-                    border-bottom: 1px solid #f8f8f8;
-                  }
-                  &_sub:hover {
-                    color: #ffb340;
-                  }
-                  &_sub + .display {
-                    display: block;
-                  }
-                  &_item {
-                    min-height: 480px;
-                    background-color: #fff;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 0;
-                    left: 480px;
-                    display: block;
-                    width: 240px;
-                    padding: 3px 8px 3px 5px;
-                    border-bottom: 1px solid #f8f8f8;
-                  }
-                  &_item:hover {
-                    color: #ffb340;
-                  }
-                  &_item + .display {
-                    display: block;
-                  }
+
+                    .category_list_sub {
+                      display: none;
+                    }
+                    &:hover {
+                      color: #ffb340;
+                      .category_list_sub {
+                        color: black;
+                        background-color: #fff;
+                        flex-direction: column;
+                        top: 0;
+                        left: 240px;
+                        position: relative;
+                        top: 0;
+                        display: block;
+                        height: 50px;
+                        width: 240px;
+                        padding: 3px 8px 3px 5px;
+                        border-bottom: 1px solid #f8f8f8;
+                        position: relative;
+                        .category_list_item {
+                          display: none;
+                        }
+                        &:hover {
+                          color: #ffb340;
+                          .category_list_item {
+                            color: black;
+                            height: 50px;
+                            background-color: #fff;
+                            flex-direction: column;
+                            position: relative;
+                            left: 240px;
+                            display: block;
+                            width: 240px;
+                            padding: 3px 8px 3px 5px;
+                            border-bottom: 1px solid #f8f8f8;
+                            &:hover {
+                              color: #ffb340;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }  
                 }
               }
             }
@@ -149,6 +155,9 @@
             text-decoration: none;
             padding: 0;
             padding: 0 0 0 16px;
+
+
+            
             .brandBtn {
               color: #333;
               text-decoration: none;
@@ -1193,3 +1202,4 @@
     opacity: 0.7;
   }
 }
+
