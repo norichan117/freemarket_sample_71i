@@ -1,41 +1,29 @@
-.pcHeader
+%header.pcHeader
   .header-Inner
     .main-Header
-      = link_to image_tag("logo.png", class: "icon")
+      %h1.icon
+        = link_to image_tag("logo.png", class: "icon")
       .searchBox
         .form
           <input class="form__input" placeholder="キーワードから探す">
           = link_to image_tag("icon-search 1.png", class: "form__submit")
     .nav
-      .listsLeft
-        .listsLeft__first
+      %ul.listsLeft
+        %li.listleft__item.listsLeft__first
           = link_to 'カテゴリー', '', class: 'catBtn'
-          .display
-            .category
-              .category_tree
-                %ul.category_list
-                  - @parents.each do |parent|
-                    = link_to parent.category_name, category_path(parent.id), class: "category_list_main"
-                    -# - parent.children.each do |child|
-                      -# .category_list_sub=child.category_name
-                      -# - child.children.each do |grandchild|
-                      -#   .category_list_item=grandchild.category_name
-                  -#   - parent.children.each do |child|
-                  -#     = child.category_name
-
-                  .point
-                    - @parents.each do |parent|
-                      %ul.category_list_main 
-                        =parent.category_name
-                        - parent.children.each do |child|
-                          %li 
-                            %ul.category_list_sub
-                              =link_to category_path(child) do
-                                =child.category_name
-                                - child.children.each do |grandchild|
-                                  =link_to category_path(grandchild) do
-                                    %li.category_list_item
-                                      =grandchild.category_name
+          .tree.displayNone
+            %ul.category_tree
+              - @parents.each do |parent|
+                %li.category_list_main
+                  = parent.category_name
+                  %ul.sub_category_tree
+                    - parent.children.each do |child|
+                      %li.category_list_sub
+                        =child.category_name
+                        %ul.sub_sub_category_tree
+                          - child.children.each do |grandchild|
+                            %li.category_list_item
+                              =grandchild.category_name
 
 
         .listsLeft__item
