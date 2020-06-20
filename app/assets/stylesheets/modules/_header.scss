@@ -64,16 +64,17 @@
             color: #ffb340;
           }
         }
+
         .displayNone {
           display: none;
         }
-        .catBtn:hover + .displayNone{
-          display: block;
-        }
-        .tree {
-          &:hover{
+        &:hover{
+          .displayNone{
             display: block;
           }
+          
+        }
+        .tree {
           z-index: 2;
           position: absolute;
           background-color: #fff;
@@ -83,7 +84,7 @@
             background-color: #fff;
             display: flex;
             flex-direction: column;
-            position: relative;
+            // position: relative;
             .category_list_main {
               text-decoration: none;
               line-height: 32px;
@@ -182,7 +183,7 @@
                 background-color: #fff;
                 display: flex;
                 flex-direction: column;
-                position: relative;
+                // position: relative;
                 .category2_list  {
                   text-decoration: none;
                   line-height: 32px;
@@ -235,8 +236,4 @@
       }
     }
   }
-}
-
-a{
-  text-decoration: none;
 }
