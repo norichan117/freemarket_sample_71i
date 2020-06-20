@@ -97,6 +97,9 @@
               width: 240px;
               padding: 3px 8px 3px 5px;
               border-bottom: 1px solid #f8f8f8;
+              &:hover {
+                color: #ffb340;
+              }
               .sub_category_tree {
                 display: none;
               }
@@ -117,6 +120,9 @@
                     padding: 3px 8px 3px 5px;
                     border-bottom: 1px solid #f8f8f8;
                     position: relative;
+                    &:hover {
+                      color: #ffb340;
+                    }
                     .sub_sub_category_tree {
                       display: none;
                     }
