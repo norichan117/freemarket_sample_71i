@@ -109,33 +109,61 @@
                   }
                   &_main:hover {
                     color: #ffb340;
-                    .category_list_sub {
-                      color: black;
+                    .category_list2 {
+                      min-height: 480px;
                       background-color: #fff;
+                      display: flex;
                       flex-direction: column;
+                      position: absolute;
+                      top: 0;
                       left: 240px;
-                      display: block;
-                      width: 240px;
-                      padding: 3px 8px 3px 5px;
-                      border-bottom: 1px solid #f8f8f8;
-                      position: relative;
-                    }
-                    .category_list_sub:hover {
-                      color: #ffb340;
-                    }
-                      .category_list_item {
-                        color: black;
-                        background-color: #fff;
-                        flex-direction: column;
-                        top: 0;
-                        left: 240px;
+                      .category_list_sub {
                         display: block;
                         width: 240px;
                         padding: 3px 8px 3px 5px;
                         border-bottom: 1px solid #f8f8f8;
-                        position: relative;
+                        a {
+                          color: black;
+                        }
                       }
+                      .category_list_sub:hover {
+                        color: #ffb340;
+                        .category_list3 {
+                          min-height: 480px;
+                          background-color: #fff;
+                          display: flex;
+                          flex-direction: column;
+                          position: absolute;
+                          top: 0;
+                          left: 240px;
+                          .category_list_item {
+                            display: block;
+                            width: 240px;
+                            padding: 3px 8px 3px 5px;
+                            border-bottom: 1px solid #f8f8f8;
+                            a {
+                              color: black;
+                            }
+                          }
+                          .category_list_item:hover {
+                            color: #ffb340;
+                          }
+                        }
+                      }
+                    }
                   }
+                      // .category_list_item {
+                      //   color: black;
+                      //   background-color: #fff;
+                      //   flex-direction: column;
+                      //   top: 0;
+                      //   left: 480px;
+                      //   display: block;
+                      //   width: 240px;
+                      //   padding: 3px 8px 3px 5px;
+                      //   border-bottom: 1px solid #f8f8f8;
+                      //   position: relative;
+                      // }
                 }
               }
             }

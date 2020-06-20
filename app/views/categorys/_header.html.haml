@@ -13,17 +13,20 @@
           .display
             .category
               .category_tree
-                .category_list
+                %ul.category_list
                   - @parents.each do |parent|
-                    %ul.category_list_main 
+                    %li.category_list_main 
                       =parent.category_name
-                      - parent.children.each do |child|
-                        %li
-                          =link_to category_path(child), class: "category_list_sub" do
-                            =child.category_name
-                            -# - child.children.each do |grandchild|
-                            -#   =link_to category_path(grandchild), class: "category_list_item" do
-                            -#     =grandchild.category_name
+                      %ul.category_list2
+                        - parent.children.each do |child|
+                          %li.category_list_sub
+                            =link_to category_path(child) do
+                              =child.category_name
+                              %ul.category_list3
+                                - child.children.each do |grandchild|
+                                  %li.category_list_item
+                                    =link_to category_path(grandchild) do
+                                      =grandchild.category_name
         .listsLeft__item
           =link_to "ブランド", "", class: "brandBtn"
           .display
