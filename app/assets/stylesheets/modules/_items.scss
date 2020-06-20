@@ -72,7 +72,7 @@
               display: block;
             }
             .display, .result{
-              // display: none;
+              display: none;
             }
             .display:hover {
               display: block;
@@ -83,7 +83,6 @@
               background-color: #fff;
               width: 240px;
               top: 40px;
-              // display: none;
               .category_tree {
                 background-color: #fff;
                 display: flex;
@@ -155,18 +154,6 @@
                       }
                     }
                   }
-                      // .category_list_item {
-                      //   color: black;
-                      //   background-color: #fff;
-                      //   flex-direction: column;
-                      //   top: 0;
-                      //   left: 480px;
-                      //   display: block;
-                      //   width: 240px;
-                      //   padding: 3px 8px 3px 5px;
-                      //   border-bottom: 1px solid #f8f8f8;
-                      //   position: relative;
-                      // }
                 }
               }
             }
