@@ -119,13 +119,16 @@
                       border-bottom: 1px solid #f8f8f8;
                       a {
                         color: black;
+                        display: block;
+                      }
+                      a:hover {
+                        color: #ffb340;
                       }
                       .category_list_item {
                         display: none;
                       }
                     }
                     .category_list_sub:hover {
-                      color: #ffb340;
                       .category_list3 {
                         min-height: 480px;
                         background-color: #fff;
@@ -141,10 +144,11 @@
                           border-bottom: 1px solid #f8f8f8;
                           a {
                             color: black;
+                            display: block;
                           }
-                        }
-                        .category_list_item:hover {
-                          color: #ffb340;
+                          a:hover {
+                            color: #ffb340;
+                          }
                         }
                       }
                     }

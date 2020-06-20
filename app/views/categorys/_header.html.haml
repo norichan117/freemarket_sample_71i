@@ -20,7 +20,7 @@
                       %ul.category_list2
                         - parent.children.each do |child|
                           %li.category_list_sub
-                            = category_path(child) do
+                            =link_to category_path(child) do
                               =child.category_name
                               %ul.category_list3
                                 - child.children.each do |grandchild|
