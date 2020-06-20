@@ -20,6 +20,11 @@ class ApplicationController < ActionController::Base
 
   before_action :basic_auth
 
+  before_action :set_parents
+  def set_parents
+    @parents = Category.all.order("id ASC").limit(13)
+  end
+
   private
 
   def basic_auth

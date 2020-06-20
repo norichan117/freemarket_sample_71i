@@ -1,31 +1,32 @@
-%header.pcHeader
+.pcHeader
   .header-Inner
     .main-Header
-      %h1.icon
-        = link_to image_tag("logo.png", class: "icon")
+      = link_to image_tag("logo.png", class: "icon")
       .searchBox
         .form
           <input class="form__input" placeholder="キーワードから探す">
           = link_to image_tag("icon-search 1.png", class: "form__submit")
     .nav
-      %ul.listsLeft
-        %li.listleft__item.listsLeft__first
+      .listsLeft
+        .listsLeft__first
           = link_to 'カテゴリー', '', class: 'catBtn'
-          .tree.displayNone
-            %ul.category_tree
-              - @parents.each do |parent|
-                %li.category_list_main
-                  = parent.category_name
-                  %ul.sub_category_tree
-                    - parent.children.each do |child|
-                      %li.category_list_sub
-                        =child.category_name
-                        %ul.sub_sub_category_tree
-                          - child.children.each do |grandchild|
-                            %li.category_list_item
-                              =grandchild.category_name
-
-
+          .display
+            .category
+              .category_tree
+                %ul.category_list
+                  - @parents.each do |parent|
+                    %li.category_list_main 
+                      =parent.category_name
+                      %ul.category_list2
+                        - parent.children.each do |child|
+                          %li.category_list_sub
+                            =link_to category_path(child) do
+                              =child.category_name
+                              %ul.category_list3
+                                - child.children.each do |grandchild|
+                                  %li.category_list_item
+                                    =link_to category_path(grandchild) do
+                                      =grandchild.category_name
         .listsLeft__item
           =link_to "ブランド", "", class: "brandBtn"
           .display
