@@ -97,52 +97,44 @@
                   background-size: 18px;
                   padding-right: 30px;
                   &_main {
+                    height: 40px;
                     color: #333;
                     display: block;
                     width: 240px;
                     padding: 3px 8px 3px 5px;
                     border-bottom: 1px solid #f8f8f8;
-                    position: absolute;
+                    .category_list_sub {
+                      display: none;
+                    }
                   }
                   &_main:hover {
                     color: #ffb340;
-                  }
-                  &_sub {
-                    color: black;
-                    background-color: #fff;
-                    flex-direction: column;
-                    top: 0;
-                    left: 240px;
-                    display: block;
-                    width: 240px;
-                    padding: 3px 8px 3px 5px;
-                    border-bottom: 1px solid #f8f8f8;
-                    position: relative;
-                  }
-                  &_sub:hover {
-                    color: #ffb340;
-                  }
-                  &_sub + .display {
-                    display: block;
-                  }
-
-                  &_item {
-                    color: black;
-                    min-height: 480px;
-                    background-color: #fff;
-                    flex-direction: column;
-                    position: absolute;
-                    left: 480px;
-                    display: block;
-                    width: 240px;
-                    padding: 3px 8px 3px 5px;
-                    border-bottom: 1px solid #f8f8f8;
-                  }
-                  &_item:hover {
-                    color: #ffb340;
-                  }
-                  &_item + .display {
-                    display: block;
+                    .category_list_sub {
+                      color: black;
+                      background-color: #fff;
+                      flex-direction: column;
+                      left: 240px;
+                      display: block;
+                      width: 240px;
+                      padding: 3px 8px 3px 5px;
+                      border-bottom: 1px solid #f8f8f8;
+                      position: relative;
+                    }
+                    .category_list_sub:hover {
+                      color: #ffb340;
+                    }
+                      .category_list_item {
+                        color: black;
+                        background-color: #fff;
+                        flex-direction: column;
+                        top: 0;
+                        left: 240px;
+                        display: block;
+                        width: 240px;
+                        padding: 3px 8px 3px 5px;
+                        border-bottom: 1px solid #f8f8f8;
+                        position: relative;
+                      }
                   }
                 }
               }
