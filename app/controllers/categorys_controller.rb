@@ -7,11 +7,5 @@ class CategorysController < ApplicationController
   def show
     @categories = Category.find(params[:id]).descendants.order([:id]) 
     @items = Item.where(category_id: Category.find(params[:id]).subtree_ids)
-
-    # @categories  = Category.find(2).subtree
-    # テスト用
-
-   # @items = @categories.items ダメ
-
   end
 end
