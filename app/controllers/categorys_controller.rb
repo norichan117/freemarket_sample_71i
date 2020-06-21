@@ -6,7 +6,7 @@ class CategorysController < ApplicationController
   end
 
   def show
-    @categories  = Category.find(params[:id]).subtree.order([:id])
+    @categories  = Category.find(params[:id]).descendants.order([:id])
     @items = Item.where(category_id: @categories.select("id"))
 
     # @categories  = Category.find(2).subtree
