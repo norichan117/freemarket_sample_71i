@@ -4,6 +4,9 @@ $red: #ea352d;
 $white: #fff;
 
 @import "reset";
+@import "modules/header";
+@import "modules/toppage-main";
+@import "modules/footer";
 @import "modules/users";
 @import "font-awesome-sprockets";
 @import "font-awesome";
