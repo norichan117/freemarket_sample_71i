@@ -4,10 +4,10 @@ class UserAddressesController < ApplicationController
   end
 
   def create
-    @user = UserAddress.new(user_address_params)
-    if @user.save
+    @user_address = UserAddress.new(user_address_params)
+    if @user_address.save
       flash[:notice] = "連絡先を登録しました"
-      redirect_to new_user_address_path
+      redirect_to edit_user_address_path(@user_address)
     else
       flash[:alert] = '〇〇ください。'
       redirect_to new_user_address_path
@@ -15,8 +15,8 @@ class UserAddressesController < ApplicationController
   end
 
   def edit
-    @user_address = UserAddress.where(user_id: current_user)
-
+#     @user_address = UserAddress.find_by(user_id: current_user)
+# binding.pry
   end
   
   def update
