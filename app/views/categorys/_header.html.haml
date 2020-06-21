@@ -14,18 +14,19 @@
             .category
               .category_tree
                 %ul.category_list
-                  %li= link_to 'レディース', '#', class: 'category_list_item'
-                  %li= link_to 'メンズ', '#', class: 'category_list_item'
-                  %li= link_to 'ベビー・キッズ', '#', class: 'category_list_item'
-                  %li= link_to '本・音楽・ゲーム', '#', class: 'category_list_item'
-                  %li= link_to 'おもちゃ・ホビー・グッズ', '#', class: 'category_list_item'
-                  %li= link_to 'コスメ・香水・美容', '#', class: 'category_list_item'
-                  %li= link_to '家電・スマホ・カメラ', '#', class: 'category_list_item'
-                  %li= link_to 'スポーツ・レジャー', '#', class: 'category_list_item'
-                  %li= link_to 'ハンドメイド', '#', class: 'category_list_item'
-                  %li= link_to 'チケット', '#', class: 'category_list_item'
-                  %li= link_to '自動車・オートバイ', '#', class: 'category_list_item'
-                  %li= link_to 'その他', '#', class: 'category_list_item'
+                  - @parents.each do |parent|
+                    %li.category_list_main 
+                      =parent.category_name
+                      %ul.category_list2
+                        - parent.children.each do |child|
+                          %li.category_list_sub
+                            =link_to category_path(child) do
+                              =child.category_name
+                              %ul.category_list3
+                                - child.children.each do |grandchild|
+                                  %li.category_list_item
+                                    =link_to category_path(grandchild) do
+                                      =grandchild.category_name
         .listsLeft__item
           =link_to "ブランド", "", class: "brandBtn"
           .display

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.where(user_id: current_user)
   end
 
+
   def edit
   end
 end

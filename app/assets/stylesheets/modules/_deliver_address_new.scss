@@ -1,70 +1,136 @@
-.deliver_address_new{
+.mypage_box {
   background-color: #f5f5f5;
-  width: 1020px;
-  display: flex;
-  margin: 40px auto 0;
-  padding: 0 0 40px;
-  .mypage_side {width: 280px;
-    margin-right: 40px;
-  }
-  .deliver_address {
-    background-color: #fff;
-    width: 700px;
-    &__title {
-      font-size: 24px;
-      font-weight: 700;
-      padding: 8px 24px;
-      text-align: center;
-      border-bottom: 1px solid #f5f5f5;
-    }
-    &__form {
-      padding: 40px 40px 64px;
-      &__container {
-        max-width: 343px;
-        margin: 0 auto;
-
-        .form_group{
-          font-weight: 600;
-          &-first {
-            margin: 0;
+  border-style: solid; border-width: 1px;
+  border-color: #f5f5f5;
+  .deliver_address_new{
+    width: 1020px;
+    display: flex;
+    margin: 40px auto 0;
+    padding: 0 0 40px;
+    .mypage_side {width: 280px;
+      margin-right: 40px;
+      .main_contaier_r-side {
+        width: 280px;
+        height: 1300px;
+        margin: 0 40px 0 0;
+        float: left;
+  
+        &_list {
+  
+        &_nav {
+          width: 280px;
+          height: 48px;
+          background-color: white;
+          border-top: 1px solid #eee;
+          font-size: 14px;
+          position: relative;
+          display: inline-block;
+  
+          &:hover {
+            opacity: 0.75;
+            background-color: rgb(233, 233, 233);
           }
-          margin: 32px 0 24px;
-          &__label {
-            font-size: 14px;
+          
+  
+          &_mypage {
+            text-decoration: none;
+            display: block;
+            cursor:pointer;
+            height: 48px;
+            width: 240px;
+            padding: 14px;
+            color: black;
+            
+            &_icon {
+              position: absolute;
+              right: 20px;
+              bottom: 15px;
+            }
           }
-          &__require {
-            font-size: 12px;
-            color: #fff;
-            background-color: #ea352d;
-            border-radius: 2px;
-            padding: 2px 4px;
-            margin-left: 8px;
-          }
-          &__notrequire {
-            background-color: #ccc;
-          }
-          &__field {
-            width: 100%;
-            padding: 10px 16px 8px;
-            margin-top: 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
+  
+          &_item {
+            text-decoration: none;
+            display: block;
+            cursor:pointer;
+            height: 48px;
+            width: 240px;
+            padding: 14px;
+            color: black;
+  
+            &_icon {
+              position: absolute;
+              right: 20px;
+              bottom: 15px;
+            }
           }
         }
-        .address-new-btn {
-          color: #fff;
-          background-color: #ea352d;
-          font-weight: 400px;
-          margin-top: 32px;
-          width: 100%;
-          text-align: center;
-          line-height: 48px;
-          border-radius: 4px;
-          font-size: 14px;
-          border: 1px solid #ea352d;
+        }
+  
+        &_title {
+          margin: 40px 0 0;
         }
       }
     }
-  }
+    .deliver_address {
+      background-color: #fff;
+      width: 700px;
+      &__title {
+        font-size: 24px;
+        font-weight: 700;
+        padding: 8px 24px;
+        text-align: center;
+        border-bottom: 1px solid #f5f5f5;
+      }
+      &__form {
+        border-top: 1px solid #f5f5f5;
+        padding: 40px 40px 64px;
+        &__container {
+          max-width: 343px;
+          margin: 0 auto;
 
+          .form_group{
+            font-weight: 600;
+            &-first {
+              margin: 0;
+            }
+            margin: 32px 0 24px;
+            &__label {
+              font-size: 14px;
+            }
+            &__require {
+              font-size: 12px;
+              color: #fff;
+              background-color: #ea352d;
+              border-radius: 2px;
+              padding: 2px 4px;
+              margin-left: 8px;
+            }
+            &__notrequire {
+              background-color: #ccc;
+            }
+            &__field {
+              width: 100%;
+              padding: 10px 16px 8px;
+              margin-top: 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+            }
+          }
+          .address-new-btn {
+            color: #fff;
+            background-color: $furima;
+            font-weight: 400px;
+            margin-top: 32px;
+            width: 100%;
+            text-align: center;
+            line-height: 48px;
+            border-radius: 4px;
+            font-size: 14px;
+            border: 1px solid $furima;
+          }
+        }
+      }
+    }
+
+  }
 }
