@@ -5,6 +5,7 @@ class UserCardsController < ApplicationController
   end
 
   def new
+    @user_card = UserCard.new
   end
 
   def create
@@ -25,7 +26,7 @@ class UserCardsController < ApplicationController
         redirect_to action: "create"
       end
   end
-
+end
   def show
   end
 end
