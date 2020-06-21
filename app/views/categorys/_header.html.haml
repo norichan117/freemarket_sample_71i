@@ -17,6 +17,7 @@
                   - @parents.each do |parent|
                     %li.category_list_main 
                       =parent.category_name
+                      - binding.pry if parent.id == 984
                       %ul.category_list2
                         - parent.children.each do |child|
                           %li.category_list_sub
