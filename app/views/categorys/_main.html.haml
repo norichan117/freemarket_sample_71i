@@ -106,19 +106,20 @@
         = link_to "#", class: "title" do
           アーカイバ
       .productLists
-        = link_to "#", class: "productList" do
-          .productList--img
-            = image_tag src=Image.find_by(item_id: item).item_image, class: "productList--img__img"
-          .productList__body
-            .name
-              =item.item_name
-            .details
-              .ul
-                .li
-                  ="#{item.price}円"
-                <i class="fa fa-star likeIcon">0</i>
-              .p
-                (税込)
+        -@items.each do |item|
+          = link_to "#", class: "productList" do
+            .productList--img
+              = image_tag src=Image.find_by(item_id: item).item_image, class: "productList--img__img"
+            .productList__body
+              .name
+                =item.item_name
+              .details
+                .ul
+                  .li
+                    ="#{item.price}円"
+                  <i class="fa fa-star likeIcon">0</i>
+                .p
+                  (税込)
         -# = link_to "#", class: "productList2" do
         -#   .productList2--img
         -#     = image_tag(src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "productList2--img__img")

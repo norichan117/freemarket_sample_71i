@@ -51,10 +51,10 @@
                     height: 100px;
                     width: 100%;
                   }
+                  .itembox_item_sub_list:hover {
+                    opacity: 0.7;
+                  }
                 }
-              }
-              .itembox_item_sub:hover {
-                opacity: 0.7;
               }
             }
             .itembox__price {
