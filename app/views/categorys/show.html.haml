@@ -5,7 +5,6 @@
         .title_box
           %h2.title_box-title 
             =Category.find(params[:id]).category_name + "の商品一覧"
-            
           %ul.list_box
             - @categories.each do |category|
               =link_to category_path(category), class: "category_list_link"do

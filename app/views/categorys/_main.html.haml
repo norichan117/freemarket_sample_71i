@@ -106,7 +106,7 @@
         = link_to "#", class: "title" do
           アーカイバ
       .productLists
-        -@items.each do |item|
+        -@items_archive.each do |item|
           = link_to "#", class: "productList" do
             .productList--img
               = image_tag src=Image.find_by(item_id: item).item_image, class: "productList--img__img"

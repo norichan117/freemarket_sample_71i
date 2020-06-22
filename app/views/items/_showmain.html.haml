@@ -5,7 +5,7 @@
       .topcontent
         .itembox
           .itembox__name
-            product2
+            =@item.item_name
           .itembox__body
             %ul.itembox_item
               %li.itembox_item_main
@@ -20,7 +20,6 @@
             .price= "¥#{@item.price}"
             .itembox__price__detail
               <span>(税込)</span>
-              <span>送料込み</span>
           .itembox__detail
             = @item.item_info
           %table.table
@@ -31,8 +30,7 @@
                 %td.td=@item.user.nickname
               %tr
                 %th カテゴリー
-                %td
-                  =link_to @item.category.category_name
+                %td=link_to @item.category.category_name, category_path(@item.category_id)
               %tr
                 %th ブランド
                 %td=@item.brand_id
@@ -44,7 +42,7 @@
                 %td=@item.postage_burden
               %tr
                 %th 発送元の地域
-                %td=link_to @item.shipping_area
+                %td=@item.shipping_area
               %tr
                 %th 発想日の目安
                 %td= @item.days_to_ship
@@ -55,7 +53,7 @@
                 = link_to "編集画面に進む", edit_item_path(@item), class: "buybtn"
             .commentbox.commentbox-second
               %button.item_delete_btn
-                = link_to "出品を取り消す", "/items/2", method: :delete , class: "buybtn"
+                = link_to "出品を取り消す", "", method: :delete , class: "buybtn"
           - else 
             .commentbox
               %button.commentbtn
