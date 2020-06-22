@@ -49,13 +49,14 @@
                 %th 発想日の目安
                 %td= @item.days_to_ship
           .commentbox
-            -if user_signed_in?
-              - if @item.user_id == current_user.id
-                %button.commentbtn
-                  = link_to "編集画面に進む", edit_item_path(@item), class: "buybtn"
-              - else 
-                %button.commentbtn
-                  = link_to "購入画面に進む", new_trading_path, class: "buybtn"
-            -else 
+          - if @item.user_id == current_user.id
+            .commentbox
+              %button.item_edit_btn
+                = link_to "編集画面に進む", edit_item_path(@item), class: "buybtn"
+            .commentbox.commentbox-second
+              %button.item_delete_btn
+                = link_to "出品を取り消す", "/items/2", method: :delete , class: "buybtn"
+          - else 
+            .commentbox
               %button.commentbtn
-                = link_to "購入画面に進む", new_user_session_path, class: "buybtn"
+                = link_to "購入画面に進む", "", class: "buybtn"
