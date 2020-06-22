@@ -108,6 +108,34 @@
                   color: #fff;
                 }
               }
+              .item_edit_btn{
+                line-height: 48px;
+                background: orange;
+                border: 1px solid orange;
+                color: #fff;
+                width: 60%;
+                font-size: 18px;
+                border-radius: 100px;
+                .buybtn {
+                  color: #fff;
+                }
+              }
+              &-second{
+                padding-top: 0;
+                .item_delete_btn {
+                  line-height: 48px;
+                  background: $red;
+                  border: 1px solid $red;
+                  color: #fff;
+                  width: 60%;
+                  font-size: 18px;
+                  border-radius: 100px;
+                  .buybtn {
+                    color: #fff;
+                  }
+              }
+              
+              }
             }
           }
         }
