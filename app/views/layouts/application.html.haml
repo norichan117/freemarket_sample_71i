@@ -10,13 +10,13 @@
   -if devise_controller?
     = yield
   - else
-    = render 'categorys/header'
+    = render 'shared/header'
     = yield
 
   -if devise_controller?
   - else
-    = render 'categorys/appBanner'
+    = render 'shared/appBanner'
 
   -if devise_controller?
   - else
-    = render 'categorys/footer'
+    = render 'shared/footer'
