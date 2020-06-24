@@ -9,9 +9,10 @@
           .itembox__body
             %ul.itembox_item
               %li.itembox_item_main
-                = image_tag(@image.item_image, class: "itembox_item_img")
+                = image_tag src= Image.find_by(item_id: @item).item_image, class: "itembox_item_img"
+                
           .itembox__price
-            .price=@item.price
+            .price= "¥#{@item.price}"
             .itembox__price__detail
               <span>(税込)</span>
               <span>送料込み</span>
@@ -42,10 +43,16 @@
               %tr
                 %th 発想日の目安
                 %td= @item.days_to_ship
-          .commentbox
-            - if devise_controller?
+
+          - if @item.user_id == current_user.id
+            .commentbox
+              %button.item_edit_btn
+                = link_to "編集画面に進む", edit_item_path(@item), class: "buybtn"
+            .commentbox.commentbox-second
+              %button.item_delete_btn
+                = link_to "出品を取り消す", item_path, method: :delete , class: "buybtn"
+          - else 
+            .commentbox
               %button.commentbtn
-                = link_to "購入画面に進む", "#", class: "buybtn"
-            - else 
-              %button.commentbtn
-                = link_to "購入画面", "#", class: "buybtn"
+                = link_to "購入画面に進む", "", class: "buybtn"
+

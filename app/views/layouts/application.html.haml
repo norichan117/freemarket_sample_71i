@@ -3,6 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title FreemarketSample71i
+    %script{src: "https://js.pay.jp/", type: "text/javascript"}
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -10,13 +11,13 @@
   -if devise_controller?
     = yield
   - else
-    = render 'categorys/header'
+    = render 'shared/header'
     = yield
 
   -if devise_controller?
   - else
-    = render 'categorys/appBanner'
+    = render 'shared/appBanner'
 
   -if devise_controller?
   - else
-    = render 'categorys/footer'
+    = render 'shared/footer'

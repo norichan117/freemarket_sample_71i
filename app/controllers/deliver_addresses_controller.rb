@@ -8,6 +8,9 @@ class DeliverAddressesController < ApplicationController
     DeliverAddress.create(deliver_address_params)
   end
 
+  def edit
+    @deliver_address = DeliverAddress.find_by(user_id: current_user)
+  end
 end
 
 private

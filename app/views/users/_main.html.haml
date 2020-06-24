@@ -3,7 +3,7 @@
     .main_contaier_r-side
       %ul.mai_contaiern_r-side_list 
         %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_mypage" do
+          = link_to user_path(current_user), class: "main_contaier_r-side_list_nav_mypage" do
             マイページ
             = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_mypage_icon")
         %li.main_contaier_r-side_list_nav<
@@ -81,11 +81,11 @@
             プロフィール
             = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
         %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
+          = link_to new_deliver_address_path, class: "main_contaier_r-side_list_nav_item" do
             発送元・お届け先住所変更
             = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
         %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
+          = link_to new_user_card_path, class: "main_contaier_r-side_list_nav_item" do
             支払い方法
             = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
         %li.main_contaier_r-side_list_nav<
@@ -93,7 +93,7 @@
             メール/パスワード
             = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
         %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
+          = link_to new_user_address_path, class: "main_contaier_r-side_list_nav_item" do
             本人情報
             = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
         %li.main_contaier_r-side_list_nav<
@@ -101,7 +101,7 @@
             電話番号の確認
             = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
         %li.main_contaier_r-side_list_nav<
-          = link_to '#', class: "main_contaier_r-side_list_nav_item" do
+          = link_to edit_user_path(current_user) , class: "main_contaier_r-side_list_nav_item" do
             ログアウト
             = icon('fas', 'angle-right', class: "main_contaier_r-side_list_nav_item_icon")
     .main_contaier_l-side
@@ -138,4 +138,5 @@
                   プラズマテレビ
               %li.main_contaier_l-side_todo_tabcontent_menu1_messages_body<
                 = link_to '#', class: 'main_contaier_l-side_todo_tabcontent_menu1_messages_body_link' do
-                  mac book air 11inc
+                  プラズマテレビ
+

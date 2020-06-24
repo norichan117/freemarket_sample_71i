@@ -1,4 +1,12 @@
+$furima: #3ccace;
+$back: #f5f5f5;
+$red: #ea352d;
+$white: #fff;
+
 @import "reset";
+@import "modules/header";
+@import "modules/toppage-main";
+@import "modules/footer";
 @import "modules/users";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -7,6 +15,10 @@
 @import "modules/devise_login";
 @import "modules/product.scss";
 @import "modules/new-main.scss";
-@import "modules/user_address_new";
-@import "modules/deliver_address_new";
-
+@import "modules/maypage_box";
+@import "modules/maypage_side";
+@import "modules/deliver_address";
+@import "modules/user_address";
+@import "modules/user_cards";
+@import "modules/user_logout";
+@import "modules/show_categories";
