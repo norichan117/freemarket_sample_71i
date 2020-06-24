@@ -1,6 +1,7 @@
 class CategorysController < ApplicationController
   def index
     @items = Item.last(3)
+    @items_archive = Item.order(:price).limit(3)
   end
 
   def show

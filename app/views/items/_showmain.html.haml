@@ -5,17 +5,21 @@
       .topcontent
         .itembox
           .itembox__name
-            product2
+            =@item.item_name
           .itembox__body
             %ul.itembox_item
               %li.itembox_item_main
-                = image_tag src= Image.find_by(item_id: @item).item_image, class: "itembox_item_img"
-                
+                =link_to image_tag src= Image.find_by(item_id: @item).item_image, class: "itembox_item_img"
+            -if @images.count==1
+            -else
+              %ul.itembox_item_sub
+                -@images.each do |image|
+                  %li.itembox_item_sub_list
+                    =link_to image_tag src= image.item_image, class: "itembox_item_sub_list"
           .itembox__price
             .price= "¥#{@item.price}"
             .itembox__price__detail
               <span>(税込)</span>
-              <span>送料込み</span>
           .itembox__detail
             = @item.item_info
           %table.table
@@ -26,8 +30,7 @@
                 %td.td=@item.user.nickname
               %tr
                 %th カテゴリー
-                %td
-                  =link_to @item.category.category_name
+                %td=link_to @item.category.category_name, category_path(@item.category_id)
               %tr
                 %th ブランド
                 %td=@item.brand_id
@@ -39,11 +42,11 @@
                 %td=@item.postage_burden
               %tr
                 %th 発送元の地域
-                %td=link_to @item.shipping_area
+                %td=@item.shipping_area
               %tr
                 %th 発想日の目安
                 %td= @item.days_to_ship
-
+          .commentbox
           - if @item.user_id == current_user.id
             .commentbox
               %button.item_edit_btn
@@ -55,4 +58,3 @@
             .commentbox
               %button.commentbtn
                 = link_to "購入画面に進む", "", class: "buybtn"
-

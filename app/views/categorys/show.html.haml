@@ -5,7 +5,6 @@
         .title_box
           %h2.title_box-title 
             =Category.find(params[:id]).category_name + "の商品一覧"
-            
           %ul.list_box
             - @categories.each do |category|
               =link_to category_path(category), class: "category_list_link"do
@@ -35,4 +34,3 @@
                     = image_tag src= Image.find_by(item_id: item).item_image, size: "220x150"
                   .sold_box
                     =image_tag "sold.png", size:"150x50"
-

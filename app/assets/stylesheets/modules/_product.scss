@@ -37,6 +37,26 @@
                     object-fit: cover;
                     height: 346px;
                   }
+                  .itembox_item_img:hover {
+                    opacity: 0.7;
+                  }
+                }
+              }
+              ul.itembox_item_sub {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                li.itembox_item_sub_list {
+                  width: 25%;
+                  margin: 0 10px 0 0;
+                  .itembox_item_sub_list {
+                    object-fit: cover;
+                    height: 100px;
+                    width: 100%;
+                  }
+                  .itembox_item_sub_list:hover {
+                    opacity: 0.7;
+                  }
                 }
               }
             }

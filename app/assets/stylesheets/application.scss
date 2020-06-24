@@ -15,6 +15,14 @@ $white: #fff;
 @import "modules/devise_login";
 @import "modules/product.scss";
 @import "modules/new-main.scss";
+
+@import "modules/user_logout";
+@import "modules/show_categories";
+@import "modules/maypage_box";
+@import "modules/maypage_side";
+@import "modules/deliver_address";
+@import "modules/user_address";
+
 @import "modules/maypage_box";
 @import "modules/maypage_side";
 @import "modules/deliver_address";
