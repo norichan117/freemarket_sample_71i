@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :categorys, only: [:index, :show]
   resources :user_addresses, only:[:new, :create, :edit]
   resources :deliver_addresses, only:[:new, :create, :edit]
-  resources :user_cards, only:[:index, :new, :create]
+  resources :user_cards, only:[:new, :create]
   resources :tradings, only:[:new, :create]
 
 end
