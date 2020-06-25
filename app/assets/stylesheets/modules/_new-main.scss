@@ -33,12 +33,26 @@
           }
         }
         .new-main_product_top_body_form {
-          
+          margin-top: 16px;
+          align-items: center;
+          display: inline-flex;
+          width: 100%;
+          color: #222;
+          font-size: 16px;
           .new-main_product_top_body_form_body {
 
           
             .new-main_product_top_body_form_body_text {
-
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+              font-family: inherit;
+              font-size: inherit;
+              height: 48px;
+              margin: 0;
+              outline: none;
+              padding: 0 16px;
+              width: inherit;
             }
           }
         }
