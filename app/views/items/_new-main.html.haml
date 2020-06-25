@@ -44,7 +44,10 @@
             ブランド
           .new-main_product-details_brand_body_top_right
             任意
-
+        .new-main_product-details_brand_body_bottom
+          .new-main_product-details_brand_body_bottom_box
+            = form_for "#" do |f|
+              = f.text_field :content, class: 'new-main_product-details_brand_body_bottom_box_form', placeholder: ''
     .new-main_product-details_condition
       .new-main_product-details_condition_body
         .new-main_product-details_condition_body_top
@@ -67,15 +70,37 @@
           .new-main_delivery_burden_body_top_right
             必須
         .new-main_delivery_burden_body_bottom
-          .new-main_delivery_burden_body_bottom_body
-            .new-main_delivery_burden_body_bottom_body_form
-            .new-main_delivery_burden_body_bottom_body_choice
+          .new-main_delivery_burden_body_bottom_box
+            = form_for "#" do |f|
+              = f.text_field :content, class: 'new-main_delivery_burden_body_bottom_box_form', placeholder: ''
+
+            .new-main_delivery_burden_body_bottom_box_choice
     .new-main_delivery_area
-      発送元の地域
-      必須
+      .new-main_delivery_area_body
+        .new-main_delivery_area_body_top
+          .new-main_delivery_area_body_top_left
+            発送元の地域
+          .new-main_delivery_area_body_top_right
+            必須
+        .new-main_delivery_area_body_bottom
+          .new-main_delivery_area_body_bottom_box
+            = form_for "#" do |f|
+              = f.text_field :content, class: 'new-main_delivery_area_body_bottom_box_form', placeholder: ''
+            .new-main_delivery_area_body_bottom_box_choice
+
     .new-main_delivery_days
-      発送までの日数
-      必須
+      .new-main_delivery_days_body
+        .new-main_delivery_days_body_top
+          .new-main_delivery_days_body_top_left
+            発送までの日数
+          .new-main_delivery_days_body_top_right
+            必須
+        .new-main_delivery_days_body_bottom
+          .new-main_delivery_days_body_bottom_box
+            = form_for "#" do |f|
+              = f.text_field :content, class: 'new-main_delivery_days_body_bottom_box_form', placeholder: ''
+            .new-main_delivery_days_body_bottom_box_choice
+
   .new-main_selling-price
   .new-main_btn
     .new-main_btn_top
