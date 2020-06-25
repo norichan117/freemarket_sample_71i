@@ -10,13 +10,54 @@
             必須
         .new-main_product_top_body_form
           .new-main_product_top_body_form_body
-            .new-main_product_top_body_form_body_text
+            = form_for "#" do |f|
               = f.text_field :content, class: 'new-main_product_top_body_form_body_text', placeholder: '40文字まで'
     .new-main_product_bottom
       .new-main_product_bottom_body
         .new-main_product_bottom_body_top
-
+          .new-main_product_bottom_body_top_left
+            商品の説明
+          .new-main_product_bottom_body_top_right
+            必須
+        = form_for "#" do |f|
+          = f.text_area :content, class: 'new-main_product_bottom_body_btm', placeholder: ''
   .new-main_product-details
+    .new-main_product-details_title
+      商品の詳細
+    .new-main_product-details_category
+      .new-main_product-details_category_body
+        .new-main_product-details_category_body_top
+          .new-main_product-details_category_body_top_left
+            カテゴリー
+          .new-main_product-details_category_body_top_right
+            必須
+        .new-main_product-details_category_body_bottom
+          .new-main_product-details_category_body_bottom_box
+            = form_for "#" do |f|
+              = f.text_field :content, class: 'new-main_product-details_category_body_bottom_box_form', placeholder: ''
+              .new-main_product-details_category_body_bottom_box_choice
+
+    .new-main_product-details_brand
+      .new-main_product-details_brand_body
+        .new-main_product-details_brand_body_top
+          .new-main_product-details_brand_body_top_left
+            ブランド
+          .new-main_product-details_brand_body_top_right
+            任意
+
+    .new-main_product-details_condition
+      .new-main_product-details_condition_body
+        .new-main_product-details_condition_body_top
+          .new-main_product-details_condition_body_top_left
+            商品の状態
+          .new-main_product-details_condition_body_top_right
+            必須
+        .new-main_product-details_condition_body_bottom
+          .new-main_product-details_condition_body_bottom_box
+            = form_for "#" do |f|
+              = f.text_field :content, class: 'new-main_product-details_condition_body_bottom_box_form', placeholder: ''
+              .new-main_product-details_condition_body_bottom_box_choice
+
   .new-main_delivery
     .new-main_delivery_burden
       .new-main_delivery_burden_body
