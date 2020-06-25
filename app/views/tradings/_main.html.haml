@@ -1,12 +1,56 @@
-.main
-  .main__inside
+
+.tradings_new-main
+  .tradings_new-main__inside
     %section.trading_section
-      %h2.trading.header 購入内容の確認
+      %h2.trading_header 購入内容の確認
 
     %section.trading_section
+      .item_box
+        .item_box__photo
+          %figure.item_photo_figure
+            = image_tag src = Image.find_by(item_id: @item).item_image ,class: "item_photo_figure_image"
+        .item_box__info
+          %p.item_box__item_name
+          %p.item_box__price
+            %span.item_box__price-zei 
+              送料込み (税込)
+            %span.item_box__price-price
+              = @item.price
     %section.trading_section
-    %section.trading_section
-    %section.trading_section
-    %section.trading_section
-    %section.trading_section
-    %section.trading_section
+      .card_info
+        .card_info-top
+          %h3.card_info-top-left 支払い方法
+          =link_to "変更する" ,"",class: "card_info-top-right"
+        .card_info-main
+          %p 
+            クレジットカード
+
+          %p
+            ************1111
+          %p
+            有効期限 01 / 01
+          =image_tag "jcb_card.svg" ,class: "card_image"
+  %section.trading_section-under
+    .deliver_info
+      .deliver_info-top
+        %h3.deliver_info-top-left 配送先
+        =link_to "変更する" ,"" ,class: 'deliver_info-top-right'
+      .deliver_info-address
+        %p 
+          〒
+          = @deliver_address.deliver_yubin_bango
+          
+        %p
+          = @deliver_address.deliver_todofuken
+          = @deliver_address.deliver_shichoson
+          = @deliver_address.deliver_banchi
+        %p
+
+
+  %section.trading_section-under
+    .trading_btn_area
+      .trading_btn 購入する
+    = button_to "ボタン", {controller: 'tradings', action: 'create'}, {method: :post, params: {trading: {user_id: @item.user_id, trading_family_name: @deliver_address.deliver_family_name, trading_first_name: @deliver_address.deliver_first_name, trading_family_name_kana: @deliver_address.deliver_family_name_kana, trading_first_name_kana: @deliver_address.deliver_first_name_kana, trading_yubin_bango: @deliver_address.deliver_yubin_bango, trading_todofuken: @deliver_address.deliver_todofuken, trading_shichoson: @deliver_address.deliver_shichoson, trading_banchi: @deliver_address.deliver_banchi, trading_building: @deliver_address.deliver_building, trading_tel_no: @deliver_address.deliver_tel_no, trading_card_id: @user_card.card_id, trading_customer_id: current_user}}} 
+
+              
+

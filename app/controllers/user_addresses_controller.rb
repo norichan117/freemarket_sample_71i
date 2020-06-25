@@ -4,7 +4,6 @@ class UserAddressesController < ApplicationController
   end
 
   def create
-
     @user_address = UserAddress.new(user_address_params)
     if @user_address.save
       flash[:notice] = "連絡先を登録しました"
