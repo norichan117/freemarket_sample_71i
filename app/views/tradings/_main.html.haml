@@ -3,7 +3,6 @@
   .tradings_new-main__inside
     %section.trading_section
       %h2.trading_header 購入内容の確認
-
     %section.trading_section
       .item_box
         .item_box__photo
@@ -19,14 +18,31 @@
               ¥
               = @item.price
     %section.trading_section
+      .amount_box
+        .amount_box_info
+          %span 支払い金額
+          %span.amount_info_price
+            ¥
+            = @item.price
+        -# .amount_box_point_option
+        -#   %label.point_option_label
+        -#     .point_check
+        -#       %span.point_check_span
+        -#         -# %span
+        -#         -#   %svg
+        -#       -# = image_tag ""
+        -#       %p ポイントの使用
+        -#     %p.user_point 所持ポイント: P0
+
+    %section.trading_section
       .card_info
         .card_info-top
           %h3.card_info-top-left 支払い方法
-          =link_to "変更する" ,"",class: "card_info-top-right"
+          =link_to "",class: "card_info-top-right" do
+            変更する
         .card_info-main
           %p 
             クレジットカード
-
           %p
             ************1111
           %p
@@ -36,12 +52,14 @@
       .deliver_info
         .deliver_info-top
           %h3.deliver_info-top-left 配送先
-          =link_to "変更する" ,"" ,class: 'deliver_info-top-right'
+          =link_to "" ,class: 'deliver_info-top-right' do
+            変更する
+
+
         .deliver_info-address
           %p 
             〒
             = @deliver_address.deliver_yubin_bango
-            
           %p
             = @deliver_address.deliver_todofuken
             = @deliver_address.deliver_shichoson

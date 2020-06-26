@@ -1,8 +1,7 @@
 class TradingsController < ApplicationController
+
   def new
-    
     @item = Item.find(params[:item_id])
-    @trading = Trading.new
     @deliver_address = DeliverAddress.find_by(user_id: current_user)
     @user_card = UserCard.find_by(user_id: current_user)
    
@@ -17,9 +16,7 @@ class TradingsController < ApplicationController
     else
       render :new
     end
-
   end
-
 
 end
 
