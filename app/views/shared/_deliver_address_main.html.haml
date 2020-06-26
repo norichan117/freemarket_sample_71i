@@ -1,6 +1,6 @@
 %section.deliver_address
   %h2.deliver_address__title 発送元お届け先情報登録
-  = form_for(@deliver_address, html: { class: "deliver_address__form" }) do  |f|
+  = form_for @deliver_address, html: {class: "deliver_address__form" } do  |f|
     .deliver_address__form__container
       .form_group.form_group-first
         %label.form_group__label お名前
@@ -36,5 +36,8 @@
         %label.form_group__ser_label 電話
         %span.form_group__require.form_group__notrequire 任意
         = f.text_field :deliver_tel_no, class: "form_group__field"
-      = f.submit "登録", class: "address-new-btn"
+      - if controller.action_name == "edit"
+        = f.submit "更新", class: "address-new-btn"
+      -else
+        = f.submit "登録", class: "address-new-btn"
 

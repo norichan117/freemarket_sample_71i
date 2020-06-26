@@ -1,7 +1,10 @@
 class DeliverAddressesController < ApplicationController
   def new
-    @deliver_address = DeliverAddress.new
-    # @deliver_address = DeliverAddress.where(user_id: current_user)
+    if DeliverAddress.exists?(user_id: current_user) 
+      redirect_to edit_deliver_address_path(DeliverAddress.find_by(user_id: current_user))
+    else
+      @deliver_address = DeliverAddress.new
+    end
   end
   
   def create
@@ -10,6 +13,11 @@ class DeliverAddressesController < ApplicationController
 
   def edit
     @deliver_address = DeliverAddress.find_by(user_id: current_user)
+  end
+
+  def update
+    deliver_address = DeliverAddress.find(params[:id])
+    deliver_address.update(deliver_address_params)
   end
 end
 

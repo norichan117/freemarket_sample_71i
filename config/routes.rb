@@ -9,12 +9,13 @@ Rails.application.routes.draw do
     resources :tradings, only:[:new, :create]
     member do
       get 'editaddress'
+      post 'create_editaddress'
       get 'editcard'
     end
   end
   resources :categorys, only: [:index, :show]
-  resources :user_addresses, only:[:new, :create, :edit]
-  resources :deliver_addresses, only:[:new, :create, :edit]
+  resources :user_addresses, only:[:new, :create, :edit, :update]
+  resources :deliver_addresses, only:[:new, :create, :edit, :update]
   resources :user_cards, only:[:index, :new, :create]
   
 

@@ -1,6 +1,10 @@
 class UserAddressesController < ApplicationController
   def new
-    @user_address = UserAddress.new
+    if UserAddress.exists?(user_id: current_user)
+      redirect_to edit_user_address_path(UserAddress.find_by(user_id: current_user))
+    else
+      @user_address = UserAddress.new
+    end
   end
 
   def create
@@ -15,12 +19,12 @@ class UserAddressesController < ApplicationController
   end
 
   def edit
-#     @user_address = UserAddress.find_by(user_id: current_user)
-# binding.pry
+    @user_address = UserAddress.find_by(user_id: current_user)
   end
   
   def update
-
+    user_address = UserAddress.find(params[:id])
+    user_address.update(user_address_params)
   end
 
 end
