@@ -15,6 +15,7 @@ class TradingsController < ApplicationController
       item.update(trading_id: trading.id)
       redirect_to category_path(item.category_id)
     else
+      render :new
     end
 
   end
