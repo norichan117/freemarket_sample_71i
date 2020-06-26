@@ -45,12 +45,9 @@
           = @deliver_address.deliver_shichoson
           = @deliver_address.deliver_banchi
         %p
-
-
   %section.trading_section-under
     .trading_btn_area
-      .trading_btn 購入する
-    = button_to "ボタン", {controller: 'tradings', action: 'create'}, {method: :post, params: {trading: {user_id: @item.user_id, trading_family_name: @deliver_address.deliver_family_name, trading_first_name: @deliver_address.deliver_first_name, trading_family_name_kana: @deliver_address.deliver_family_name_kana, trading_first_name_kana: @deliver_address.deliver_first_name_kana, trading_yubin_bango: @deliver_address.deliver_yubin_bango, trading_todofuken: @deliver_address.deliver_todofuken, trading_shichoson: @deliver_address.deliver_shichoson, trading_banchi: @deliver_address.deliver_banchi, trading_building: @deliver_address.deliver_building, trading_tel_no: @deliver_address.deliver_tel_no, trading_card_id: @user_card.card_id, trading_customer_id: current_user}}} 
+      = button_to "購入する", {controller: 'tradings', action: 'create'}, {method: :post,class: "trading_btn", params: {trading: {user_id: @item.user_id, trading_family_name: @deliver_address.deliver_family_name, trading_first_name: @deliver_address.deliver_first_name, trading_family_name_kana: @deliver_address.deliver_family_name_kana, trading_first_name_kana: @deliver_address.deliver_first_name_kana, trading_yubin_bango: @deliver_address.deliver_yubin_bango, trading_todofuken: @deliver_address.deliver_todofuken, trading_shichoson: @deliver_address.deliver_shichoson, trading_banchi: @deliver_address.deliver_banchi, trading_building: @deliver_address.deliver_building, trading_tel_no: @deliver_address.deliver_tel_no, trading_card_id: @user_card.card_id, trading_customer_id: current_user}}} 
 
-              
+
 

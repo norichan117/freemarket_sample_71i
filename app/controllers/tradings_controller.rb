@@ -9,11 +9,11 @@ class TradingsController < ApplicationController
   end
 
   def create
-    @trading = Trading.new(trading_params)
-    if @trading.save
-      Item.find(params[:item_id]).update(trading_id: @trading)
-      binding.pry
-      redirect_to user_path(current_user)
+    trading = Trading.new(trading_params)
+    if trading.save
+      item = Item.find(params[:item_id])
+      item.update(trading_id: trading.id)
+      redirect_to category_path(item.category_id)
     else
     end
 
