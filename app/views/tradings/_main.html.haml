@@ -24,15 +24,6 @@
           %span.amount_info_price
             ¥
             = @item.price
-        -# .amount_box_point_option
-        -#   %label.point_option_label
-        -#     .point_check
-        -#       %span.point_check_span
-        -#         -# %span
-        -#         -#   %svg
-        -#       -# = image_tag ""
-        -#       %p ポイントの使用
-        -#     %p.user_point 所持ポイント: P0
     - if UserCard.exists?(user_id: current_user)
       %section.trading_section
         .card_info
@@ -60,7 +51,7 @@
         .deliver_info
           .deliver_info-top
             %h3.deliver_info-top-left 配送先
-            =link_to edit_item_item_deliver_address_path(@item, DeliverAddress.find_by(user_id: current_user)) ,class: 'deliver_info-top-right' do
+            =link_to edit_item_item_deliver_address_path(@item, current_user.deliver_address) ,class: 'deliver_info-top-right' do
               変更する
           .deliver_info-address
             %p 
