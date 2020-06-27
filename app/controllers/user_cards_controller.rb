@@ -19,7 +19,7 @@ class UserCardsController < ApplicationController
         card: params["payjp_token"],
         metadata: {user_id: current_user.id} 
       )
-    
+    end
       @card = UserCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
       else
@@ -27,6 +27,4 @@ class UserCardsController < ApplicationController
       end
   end
 end
-  def show
-  end
-end
+  
