@@ -33,22 +33,29 @@
         -#       -# = image_tag ""
         -#       %p ポイントの使用
         -#     %p.user_point 所持ポイント: P0
-
-    %section.trading_section
-      .card_info
-        .card_info-top
-          %h3.card_info-top-left 支払い方法
-          =link_to "",class: "card_info-top-right" do
-            変更する
-        .card_info-main
-          %p 
-            クレジットカード
-          %p
-            ************1111
-          %p
-            有効期限 01 / 01
-          =image_tag "jcb_card.svg" ,class: "card_image"
-    -if DeliverAddress.exists?(user_id: current_user)
+    - if UserCard.exists?(user_id: current_user)
+      %section.trading_section
+        .card_info
+          .card_info-top
+            %h3.card_info-top-left 支払い方法
+            =link_to "",class: "card_info-top-right" do
+              変更する
+          .card_info-main
+            %p 
+              クレジットカード
+            %p
+              ************1111
+            %p
+              有効期限 01 / 01
+            =image_tag "jcb_card.svg" ,class: "card_image"
+    - else
+      %section.trading_section
+        .card_info
+          .card_info-top
+            %h3.card_info-top-left.needed 支払い方法がまだ登録されていません
+            =link_to "" ,class: "card_info-top-right" do
+              登録する
+    - if DeliverAddress.exists?(user_id: current_user)
       %section.trading_section
         .deliver_info
           .deliver_info-top
@@ -71,13 +78,13 @@
       %section.trading_section
         .deliver_info
           .deliver_info-top
-            %h3.deliver_info-top-left 配送先がまだ登録されていません
+            %h3.deliver_info-top-left.needed 配送先がまだ登録されていません
             =link_to new_item_item_deliver_address_path(@item) ,class: 'deliver_info-top-right' do
               登録する
     %section.trading_section
       .trading_btn_area
-        -if DeliverAddress.exists?(user_id: current_user)
+        - if DeliverAddress.exists?(user_id: current_user) && UserCard.exists?(user_id: current_user)
           = button_to "購入する", {controller: 'tradings', action: 'create'}, {method: :post,class: "trading_btn", params: {trading: {user_id: @item.user_id, trading_family_name: @deliver_address.deliver_family_name, trading_first_name: @deliver_address.deliver_first_name, trading_family_name_kana: @deliver_address.deliver_family_name_kana, trading_first_name_kana: @deliver_address.deliver_first_name_kana, trading_yubin_bango: @deliver_address.deliver_yubin_bango, trading_todofuken: @deliver_address.deliver_todofuken, trading_shichoson: @deliver_address.deliver_shichoson, trading_banchi: @deliver_address.deliver_banchi, trading_building: @deliver_address.deliver_building, trading_tel_no: @deliver_address.deliver_tel_no, trading_card_id: @user_card.card_id, trading_customer_id: current_user}}} 
-
-
+        - else
+          = button_to "購入する", "",class: "trading_btn-disabled"
 

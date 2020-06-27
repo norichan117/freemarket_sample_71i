@@ -124,9 +124,8 @@
                 width: 60%;
                 font-size: 18px;
                 border-radius: 100px;
-                .buybtn {
-                  color: #fff;
-                }
+                outline: none;
+                cursor:pointer
               }
               .item_edit_btn{
                 line-height: 48px;

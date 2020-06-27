@@ -4,7 +4,6 @@ class TradingsController < ApplicationController
     @item = Item.find(params[:item_id])
     @deliver_address = current_user.deliver_address
     @user_card = current_user.user_card
-
   end
 
   def create

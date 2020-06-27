@@ -58,5 +58,6 @@
                   出品を取り消す
           - else 
             .commentbox
-              %button.commentbtn
-                = link_to "購入画面に進む", new_item_trading_path(@item), class: "buybtn"
+              = link_to new_item_trading_path(@item) do
+                %button.commentbtn
+                  購入画面に進む
