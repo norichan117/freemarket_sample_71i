@@ -57,9 +57,16 @@
             必須
         .new-main_product-details_condition_body_bottom
           .new-main_product-details_condition_body_bottom_box
-            = form_for "#" do |f|
-              = f.text_field :content, class: 'new-main_product-details_condition_body_bottom_box_form', placeholder: ''
-              .new-main_product-details_condition_body_bottom_box_choice
+            .new-main_product-details_condition_body_bottom_box_form
+              = form_for "#" do |f|
+                %select#status.form-control{"data-reactid" => ".0.4.9.0.1.0", :name => "item[status]"}
+                  %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "5"} 新品、未使用
+                  %option{"data-reactid" => ".0.4.9.0.1.0.1", :value => "4"} 未使用に近い
+                  %option{"data-reactid" => ".0.4.9.0.1.0.2", :value => "6"} 目立った傷や汚れなし
+                  %option{"data-reactid" => ".0.4.9.0.1.0.3", :value => "3"} やや傷や汚れあり
+                  %option{"data-reactid" => ".0.4.9.0.1.0.4", :value => "2"} 傷や汚れあり
+                  %option{"data-reactid" => ".0.4.9.0.1.0.5", :value => "1"} 全体的に状態が悪い
+
 
   .new-main_delivery
     .new-main_delivery_burden
@@ -102,6 +109,16 @@
             .new-main_delivery_days_body_bottom_box_choice
 
   .new-main_selling-price
+    .new-main_selling-price_box
+      .new-main_selling-price_box_name
+        .new-main_selling-price_box_name_left
+          販売価格
+        .new-main_selling-price_box_name_right
+          必須
+      .new-main_selling-price_box_name_en
+        ¥
+      = form_for "#" do |f|
+        = f.text_field :content, class: 'new-main_selling-price_box_name_txit', placeholder: ''
   .new-main_btn
     .new-main_btn_top
       出品する
