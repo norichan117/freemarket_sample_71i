@@ -9,7 +9,7 @@ class UserCardsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
+    Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
 
     if params["payjp_token"].blank?
       redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
@@ -20,7 +20,7 @@ class UserCardsController < ApplicationController
         metadata: {user_id: current_user.id} 
       )
     
-      @card = UserCards.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      @card = UserCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
       else
         redirect_to action: "create"

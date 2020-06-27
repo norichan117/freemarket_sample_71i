@@ -16,6 +16,6 @@ class User < ApplicationRecord
   has_many :tradings
   has_one :user_address
   has_one :deliver_address
-  has_one :user_card
+  has_one :user_card 
 
 end
