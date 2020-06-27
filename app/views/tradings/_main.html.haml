@@ -48,29 +48,36 @@
           %p
             有効期限 01 / 01
           =image_tag "jcb_card.svg" ,class: "card_image"
-    %section.trading_section
-      .deliver_info
-        .deliver_info-top
-          %h3.deliver_info-top-left 配送先
-          =link_to editaddress_item_path(@item) ,class: 'deliver_info-top-right' do
-            変更する
-
-
-        .deliver_info-address
-          %p 
-            〒
-            = @deliver_address.deliver_yubin_bango
-          %p
-            = @deliver_address.deliver_todofuken
-            = @deliver_address.deliver_shichoson
-            = @deliver_address.deliver_banchi
-            = @deliver_address.deliver_building
-          %p
-            = @deliver_address.deliver_family_name
-            = @deliver_address.deliver_first_name
+    -if DeliverAddress.exists?(user_id: current_user)
+      %section.trading_section
+        .deliver_info
+          .deliver_info-top
+            %h3.deliver_info-top-left 配送先
+            =link_to edit_item_item_deliver_address_path(@item, DeliverAddress.find_by(user_id: current_user)) ,class: 'deliver_info-top-right' do
+              変更する
+          .deliver_info-address
+            %p 
+              〒
+              = @deliver_address.deliver_yubin_bango
+            %p
+              = @deliver_address.deliver_todofuken
+              = @deliver_address.deliver_shichoson
+              = @deliver_address.deliver_banchi
+              = @deliver_address.deliver_building
+            %p
+              = @deliver_address.deliver_family_name
+              = @deliver_address.deliver_first_name
+    - else
+      %section.trading_section
+        .deliver_info
+          .deliver_info-top
+            %h3.deliver_info-top-left 配送先がまだ登録されていません
+            =link_to new_item_item_deliver_address_path(@item) ,class: 'deliver_info-top-right' do
+              登録する
     %section.trading_section
       .trading_btn_area
-        = button_to "購入する", {controller: 'tradings', action: 'create'}, {method: :post,class: "trading_btn", params: {trading: {user_id: @item.user_id, trading_family_name: @deliver_address.deliver_family_name, trading_first_name: @deliver_address.deliver_first_name, trading_family_name_kana: @deliver_address.deliver_family_name_kana, trading_first_name_kana: @deliver_address.deliver_first_name_kana, trading_yubin_bango: @deliver_address.deliver_yubin_bango, trading_todofuken: @deliver_address.deliver_todofuken, trading_shichoson: @deliver_address.deliver_shichoson, trading_banchi: @deliver_address.deliver_banchi, trading_building: @deliver_address.deliver_building, trading_tel_no: @deliver_address.deliver_tel_no, trading_card_id: @user_card.card_id, trading_customer_id: current_user}}} 
+        -if DeliverAddress.exists?(user_id: current_user)
+          = button_to "購入する", {controller: 'tradings', action: 'create'}, {method: :post,class: "trading_btn", params: {trading: {user_id: @item.user_id, trading_family_name: @deliver_address.deliver_family_name, trading_first_name: @deliver_address.deliver_first_name, trading_family_name_kana: @deliver_address.deliver_family_name_kana, trading_first_name_kana: @deliver_address.deliver_first_name_kana, trading_yubin_bango: @deliver_address.deliver_yubin_bango, trading_todofuken: @deliver_address.deliver_todofuken, trading_shichoson: @deliver_address.deliver_shichoson, trading_banchi: @deliver_address.deliver_banchi, trading_building: @deliver_address.deliver_building, trading_tel_no: @deliver_address.deliver_tel_no, trading_card_id: @user_card.card_id, trading_customer_id: current_user}}} 
 
 
 

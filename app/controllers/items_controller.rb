@@ -13,17 +13,6 @@ class ItemsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def editaddress
-
-    @deliver_address = DeliverAddress.find_by(user_id: current_user)
-    unless @deliver_address.exists?
-      @deliver_address = DeliverAddress.new
-    end
-
-  end
-
-  def editcard
-  end
 end
 
 

@@ -1,26 +1,22 @@
-class DeliverAddressesController < ApplicationController
+class ItemDeliverAddressesController < ApplicationController
   def new
-    if DeliverAddress.exists?(user_id: current_user) 
-      redirect_to edit_deliver_address_path(DeliverAddress.find_by(user_id: current_user))
-    else
-      @deliver_address = DeliverAddress.new
-    end
-    
+    @deliver_address = DeliverAddress.new
+
   end
   
   def create
     DeliverAddress.create(deliver_address_params)
-    redirect_to user_path(current_user)
+    redirect_to new_item_trading_path(params[:item_id])
   end
 
   def edit
     @deliver_address = DeliverAddress.find_by(user_id: current_user)
   end
-
+  
   def update
     deliver_address = DeliverAddress.find(params[:id])
     deliver_address.update(deliver_address_params)
-    redirect_to user_path(current_user)
+    redirect_to new_item_trading_path(params[:item_id])
   end
 end
 

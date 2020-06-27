@@ -25,6 +25,7 @@ class UserAddressesController < ApplicationController
   def update
     user_address = UserAddress.find(params[:id])
     user_address.update(user_address_params)
+    redirect_to user_path(current_user)
   end
 
 end

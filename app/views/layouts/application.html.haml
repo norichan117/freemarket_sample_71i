@@ -9,14 +9,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
 
-  -if devise_controller? || controller.controller_name == "tradings"|| ( controller.controller_name == "items" && controller.action_name == "new" )|| controller.action_name == ("editaddress"|| "editcard")
+  -if devise_controller? || controller.controller_name == "tradings"|| controller.controller_name == "item_deliver_addresses"|| ( controller.controller_name == "items" && controller.action_name == "new" )
     = yield
   - else
     = render 'shared/header'
     = yield
 
 
-  -if devise_controller? || controller.controller_name == "tradings"|| ( controller.controller_name == "items" && controller.action_name == "new" )|| controller.action_name == ("editaddress"|| "editcard")
+  -if devise_controller? || controller.controller_name =="tradings"|| controller.controller_name == "item_deliver_addresses"|| ( controller.controller_name == "items" && controller.action_name == "new" )
   - else
     = render 'shared/appBanner'
     = render 'shared/footer'
