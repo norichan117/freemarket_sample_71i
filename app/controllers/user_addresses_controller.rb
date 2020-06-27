@@ -19,7 +19,7 @@ class UserAddressesController < ApplicationController
   end
 
   def edit
-    @user_address = UserAddress.find_by(user_id: current_user)
+    @user_address = current_user.user_address
   end
   
   def update

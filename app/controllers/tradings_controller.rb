@@ -2,9 +2,9 @@ class TradingsController < ApplicationController
 
   def new
     @item = Item.find(params[:item_id])
-    @deliver_address = DeliverAddress.find_by(user_id: current_user)
-    @user_card = UserCard.find_by(user_id: current_user)
-   
+    @deliver_address = current_user.deliver_address
+    @user_card = current_user.user_card
+
   end
 
   def create
