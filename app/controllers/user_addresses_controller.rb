@@ -1,27 +1,32 @@
 class UserAddressesController < ApplicationController
   def new
-    @user_address = UserAddress.new
+    if UserAddress.exists?(user_id: current_user)
+      redirect_to edit_user_address_path(current_user.user_address)
+    else
+      @user_address = UserAddress.new
+    end
   end
 
   def create
-
-    @user_address = UserAddress.new(user_address_params)
-    if @user_address.save
-      flash[:notice] = "連絡先を登録しました"
-      redirect_to new_user_address_path(@user_address)
+    user_address = UserAddress.new(user_address_params)
+    if user_address.save
+      redirect_to edit_user_address_path(current_user.user_address), notice: "連絡先を登録しました"
     else
-      flash[:alert] = '〇〇ください。'
-      redirect_to new_user_address_path
+      redirect_to new_user_address_path, alert: '入力事項を確認してください'
     end
   end
 
   def edit
-#     @user_address = UserAddress.find_by(user_id: current_user)
-# binding.pry
+    @user_address = current_user.user_address
   end
   
   def update
-
+    user_address = UserAddress.find(params[:id])
+    if user_address.update(user_address_params)
+      redirect_to edit_user_address_path(current_user.user_address),notice: "連絡先を更新しました"
+    else
+      redirect_to edit_user_address_path(current_user.user_address), alert: '入力事項を確認してください'
+    end
   end
 
 end

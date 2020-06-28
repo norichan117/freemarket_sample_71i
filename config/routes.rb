@@ -5,11 +5,13 @@ Rails.application.routes.draw do
    }
   root "categorys#index"
   resources :users, only: [:show, :edit]
-  resources :items, only: [:index, :show, :new, :edit]
+  resources :items  do
+    resources :tradings, only:[:new, :create]
+    resources :item_deliver_addresses, only:[:new, :create, :edit, :update]
+  end
   resources :categorys, only: [:index, :show]
-  resources :user_addresses, only:[:new, :create, :edit]
-  resources :deliver_addresses, only:[:new, :create, :edit]
   resources :user_cards, only:[:new, :create]
-  resources :tradings, only:[:new, :create]
+  resources :user_addresses, only:[:new, :create, :edit, :update]
+  resources :deliver_addresses, only:[:new, :create, :edit, :update]
 
 end

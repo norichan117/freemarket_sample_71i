@@ -15,6 +15,14 @@ $white: #fff;
 @import "modules/devise_login";
 @import "modules/product.scss";
 @import "modules/new-main.scss";
+
+@import "modules/user_logout";
+@import "modules/show_categories";
+@import "modules/maypage_box";
+@import "modules/maypage_side";
+@import "modules/deliver_address";
+@import "modules/user_address";
+
 @import "modules/maypage_box";
 @import "modules/maypage_side";
 @import "modules/deliver_address";
@@ -22,3 +30,7 @@ $white: #fff;
 @import "modules/user_cards";
 @import "modules/user_logout";
 @import "modules/show_categories";
+@import "modules/furima_header";
+@import "modules/furima_footer";
+@import "modules/tradings_new";
+@import "modules/item_deliver_address";
