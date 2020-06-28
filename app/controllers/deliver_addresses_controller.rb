@@ -11,8 +11,9 @@ class DeliverAddressesController < ApplicationController
   def create
     deliver_address = DeliverAddress.new(deliver_address_params)
     if deliver_address.save
-      redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: "お届け先情報を登録しました"
     else
+      redirect_to "", alert: "入力情報を確認してください"
     end
   end
 
@@ -23,8 +24,9 @@ class DeliverAddressesController < ApplicationController
   def update
     deliver_address = DeliverAddress.find(params[:id])
     if  deliver_address.update(deliver_address_params)
-    redirect_to user_path(current_user)
+      redirect_to user_path(current_user), notice: "お届け先情報を更新しました"
     else
+      redirect_to "", alert: "入力情報を確認してください"
     end
   end
 end
