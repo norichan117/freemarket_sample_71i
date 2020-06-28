@@ -7,9 +7,9 @@ class ItemDeliverAddressesController < ApplicationController
   def create
     deliver_address = DeliverAddress.new(deliver_address_params)
     if deliver_address.save
-      redirect_to new_item_trading_path(params[:item_id]), notice: "お届け先情報を登録しました"
+      redirect_to new_item_trading_path(params[:item_id])
     else
-      redirect_to "", alert: "入力情報を確認してください"
+      redirect_to action: :new, alert: "入力情報を確認してください"
     end
   end
 
@@ -20,9 +20,9 @@ class ItemDeliverAddressesController < ApplicationController
   def update
     deliver_address = DeliverAddress.find(params[:id])
     if deliver_address.update(deliver_address_params)
-      redirect_to new_item_trading_path(params[:item_id]), notice: "お届け先情報を登録しました"
+      redirect_to new_item_trading_path(params[:item_id])
     else
-      redirect_to "", alert: "入力情報を確認してください"
+      redirect_to action: :edit, alert: "入力情報を確認してください"
     end
   end
 end

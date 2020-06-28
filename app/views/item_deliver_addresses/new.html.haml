@@ -4,6 +4,10 @@
     %h2.deliver_address__title 発送元お届け先情報登録
     = form_for @deliver_address, url: {controller: "item_deliver_addresses" ,action: "create"}, html: {class: "deliver_address__form" } do  |f|
       .deliver_address__form__container
+        -if flash[:alert]
+          .flash_box
+            .p
+              = flash[:alert]
         .form_group.form_group-first
           %label.form_group__label お名前
           %span.form_group__require 必須
