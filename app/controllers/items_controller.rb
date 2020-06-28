@@ -11,5 +11,7 @@ class ItemsController < ApplicationController
     item.destroy
     redirect_to user_path(current_user)
   end
+
 end
+
 
