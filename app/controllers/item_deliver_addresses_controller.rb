@@ -5,8 +5,11 @@ class ItemDeliverAddressesController < ApplicationController
   end
   
   def create
-    DeliverAddress.create(deliver_address_params)
-    redirect_to new_item_trading_path(params[:item_id])
+    deliver_address = DeliverAddress.new(deliver_address_params)
+    if deliver_address.save
+      redirect_to new_item_trading_path(params[:item_id])
+    else
+    end
   end
 
   def edit
@@ -15,8 +18,10 @@ class ItemDeliverAddressesController < ApplicationController
   
   def update
     deliver_address = DeliverAddress.find(params[:id])
-    deliver_address.update(deliver_address_params)
-    redirect_to new_item_trading_path(params[:item_id])
+    if deliver_address.update(deliver_address_params)
+      redirect_to new_item_trading_path(params[:item_id])
+    else
+    end
   end
 end
 
