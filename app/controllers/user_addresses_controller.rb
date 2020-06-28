@@ -23,9 +23,9 @@ class UserAddressesController < ApplicationController
   def update
     user_address = UserAddress.find(params[:id])
     if user_address.update(user_address_params)
-      edit_user_address_path(current_user.user_address), flash[:notice] = "連絡先を更新しました"
+      redirect_to edit_user_address_path(current_user.user_address), flash[:notice] = "連絡先を更新しました"
     else
-      edit_user_address_path(current_user.user_address), flash[:alert] = '入力事項を確認してください'
+      redirect_to edit_user_address_path(current_user.user_address), flash[:alert] = '入力事項を確認してください'
     end
   end
 
