@@ -9,8 +9,11 @@ class DeliverAddressesController < ApplicationController
   end
   
   def create
-    DeliverAddress.create(deliver_address_params)
-    redirect_to user_path(current_user)
+    deliver_address = DeliverAddress.new(deliver_address_params)
+    if deliver_address.save
+      redirect_to user_path(current_user)
+    else
+    end
   end
 
   def edit
@@ -19,8 +22,10 @@ class DeliverAddressesController < ApplicationController
 
   def update
     deliver_address = DeliverAddress.find(params[:id])
-    deliver_address.update(deliver_address_params)
+    if  deliver_address.update(deliver_address_params)
     redirect_to user_path(current_user)
+    else
+    end
   end
 end
 
