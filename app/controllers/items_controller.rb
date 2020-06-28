@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+  def new
+    @item = Item.new
+  end
+
   def show
     @item = Item.find(params[:id])
     @images = Image.where(item_id: @item)
@@ -11,7 +15,7 @@ class ItemsController < ApplicationController
     item.destroy
     redirect_to user_path(current_user)
   end
-  def new
-  end
+
 end
+
 

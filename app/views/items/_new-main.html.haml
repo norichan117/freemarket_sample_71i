@@ -1,47 +1,46 @@
 .new-main
-  .new-main_image
-    .new-main_image_body
-      .new-main_image_body_name
-        .new-main_image_body_name_left
-          出品画像
-        .new-main_image_body_name_right
-          必須
-      .new-main_image_body_photo
-        %i=link_to icon("fa-camera", class: "fas"), root_path
-  .new-main_product
-    .new-main_product_top
-      .new-main_product_top_body
-        .new-main_product_top_body_name
-          .new-main_product_top_body_name_left
-            商品名
-          .new-main_product_top_body_name_right
+  =form_for @item do |f|
+    .new-main_image
+      .new-main_image_body
+        .new-main_image_body_name
+          .new-main_image_body_name_left
+            出品画像
+          .new-main_image_body_name_right
             必須
-        .new-main_product_top_body_form
-          .new-main_product_top_body_form_body
-            = form_for "#" do |f|
-              = f.text_field :content, class: 'new-main_product_top_body_form_body_text', placeholder: '40文字まで'
-    .new-main_product_bottom
-      .new-main_product_bottom_body
-        .new-main_product_bottom_body_top
-          .new-main_product_bottom_body_top_left
-            商品の説明
-          .new-main_product_bottom_body_top_right
-            必須
-        = form_for "#" do |f|
-          = f.text_area :content, class: 'new-main_product_bottom_body_btm', placeholder: ''
-  .new-main_product-details
-    .new-main_product-details_title
-      商品の詳細
-    .new-main_product-details_category
-      .new-main_product-details_category_body
-        .new-main_product-details_category_body_top
-          .new-main_product-details_category_body_top_left
-            カテゴリー
-          .new-main_product-details_category_body_top_right
-            必須
-        .new-main_product-details_category_body_bottom
-          .new-main_product-details_category_body_bottom_box
-            = form_for "#" do |f|
+        .new-main_image_body_photo
+          %i=link_to icon("fa-camera", class: "fas"), root_path
+    .new-main_product
+      .new-main_product_top
+        .new-main_product_top_body
+          .new-main_product_top_body_name
+            .new-main_product_top_body_name_left
+              商品名
+            .new-main_product_top_body_name_right
+              必須
+          .new-main_product_top_body_form
+            .new-main_product_top_body_form_body
+              = f.text_field :item_name, class: 'new-main_product_top_body_form_body_text', placeholder: '40文字まで'
+      .new-main_product_bottom
+        .new-main_product_bottom_body
+          .new-main_product_bottom_body_top
+            .new-main_product_bottom_body_top_left
+              商品の説明
+            .new-main_product_bottom_body_top_right
+              必須
+
+            = f.text_area :item_info, class: 'new-main_product_bottom_body_btm', placeholder: ''
+    .new-main_product-details
+      .new-main_product-details_title
+        商品の詳細
+      .new-main_product-details_category
+        .new-main_product-details_category_body
+          .new-main_product-details_category_body_top
+            .new-main_product-details_category_body_top_left
+              カテゴリー
+            .new-main_product-details_category_body_top_right
+              必須
+          .new-main_product-details_category_body_bottom
+            .new-main_product-details_category_body_bottom_box
               %select#category_name.btn.btn-select{"data-reactid" => ".0.4.6.0.1.0", :name => "item[category]"}
                 %option 選択してください
                 - @parents.each do |parent|
@@ -63,27 +62,25 @@
                   -#             %option=grandchild.category_name
 
 
-    .new-main_product-details_brand
-      .new-main_product-details_brand_body
-        .new-main_product-details_brand_body_top
-          .new-main_product-details_brand_body_top_left
-            ブランド
-          .new-main_product-details_brand_body_top_right
-            任意
-        .new-main_product-details_brand_body_bottom
-          .new-main_product-details_brand_body_bottom_box
-            = form_for "#" do |f|
-              = f.text_field :content, class: 'new-main_product-details_brand_body_bottom_box_form', placeholder: ''
-    .new-main_product-details_condition
-      .new-main_product-details_condition_body
-        .new-main_product-details_condition_body_top
-          .new-main_product-details_condition_body_top_left
-            商品の状態
-          .new-main_product-details_condition_body_top_right
-            必須
-        .new-main_product-details_condition_body_bottom
-          .new-main_product-details_condition_body_bottom_box
-            = form_for "#" do |f|
+      .new-main_product-details_brand
+        .new-main_product-details_brand_body
+          .new-main_product-details_brand_body_top
+            .new-main_product-details_brand_body_top_left
+              ブランド
+            .new-main_product-details_brand_body_top_right
+              任意
+          .new-main_product-details_brand_body_bottom
+            .new-main_product-details_brand_body_bottom_box
+              = f.text_field :brand_id, class: 'new-main_product-details_brand_body_bottom_box_form', placeholder: ''
+      .new-main_product-details_condition
+        .new-main_product-details_condition_body
+          .new-main_product-details_condition_body_top
+            .new-main_product-details_condition_body_top_left
+              商品の状態
+            .new-main_product-details_condition_body_top_right
+              必須
+          .new-main_product-details_condition_body_bottom
+            .new-main_product-details_condition_body_bottom_box
               %select#status.form-control{"data-reactid" => ".0.4.9.0.1.0", :name => "item[condition]"}
                 %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "1"} 選択して下さい
                 %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "2"} 新品、未使用
@@ -92,65 +89,61 @@
                 %option{"data-reactid" => ".0.4.9.0.1.0.3", :value => "5"} やや傷や汚れあり
                 %option{"data-reactid" => ".0.4.9.0.1.0.4", :value => "6"} 傷や汚れあり
                 %option{"data-reactid" => ".0.4.9.0.1.0.5", :value => "7"} 全体的に状態が悪い
-  .new-main_delivery
-    .new-main_delivery_burden
-      .new-main_delivery_burden_body
-        .new-main_delivery_burden_body_top
-          .new-main_delivery_burden_body_top_left
-            配送料の負担
-          .new-main_delivery_burden_body_top_right
-            必須
-        .new-main_delivery_burden_body_bottom
-          .new-main_delivery_burden_body_bottom_box
-            = form_for "#" do |f|
+    .new-main_delivery
+      .new-main_delivery_burden
+        .new-main_delivery_burden_body
+          .new-main_delivery_burden_body_top
+            .new-main_delivery_burden_body_top_left
+              配送料の負担
+            .new-main_delivery_burden_body_top_right
+              必須
+          .new-main_delivery_burden_body_bottom
+            .new-main_delivery_burden_body_bottom_box
               %select#carriage.form-control{"data-reactid" => ".0.4.b.0.1.0", :name => "item[burden]"}
                 %option{"data-reactid" => ".0.4.b.0.1.0.0", :value => "1"} 選択してください
                 %option{"data-reactid" => ".0.4.b.0.1.0.0", :value => "2"} 送料込み（出品者が負担）
                 %option{"data-reactid" => ".0.4.b.0.1.0.1", :value => "3"} 着払い（購入者が負担）
-    .new-main_delivery_area
-      .new-main_delivery_area_body
-        .new-main_delivery_area_body_top
-          .new-main_delivery_area_body_top_left
-            発送元の地域
-          .new-main_delivery_area_body_top_right
-            必須
-        .new-main_delivery_area_body_bottom
-          .new-main_delivery_area_body_bottom_box
-            = form_for "#" do |f|
+      .new-main_delivery_area
+        .new-main_delivery_area_body
+          .new-main_delivery_area_body_top
+            .new-main_delivery_area_body_top_left
+              発送元の地域
+            .new-main_delivery_area_body_top_right
+              必須
+          .new-main_delivery_area_body_bottom
+            .new-main_delivery_area_body_bottom_box
               %select#delivery_area.form-control{"data-reactid" => ".0.4.f.0.1.0", :name => "item[delivery_area]"}
                 %option{"data-reactid" => ".0.4.f.0.1.0.0", :value => "0"} 選択してください
                 %option{"data-reactid" => ".0.4.f.0.1.0.0", :value => "1"} 北海道
-    .new-main_delivery_days
-      .new-main_delivery_days_body
-        .new-main_delivery_days_body_top
-          .new-main_delivery_days_body_top_left
-            発送までの日数
-          .new-main_delivery_days_body_top_right
-            必須
-        .new-main_delivery_days_body_bottom
-          .new-main_delivery_days_body_bottom_box
-            = form_for "#" do |f|
+      .new-main_delivery_days
+        .new-main_delivery_days_body
+          .new-main_delivery_days_body_top
+            .new-main_delivery_days_body_top_left
+              発送までの日数
+            .new-main_delivery_days_body_top_right
+              必須
+          .new-main_delivery_days_body_bottom
+            .new-main_delivery_days_body_bottom_box
               %select#delivery_date.form-control{"data-reactid" => ".0.4.e.0.1.0", :name => "item[delivery_days]"}
                 %option{"data-reactid" => ".0.4.e.0.1.0.0", :value => "1"} 選択してください
                 %option{"data-reactid" => ".0.4.e.0.1.0.0", :value => "2"} 支払い後、1～2日で発送
                 %option{"data-reactid" => ".0.4.e.0.1.0.1", :value => "3"} 支払い後、2～3日で発送
                 %option{"data-reactid" => ".0.4.e.0.1.0.2", :value => "4"} 支払い後、4～7日で発送
-            .new-main_delivery_days_body_bottom_box_choice
+              .new-main_delivery_days_body_bottom_box_choice
 
-  .new-main_selling-price
-    .new-main_selling-price_box
-      .new-main_selling-price_box_name
-        .new-main_selling-price_box_name_left
-          販売価格
-        .new-main_selling-price_box_name_right
-          必須
-      = form_for "#" do |f|
-        = f.text_field :content, class: 'new-main_selling-price_box_name_txit', placeholder: ''
-      .new-main_selling-price_box_name_en
-        ¥
-  .new-main_btn
-    .new-main_btn_box
-      .new-main_btn_box_top
-        出品する
-      .new-main_btn_box_bottom
-        下書きに保存
+    .new-main_selling-price
+      .new-main_selling-price_box
+        .new-main_selling-price_box_name
+          .new-main_selling-price_box_name_left
+            販売価格
+          .new-main_selling-price_box_name_right
+            必須
+          = f.text_field :price, class: 'new-main_selling-price_box_name_txit', placeholder: ''
+        .new-main_selling-price_box_name_en
+          ¥
+    .new-main_btn
+      .new-main_btn_box
+        .new-main_btn_box_top
+          出品する
+        .new-main_btn_box_bottom
+          下書きに保存
