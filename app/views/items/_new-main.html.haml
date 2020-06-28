@@ -7,7 +7,7 @@
         .new-main_image_body_name_right
           必須
       .new-main_image_body_photo
-        %i(class="fas fa-camera")
+        %i=link_to icon("fa-camera", class: "fas"), root_path
   .new-main_product
     .new-main_product_top
       .new-main_product_top_body
@@ -43,7 +43,26 @@
           .new-main_product-details_category_body_bottom_box
             = form_for "#" do |f|
               %select#category_name.btn.btn-select{"data-reactid" => ".0.4.6.0.1.0", :name => "item[category]"}
-                %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "1"} 選択して下さい
+                %option 選択してください
+                - @parents.each do |parent|
+                  %option=parent.category_name
+                  - parent.children.each do |child|
+                    .new-main_product-details_category_body_bottom2
+                      .new-main_product-details_category_body_bottom_box2
+                        #category_name.btn.btn-select
+                          -# = category_path(child) do
+                          -#   =child.category_name
+
+                  -# - parent.children.each do |child|
+                  -#   .new-main_product-details_category_body_bottom_box2
+                  -#     = category_path(child) do
+                  -#       %option=child.category_name
+                  -#       - child.children.each do |grandchild|
+                  -#         .new-main
+                  -#           =link_to category_path(grandchild) do
+                  -#             %option=grandchild.category_name
+
+
     .new-main_product-details_brand
       .new-main_product-details_brand_body
         .new-main_product-details_brand_body_top

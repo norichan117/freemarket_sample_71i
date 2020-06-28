@@ -28,7 +28,15 @@
             }
           }
           .new-main_image_body_photo {
+            height: 100px;
             margin-top: 16px;
+            text-align: center;
+            background-color: #F5F5F5;
+            .fas {
+              top: 42px;
+              position: relative;
+              color: #3CCACE;
+            }
           }
         }
       }
@@ -163,6 +171,26 @@
                   outline: none;
                   width: 100%;
                   margin-top: 13px;
+                  .new-main_product-details_category_body_bottom2 {
+                    margin-top: 16px;
+                    .new-main_product-details_category_body_bottom_box2 {
+                      display: inline-block;
+                      position: relative;
+                      width: 100%;
+                      #category_name.btn.btn-select {
+                        background-color: #fff;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        color: #222;
+                        font-size: 16px;
+                        height: 48px;
+                        outline: none;
+                        width: 100%;
+                        margin-top: 13px;
+                      }
+                    }
+                  }
                 }
               }
             }
