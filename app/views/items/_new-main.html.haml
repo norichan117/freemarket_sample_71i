@@ -42,18 +42,19 @@
               必須
           .new-main_product-details_category_body_bottom
             .new-main_product-details_category_body_bottom_box
-              %select#category_name.btn.btn-select{"data-reactid" => ".0.4.6.0.1.0", :name => "item[category]"}
-                %option 選択してください
-                - @parents.each do |parent|
-                  %option=parent.category_name
+              = f.select :category_id, [["tシャツ", "3"], ["ポロシャツ", "7"]], include_blank: "選択して下さい"
+              -# %select#category_name.btn.btn-select{"data-reactid" => ".0.4.6.0.1.0", :name => "item[category]"}
+              -#   %option 選択してください
+              -#   - @parents.each do |parent|
+              -#     %option=parent.category_name
+
+
                   -# %ul.new-main_product-details_category_body_bottom2
                   -#   %li.new-main_product-details_category_body_bottom_box2
                   -#     %select#category_name.btn.btn-select
                   -#       - parent.children.each do |child|
                   -#         = category_path(child) do
                   -#           %option=child.category_name
-
-
                   -# - parent.children.each do |child|
                   -#   .new-main_product-details_category_body_bottom_box2
                   -#     = category_path(child) do
@@ -83,14 +84,15 @@
               必須
           .new-main_product-details_condition_body_bottom
             .new-main_product-details_condition_body_bottom_box
-              %select#status.form-control{"data-reactid" => ".0.4.9.0.1.0", :name => "item[condition]"}
-                %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "1"} 選択して下さい
-                %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "2"} 新品、未使用
-                %option{"data-reactid" => ".0.4.9.0.1.0.1", :value => "3"} 未使用に近い
-                %option{"data-reactid" => ".0.4.9.0.1.0.2", :value => "4"} 目立った傷や汚れなし
-                %option{"data-reactid" => ".0.4.9.0.1.0.3", :value => "5"} やや傷や汚れあり
-                %option{"data-reactid" => ".0.4.9.0.1.0.4", :value => "6"} 傷や汚れあり
-                %option{"data-reactid" => ".0.4.9.0.1.0.5", :value => "7"} 全体的に状態が悪い
+              = f.select :condition, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"]], include_blank: "選択して下さい"
+              -# %select#status.form-control{"data-reactid" => ".0.4.9.0.1.0", :name => "item[condition]"}
+              -#   %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "1"} 選択して下さい
+              -#   %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "2"} 新品、未使用
+              -#   %option{"data-reactid" => ".0.4.9.0.1.0.1", :value => "3"} 未使用に近い
+              -#   %option{"data-reactid" => ".0.4.9.0.1.0.2", :value => "4"} 目立った傷や汚れなし
+              -#   %option{"data-reactid" => ".0.4.9.0.1.0.3", :value => "5"} やや傷や汚れあり
+              -#   %option{"data-reactid" => ".0.4.9.0.1.0.4", :value => "6"} 傷や汚れあり
+              -#   %option{"data-reactid" => ".0.4.9.0.1.0.5", :value => "7"} 全体的に状態が悪い
     .new-main_delivery
       .new-main_delivery_burden
         .new-main_delivery_burden_body
@@ -101,10 +103,12 @@
               必須
           .new-main_delivery_burden_body_bottom
             .new-main_delivery_burden_body_bottom_box
-              %select#carriage.form-control{"data-reactid" => ".0.4.b.0.1.0", :name => "item[burden]"}
-                %option{"data-reactid" => ".0.4.b.0.1.0.0", :value => "1"} 選択してください
-                %option{"data-reactid" => ".0.4.b.0.1.0.0", :value => "2"} 送料込み（出品者が負担）
-                %option{"data-reactid" => ".0.4.b.0.1.0.1", :value => "3"} 着払い（購入者が負担）
+              = f.select :postage_burden, [["送料込み（出品者が負担）", "送料込み（出品者が負担）"], ["着払い（購入者が負担）", "着払い（購入者が負担）"]], include_blank: "選択して下さい"
+              -# = f.select :postage_burden, [["送料込み（出品者が負担）", "送料込み（出品者が負担）"], ["着払い（購入者が負担）", "着払い（購入者が負担）"]], include_blank: "選択して下さい"
+                -# %select#carriage.form-control{"data-reactid" => ".0.4.b.0.1.0", :name => "item[burden]"}
+                -#   %option{"data-reactid" => ".0.4.b.0.1.0.0", :value => "1"} 選択してください
+                -#   %option{"data-reactid" => ".0.4.b.0.1.0.0", :value => "2"} 送料込み（出品者が負担）
+                -#   %option{"data-reactid" => ".0.4.b.0.1.0.1", :value => "3"} 着払い（購入者が負担）
       .new-main_delivery_area
         .new-main_delivery_area_body
           .new-main_delivery_area_body_top
@@ -114,9 +118,11 @@
               必須
           .new-main_delivery_area_body_bottom
             .new-main_delivery_area_body_bottom_box
-              %select#delivery_area.form-control{"data-reactid" => ".0.4.f.0.1.0", :name => "item[delivery_area]"}
-                %option{"data-reactid" => ".0.4.f.0.1.0.0", :value => "0"} 選択してください
-                %option{"data-reactid" => ".0.4.f.0.1.0.0", :value => "1"} 北海道
+              = f.select :shipping_area, [["北海道", "北海道"], ["青森", "青森"]], include_blank: "選択して下さい"
+              -# %select#delivery_area.form-control{"data-reactid" => ".0.4.f.0.1.0", :name => "item[delivery_area]"}
+              -#   %option{"data-reactid" => ".0.4.f.0.1.0.0", :value => "0"} 選択してください
+              -#   %option{"data-reactid" => ".0.4.f.0.1.0.0", :value => "1"} 北海道
+              -#   %option{"data-reactid" => ".0.4.f.0.1.0.0", :value => "2"} 青森
       .new-main_delivery_days
         .new-main_delivery_days_body
           .new-main_delivery_days_body_top
@@ -126,11 +132,12 @@
               必須
           .new-main_delivery_days_body_bottom
             .new-main_delivery_days_body_bottom_box
-              %select#delivery_date.form-control{"data-reactid" => ".0.4.e.0.1.0", :name => "item[delivery_days]"}
-                %option{"data-reactid" => ".0.4.e.0.1.0.0", :value => "1"} 選択してください
-                %option{"data-reactid" => ".0.4.e.0.1.0.0", :value => "2"} 支払い後、1～2日で発送
-                %option{"data-reactid" => ".0.4.e.0.1.0.1", :value => "3"} 支払い後、2～3日で発送
-                %option{"data-reactid" => ".0.4.e.0.1.0.2", :value => "4"} 支払い後、4～7日で発送
+              = f.select :days_to_ship, [["支払い後、1～2日で発送", "支払い後、1～2日で発送"], ["支払い後、2～3日で発送", "支払い後、2～3日で発送"]], include_blank: "選択して下さい"
+              -# %select#delivery_date.form-control{"data-reactid" => ".0.4.e.0.1.0", :name => "item[delivery_days]"}
+              -#   %option{"data-reactid" => ".0.4.e.0.1.0.0", :value => "1"} 選択してください
+              -#   %option{"data-reactid" => ".0.4.e.0.1.0.0", :value => "2"} 支払い後、1～2日で発送
+              -#   %option{"data-reactid" => ".0.4.e.0.1.0.1", :value => "3"} 支払い後、2～3日で発送
+              -#   %option{"data-reactid" => ".0.4.e.0.1.0.2", :value => "4"} 支払い後、4～7日で発送
               .new-main_delivery_days_body_bottom_box_choice
 
     .new-main_selling-price
@@ -145,7 +152,4 @@
           ¥
     .new-main_btn
       .new-main_btn_box
-        .new-main_btn_box_top
-          出品する
-        .new-main_btn_box_bottom
-          下書きに保存
+        = f.submit "出品する", class: "new-main_btn_box_top"
