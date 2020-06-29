@@ -45,12 +45,13 @@
                 %option 選択してください
                 - @parents.each do |parent|
                   %option=parent.category_name
-                  - parent.children.each do |child|
-                    .new-main_product-details_category_body_bottom2
-                      .new-main_product-details_category_body_bottom_box2
-                        #category_name.btn.btn-select
-                          -# = category_path(child) do
-                          -#   =child.category_name
+                  -# %ul.new-main_product-details_category_body_bottom2
+                  -#   %li.new-main_product-details_category_body_bottom_box2
+                  -#     %select#category_name.btn.btn-select
+                  -#       - parent.children.each do |child|
+                  -#         = category_path(child) do
+                  -#           %option=child.category_name
+
 
                   -# - parent.children.each do |child|
                   -#   .new-main_product-details_category_body_bottom_box2
