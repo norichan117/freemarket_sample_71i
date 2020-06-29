@@ -46,7 +46,10 @@
           %label.form_group__label 建物名
           %span.form_group__notrequire 任意
           = f.text_field :user_building, class: "form_group__field"
-        = f.submit "登録", class: "address-new-btn"
+        - if controller.action_name == "edit"
+          = f.submit "更新", class: "address-new-btn"
+        - else
+          = f.submit "登録", class: "address-new-btn"
         .form_group_text_right
           %p.customerform__info-4
             =link_to "本人情報の登録について", ""

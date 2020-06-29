@@ -47,13 +47,17 @@
             margin: 0 0 20px 0;
             position: relative;
             background-color: #fff;
-            .item_list-image {
+            .item_list-figure {
               width: 220px;
               height: 150px;
               position: relative;
               overflow: hidden;
               margin: 0;
               z-index: auto;
+              .item_list_image {
+                height: 100%;
+                width: 100%;
+              }
             }
             .item_list--body{
               background-color: white;
