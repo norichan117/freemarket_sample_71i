@@ -10,7 +10,7 @@
         .new-main_image_body_photo
           = f.fields_for :images do |i| 
             = i.file_field :src 
-          %i=link_to icon("fa-camera", class: "fas"), root_path
+          %i.fas.fa-camera
     .new-main_product
       .new-main_product_top
         .new-main_product_top_body
