@@ -42,11 +42,23 @@
               必須
           .new-main_product-details_category_body_bottom
             .new-main_product-details_category_body_bottom_box
-              %select
-                %option 選択して下さい
-                - @parents.each do |parent| 
-                  %option=parent.category_name
-                  .new-main_product-details_category_body_bottom
+
+            - test=[]
+            - @parents.each do |parent|
+            - test2=[]
+            - test2 << parent.category_name
+            - test2 << parent.id
+            - test << test2
+            =f.select :category_id, test
+
+              -# %select
+              -#   %option 選択して下さい
+              -#   - @parents.each do |parent| 
+              -#     %option=parent.category_name
+
+
+
+                  -# .new-main_product-details_category_body_bottom
                     -# .new-main_product-details_category_body_bottom_box
                     -#   %select
                     -#     - parent.children.each do |child|
