@@ -1,11 +1,12 @@
 class UserCardsController < ApplicationController
   require "payjp"
   
-  def index
-  end
-
   def new
-    @user_card = UserCard.new
+    if UserCard.exists?(user_id: current_user) 
+      redirect_to edit_user_card_path(UserCard.find_by(user_id: current_user))
+    else
+      @deliver_address = UserCard.new
+    end
   end
 
   def create
@@ -22,9 +23,14 @@ class UserCardsController < ApplicationController
     end
       @card = UserCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
+        redirect_to edit_user_card_path(current_user.user_card), notice: "クレジットカードを登録しました"
       else
-        redirect_to action: "create"
+        redirect_to new_user_card_path, alert: "入力情報を確認してください"
       end
+    end
+
+  def edit
+    @user_card = UserCard.find_by(user_id: current_user)
   end
 end
   

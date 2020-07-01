@@ -1,5 +1,16 @@
 .card_add 
-  .title クレジットカード情報入力
+  %h2.title 
+    クレジットカード情報入力
+    = form_for @user_card, html: {class: "user_card__form" } do  |f|
+      .user_card__form__container
+        flash[:notice]
+        -#   .flash_box
+        -#     .p
+        -#       = flash[:notice]
+        -# -if flash[:alert]
+        -#   .flash_box
+        -#     .p
+        -#       = flash[:alert]
   = form_tag(user_cards_path, method: :post, id: "charge-form", class: "details", name: "inputForm") do
     .number-details
       .card-number カード番号
