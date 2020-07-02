@@ -1,134 +1,141 @@
 .new-main
-  .new-photoboxes
-    %img.new-photoboxes__first{:alt => "Item upload dummy", :src => "https://asset.fril.jp/assets/new_web/item_upload_dummy-0f57862f590c6e592ffa657b6b8c6fbdd3c4051a1acc60d72e5a15f4f71f7351.png"}
-    %img.new-photoboxes__second{:alt => "Item upload dummy", :src => "https://asset.fril.jp/assets/new_web/item_upload_dummy-0f57862f590c6e592ffa657b6b8c6fbdd3c4051a1acc60d72e5a15f4f71f7351.png"}
-    %img.new-photoboxes__third{:alt => "Item upload dummy", :src => "https://asset.fril.jp/assets/new_web/item_upload_dummy-0f57862f590c6e592ffa657b6b8c6fbdd3c4051a1acc60d72e5a15f4f71f7351.png"}
-    %img.new-photoboxes__fourth{:alt => "Item upload dummy", :src => "https://asset.fril.jp/assets/new_web/item_upload_dummy-0f57862f590c6e592ffa657b6b8c6fbdd3c4051a1acc60d72e5a15f4f71f7351.png"}
-  .item-name
-    .item-name__title
-      商品名 ※必須
-    .item-name__form
-      = form_for "#" do |f|
-        = f.text_field :content, class: 'item-name__form', placeholder: '40文字まで'
-  .item-detail
-    .item-detail__title
-      商品説明 ※必須
-    .item-detail__form
-      = form_for "#" do |f|
-        = f.text_area :content, class: 'item-detail__form', placeholder: ''
-  .item-category
-    .item-category__title
-      カテゴリ ※必須
-    .item-category__form
-      = form_for "#" do |f|
-        %a#category_name.btn.btn-select{"data-reactid" => ".0.4.6.0.1.0", "data-toggle" => "modal", :href => "#select-category", :role => "button"} 指定なし
-  .item-brand
-    .item-brand__title
-      ブランド
-    .item-brand__form
-      = form_for "#" do |f|
-        = f.text_field :content, class: 'item-name__form', placeholder: ''
-  .item-condition
-    .item-condition__title
-      商品状態 ※必須
-    .item-condition__form
-      = form_for "#" do |f|
-        %select#status.form-control{"data-reactid" => ".0.4.9.0.1.0", :name => "item[status]"}
-          %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "5"} 新品、未使用
-          %option{"data-reactid" => ".0.4.9.0.1.0.1", :value => "4"} 未使用に近い
-          %option{"data-reactid" => ".0.4.9.0.1.0.2", :value => "6"} 目立った傷や汚れなし
-          %option{"data-reactid" => ".0.4.9.0.1.0.3", :value => "3"} やや傷や汚れあり
-          %option{"data-reactid" => ".0.4.9.0.1.0.4", :value => "2"} 傷や汚れあり
-          %option{"data-reactid" => ".0.4.9.0.1.0.5", :value => "1"} 全体的に状態が悪い
-  .item-delivery-fee
-    .item-delivery-fee__title
-      配送料の負担 ※必須
-    .item-delivery-fee__form
-      = form_for "#" do |f|
-        %select#carriage.form-control{"data-reactid" => ".0.4.b.0.1.0", :name => "item[carriage]"}
-          %option{"data-reactid" => ".0.4.b.0.1.0.0", :selected => "selected", :value => "1"} 送料込み（出品者が負担）
-          %option{"data-reactid" => ".0.4.b.0.1.0.1", :value => "2"} 着払い（購入者が負担）
-  .item-shipping-method
-    .item-shipping-method__title
-      配送方法 ※必須
-    .item-shipping-method__form
-      = form_for "#" do |f|
-        %select#delivery_method.btn.btn-select{"data-reactid" => ".0.4.9.0.1.0", :name => "item[status]"}
-          %option{"data-reactid" => ".0.4.9.0.1.0.0", :value => "5"} 未定
-          %option{"data-reactid" => ".0.4.9.0.1.0.1", :value => "4"} かんたんフリマパック(日本郵便)
-          %option{"data-reactid" => ".0.4.9.0.1.0.2", :value => "6"} かんたんフリマパック(ヤマト運輸)
-          %option{"data-reactid" => ".0.4.9.0.1.0.3", :value => "3"} ヤマト宅急便
-          %option{"data-reactid" => ".0.4.9.0.1.0.4", :value => "2"} 普通郵便
-          %option{"data-reactid" => ".0.4.9.0.1.0.5", :value => "1"} 飛脚宅配便
+  =form_for @item do |f|
+    .new-main_image
+      .new-main_image_body
+        .new-main_image_body_name
+          .new-main_image_body_name_left
+            出品画像
+          .new-main_image_body_name_right
+            必須
+        .new-main_image_body_photo
+          #image-box
+            = f.fields_for :images do |image| 
+              .js-file_group{data: {index: image.index}}
+                -# %i.fas.fa-camera
+                = image.file_field :item_image, class: 'js-file'
+                %span.js-remove 削除
+                  
 
-  .item-days
-    .item-days__title
-      発送日の目安 ※必須
-    .item-days__form
-      = form_for "#" do |f|
-        %select#delivery_date.form-control{"data-reactid" => ".0.4.e.0.1.0", :name => "item[delivery_date]"}
-          %option{"data-reactid" => ".0.4.e.0.1.0.0", :value => "1"} 支払い後、1～2日で発送
-          %option{"data-reactid" => ".0.4.e.0.1.0.1", :value => "2"} 支払い後、2～3日で発送
-          %option{"data-reactid" => ".0.4.e.0.1.0.2", :value => "3"} 支払い後、4～7日で発送
-  .item-area
-    .item-area__title
-      発送元の地域 ※必須
-    .item-area__form
-      = form_for "#" do |f|
-        %select#delivery_area.form-control{"data-reactid" => ".0.4.f.0.1.0", :name => "item[delivery_area]"}
-          %option{"data-reactid" => ".0.4.f.0.1.0.0", :value => "1"} 北海道
-          %option{"data-reactid" => ".0.4.f.0.1.0.1", :value => "2"} 青森県
-          %option{"data-reactid" => ".0.4.f.0.1.0.2", :value => "3"} 岩手県
-          %option{"data-reactid" => ".0.4.f.0.1.0.3", :value => "4"} 宮城県
-          %option{"data-reactid" => ".0.4.f.0.1.0.4", :value => "5"} 秋田県
-          %option{"data-reactid" => ".0.4.f.0.1.0.5", :value => "6"} 山形県
-          %option{"data-reactid" => ".0.4.f.0.1.0.6", :value => "7"} 福島県
-          %option{"data-reactid" => ".0.4.f.0.1.0.7", :value => "8"} 茨城県
-          %option{"data-reactid" => ".0.4.f.0.1.0.8", :value => "9"} 栃木県
-          %option{"data-reactid" => ".0.4.f.0.1.0.9", :value => "10"} 群馬県
-          %option{"data-reactid" => ".0.4.f.0.1.0.a", :value => "11"} 埼玉県
-          %option{"data-reactid" => ".0.4.f.0.1.0.b", :value => "12"} 千葉県
-          %option{"data-reactid" => ".0.4.f.0.1.0.c", :value => "13"} 東京都
-          %option{"data-reactid" => ".0.4.f.0.1.0.d", :value => "14"} 神奈川県
-          %option{"data-reactid" => ".0.4.f.0.1.0.e", :value => "15"} 新潟県
-          %option{"data-reactid" => ".0.4.f.0.1.0.f", :value => "16"} 富山県
-          %option{"data-reactid" => ".0.4.f.0.1.0.g", :value => "17"} 石川県
-          %option{"data-reactid" => ".0.4.f.0.1.0.h", :value => "18"} 福井県
-          %option{"data-reactid" => ".0.4.f.0.1.0.i", :value => "19"} 山梨県
-          %option{"data-reactid" => ".0.4.f.0.1.0.j", :value => "20"} 長野県
-          %option{"data-reactid" => ".0.4.f.0.1.0.k", :value => "21"} 岐阜県
-          %option{"data-reactid" => ".0.4.f.0.1.0.l", :value => "22"} 静岡県
-          %option{"data-reactid" => ".0.4.f.0.1.0.m", :value => "23"} 愛知県
-          %option{"data-reactid" => ".0.4.f.0.1.0.n", :value => "24"} 三重県
-          %option{"data-reactid" => ".0.4.f.0.1.0.o", :value => "25"} 滋賀県
-          %option{"data-reactid" => ".0.4.f.0.1.0.p", :value => "26"} 京都府
-          %option{"data-reactid" => ".0.4.f.0.1.0.q", :value => "27"} 大阪府
-          %option{"data-reactid" => ".0.4.f.0.1.0.r", :value => "28"} 兵庫県
-          %option{"data-reactid" => ".0.4.f.0.1.0.s", :value => "29"} 奈良県
-          %option{"data-reactid" => ".0.4.f.0.1.0.t", :value => "30"} 和歌山県
-          %option{"data-reactid" => ".0.4.f.0.1.0.u", :value => "31"} 鳥取県
-          %option{"data-reactid" => ".0.4.f.0.1.0.v", :value => "32"} 島根県
-          %option{"data-reactid" => ".0.4.f.0.1.0.w", :value => "33"} 岡山県
-          %option{"data-reactid" => ".0.4.f.0.1.0.x", :value => "34"} 広島県
-          %option{"data-reactid" => ".0.4.f.0.1.0.y", :value => "35"} 山口県
-          %option{"data-reactid" => ".0.4.f.0.1.0.z", :value => "36"} 徳島県
-          %option{"data-reactid" => ".0.4.f.0.1.0.10", :value => "37"} 香川県
-          %option{"data-reactid" => ".0.4.f.0.1.0.11", :value => "38"} 愛媛県
-          %option{"data-reactid" => ".0.4.f.0.1.0.12", :value => "39"} 高知県
-          %option{"data-reactid" => ".0.4.f.0.1.0.13", :value => "40"} 福岡県
-          %option{"data-reactid" => ".0.4.f.0.1.0.14", :value => "41"} 佐賀県
-          %option{"data-reactid" => ".0.4.f.0.1.0.15", :value => "42"} 長崎県
-          %option{"data-reactid" => ".0.4.f.0.1.0.16", :value => "43"} 熊本県
-          %option{"data-reactid" => ".0.4.f.0.1.0.17", :value => "44"} 大分県
-          %option{"data-reactid" => ".0.4.f.0.1.0.18", :value => "45"} 宮崎県
-          %option{"data-reactid" => ".0.4.f.0.1.0.19", :value => "46"} 鹿児島県
-          %option{"data-reactid" => ".0.4.f.0.1.0.1a", :value => "47"} 沖縄県
+    .new-main_product
+      .new-main_product_top
+        .new-main_product_top_body
+          .new-main_product_top_body_name
+            .new-main_product_top_body_name_left
+              商品名
+            .new-main_product_top_body_name_right
+              必須
+          .new-main_product_top_body_form
+            .new-main_product_top_body_form_body
+              = f.text_field :item_name, class: 'new-main_product_top_body_form_body_text', placeholder: '40文字まで'
+      .new-main_product_bottom
+        .new-main_product_bottom_body
+          .new-main_product_bottom_body_top
+            .new-main_product_bottom_body_top_left
+              商品の説明
+            .new-main_product_bottom_body_top_right
+              必須
+          = f.text_area :item_info, class: 'new-main_product_bottom_body_btm', placeholder: ''
+    .new-main_product-details
+      .new-main_product-details_title
+        商品の詳細
+      .new-main_product-details_category
+        .new-main_product-details_category_body
+          .new-main_product-details_category_body_top
+            .new-main_product-details_category_body_top_left
+              カテゴリー
+            .new-main_product-details_category_body_top_right
+              必須
+          .new-main_product-details_category_body_bottom
+            .new-main_product-details_category_body_bottom_box
+              - test=[]
+              - @parents.each do |parent|
+                - test2 = [parent.category_name, parent.id]
+                - test << test2
+              =f.select :category_id, test, {}, id: "dest"
+              
+          -# .new-main_product-details_category_body_bottom
+          -#   .new-main_product-details_category_body_bottom_box
+          -#     - test=[]
+          -#     - @parents.each do |parent|
+          -#       - test2 = [parent.category_name, parent.id]
+          -#       - test << test2
+          -#     =f.select :category_id, "", {}, id: "dest2"
 
-  .item-price
-    .item-price__title
-      商品価格 ※必須
-    .item-price__form
-      = form_for "#" do |f|
-        = f.text_field :content, class: 'item-price__form', placeholder: ''
-  %button#confirm.btn.btn-large.btn-default{"data-reactid" => ".0.4.k.0.0.0"} 確認する
-    
+
+              -# %select
+              -#   %option 選択して下さい
+              -#   - @parents.each do |parent| 
+              -#     %option=parent.category_name
+
+
+
+                  -# .new-main_product-details_category_body_bottom
+                    -# .new-main_product-details_category_body_bottom_box
+                    -#   %select
+                    -#     - parent.children.each do |child|
+                    -#       %option=child.category_name
+
+
+      .new-main_product-details_brand
+        .new-main_product-details_brand_body
+          .new-main_product-details_brand_body_top
+            .new-main_product-details_brand_body_top_left
+              ブランド
+            .new-main_product-details_brand_body_top_right
+              任意
+          .new-main_product-details_brand_body_bottom
+            .new-main_product-details_brand_body_bottom_box
+              = f.text_field :brand_id, class: 'new-main_product-details_brand_body_bottom_box_form', placeholder: ''
+      .new-main_product-details_condition
+        .new-main_product-details_condition_body
+          .new-main_product-details_condition_body_top
+            .new-main_product-details_condition_body_top_left
+              商品の状態
+            .new-main_product-details_condition_body_top_right
+              必須
+          .new-main_product-details_condition_body_bottom
+            .new-main_product-details_condition_body_bottom_box
+              = f.select :condition, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]], include_blank: "選択して下さい"
+    .new-main_delivery
+      .new-main_delivery_burden
+        .new-main_delivery_burden_body
+          .new-main_delivery_burden_body_top
+            .new-main_delivery_burden_body_top_left
+              配送料の負担
+            .new-main_delivery_burden_body_top_right
+              必須
+          .new-main_delivery_burden_body_bottom
+            .new-main_delivery_burden_body_bottom_box
+              = f.select :postage_burden, [["送料込み（出品者が負担）", "送料込み（出品者が負担）"], ["着払い（購入者が負担）", "着払い（購入者が負担）"]], include_blank: "選択して下さい"
+      .new-main_delivery_area
+        .new-main_delivery_area_body
+          .new-main_delivery_area_body_top
+            .new-main_delivery_area_body_top_left
+              発送元の地域
+            .new-main_delivery_area_body_top_right
+              必須
+          .new-main_delivery_area_body_bottom
+            .new-main_delivery_area_body_bottom_box
+              = f.select :shipping_area, [["北海道", "北海道"], ["青森県", "青森県"], ["岩手県", "岩手県"], ["宮城県", "宮城県"], ["秋田県", "秋田県"], ["山形県", "山形県"], ["福島県", "福島県"], ["茨城県", "茨城県"], ["栃木県", "栃木県"], ["群馬県", "群馬県"], ["埼玉県", "埼玉県"], ["千葉県", "千葉県"], ["東京都", "東京都"], ["神奈川県", "神奈川県"], ["新潟県", "新潟県"], ["富山県", "富山県"], ["石川県", "石川県"], ["福井県", "福井県"], ["山梨県", "山梨県"], ["長野県", "長野県"], ["岐阜県", "岐阜県"], ["静岡県", "静岡県"], ["愛知県", "愛知県"], ["三重県", "三重県"], ["滋賀県", "滋賀県"], ["京都府", "京都府"], ["大阪府", "大阪府"], ["兵庫県", "兵庫県"], ["奈良県", "奈良県"], ["和歌山県", "和歌山県"], ["鳥取県", "鳥取県"], ["島根県", "島根県"], ["岡山県", "岡山県"], ["広島県", "広島県"], ["山口県", "山口県"], ["徳島県", "徳島県"], ["香川県", "香川県"], ["愛媛県", "愛媛県"], ["高知県", "高知県"], ["福岡県", "福岡県"], ["佐賀県", "佐賀県"], ["長崎県", "長崎県"], ["熊本県", "熊本県"], ["大分県", "大分県"], ["宮崎県", "宮崎県"], ["鹿児島県", "鹿児島県"], ["沖縄県", "沖縄県"]], include_blank: "選択して下さい"
+      .new-main_delivery_days
+        .new-main_delivery_days_body
+          .new-main_delivery_days_body_top
+            .new-main_delivery_days_body_top_left
+              発送までの日数
+            .new-main_delivery_days_body_top_right
+              必須
+          .new-main_delivery_days_body_bottom
+            .new-main_delivery_days_body_bottom_box
+              = f.select :days_to_ship, [["支払い後、1～2日で発送", "支払い後、1～2日で発送"], ["支払い後、2～3日で発送", "支払い後、2～3日で発送"], ["支払い後、4～7日で発送", "支払い後、4～7日で発送"]], include_blank: "選択して下さい"
+    .new-main_selling-price
+      .new-main_selling-price_box
+        .new-main_selling-price_box_left
+          販売価格
+        .new-main_selling-price_box_right
+          必須
+      .new-main_selling-price_box_en
+        ¥
+        = f.text_field :price, class: 'new-main_selling-price_box_txit', placeholder: ''
+    .new-main_btn
+      .new-main_btn_box
+        = f.submit "出品する", class: "new-main_btn_box_top"
