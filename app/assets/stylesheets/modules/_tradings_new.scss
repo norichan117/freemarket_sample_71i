@@ -1,6 +1,5 @@
 .tradings-new{
   background-color: $back;
-  height: 100%;
   .tradings_new-main {
     max-width: 700px;
     width: 100%;
@@ -18,8 +17,6 @@
           line-height: 34px;
           font-weight: 600;
         }
-
-          
         .item_box {
           display: flex;
           justify-content: space-between;
