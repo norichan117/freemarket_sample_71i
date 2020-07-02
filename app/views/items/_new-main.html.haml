@@ -8,14 +8,9 @@
           .new-main_image_body_name_right
             必須
         .new-main_image_body_photo
-          #image-box
-            = f.fields_for :images do |image| 
-              .js-file_group{data: {index: image.index}}
-                -# %i.fas.fa-camera
-                = image.file_field :item_image, class: 'js-file'
-                %span.js-remove 削除
-                  
-
+          = f.fields_for :images do |i| 
+            = i.file_field :item_image
+          %i.fas.fa-camera
     .new-main_product
       .new-main_product_top
         .new-main_product_top_body
@@ -47,11 +42,19 @@
               必須
           .new-main_product-details_category_body_bottom
             .new-main_product-details_category_body_bottom_box
-            - test=[]
-            - @parents.each do |parent|
-            - test2 = [parent.category_name, parent.id]
-            - test << test2
-            =f.select :category_id, test
+              - test=[]
+              - @parents.each do |parent|
+                - test2 = [parent.category_name, parent.id]
+                - test << test2
+              =f.select :category_id, test, {}, id: "dest"
+              
+          -# .new-main_product-details_category_body_bottom
+          -#   .new-main_product-details_category_body_bottom_box
+          -#     - test=[]
+          -#     - @parents.each do |parent|
+          -#       - test2 = [parent.category_name, parent.id]
+          -#       - test << test2
+          -#     =f.select :category_id, "", {}, id: "dest2"
 
               -# %select
               -#   %option 選択して下さい
