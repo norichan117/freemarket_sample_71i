@@ -2,7 +2,13 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    @parents = Category.where(ancestry: nil).limit(13)
+    @parents = Category.where(ancestry: "1/2").limit(13)
+    # def get_children
+    #   @children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+    # end
+    # def get_grandchildren
+    # @grandchildren = Category.find("#{params[:child_id]}").children
+    # end
   end
 
   def create

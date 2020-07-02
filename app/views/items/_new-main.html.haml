@@ -47,9 +47,15 @@
                 - test2 = [parent.category_name, parent.id]
                 - test << test2
               =f.select :category_id, test, {}, id: "dest"
-          .new-main_product-details_category_body_bottom
-            .new-main_product-details_category_body_bottom_box
-              =f.select :category_id, "", {}, id: "dest2"
+              
+          -# .new-main_product-details_category_body_bottom
+          -#   .new-main_product-details_category_body_bottom_box
+          -#     - test=[]
+          -#     - @parents.each do |parent|
+          -#       - test2 = [parent.category_name, parent.id]
+          -#       - test << test2
+          -#     =f.select :category_id, "", {}, id: "dest2"
+
               -# %select
               -#   %option 選択して下さい
               -#   - @parents.each do |parent| 
