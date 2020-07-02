@@ -42,12 +42,9 @@
               必須
           .new-main_product-details_category_body_bottom
             .new-main_product-details_category_body_bottom_box
-
             - test=[]
             - @parents.each do |parent|
-            - test2=[]
-            - test2 << parent.category_name
-            - test2 << parent.id
+            - test2 = [parent.category_name, parent.id]
             - test << test2
             =f.select :category_id, test
 
