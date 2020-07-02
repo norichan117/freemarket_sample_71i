@@ -8,9 +8,13 @@
           .new-main_image_body_name_right
             必須
         .new-main_image_body_photo
-          = f.fields_for :images do |i| 
-            = i.file_field :item_image
-          %i.fas.fa-camera
+          #image-box
+            = f.fields_for :images do |image| 
+              .js-file_group{data: {index: image.index}}
+                = image.file_field :item_image, class: 'js-file'
+                %span.js-remove 削除
+            %i.fas.fa-camera
+
     .new-main_product
       .new-main_product_top
         .new-main_product_top_body
