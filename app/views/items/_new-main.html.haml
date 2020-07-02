@@ -11,9 +11,10 @@
           #image-box
             = f.fields_for :images do |image| 
               .js-file_group{data: {index: image.index}}
+                -# %i.fas.fa-camera
                 = image.file_field :item_image, class: 'js-file'
                 %span.js-remove 削除
-            %i.fas.fa-camera
+                  
 
     .new-main_product
       .new-main_product_top
