@@ -32,13 +32,19 @@
             margin-top: 16px;
             text-align: center;
             background-color: #F5F5F5;
-            input {
-              position: absolute;
-            }
-            .fas {
-              top: 42px;
-              position: relative;
-              color: #3CCACE;
+            #image-box {
+              display: flex;
+              .js-file_group{
+                .fas {
+                  top: 42px;
+                  position: relative;
+                  color: $furima;
+                }
+                .js-file{
+                  outline: none;
+                  position: absolute;
+                }
+              }
             }
           }
         }
