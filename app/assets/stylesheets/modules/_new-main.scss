@@ -35,14 +35,15 @@
             #image-box {
               display: flex;
               .js-file_group{
+                width: 100px;
                 .fas {
                   top: 42px;
                   position: relative;
                   color: $furima;
                 }
                 .js-file{
+                  display: block;
                   outline: none;
-                  position: absolute;
                 }
               }
             }
