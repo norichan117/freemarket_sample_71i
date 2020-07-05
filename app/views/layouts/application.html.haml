@@ -9,14 +9,14 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
 
-  -if ( controller.controller_name == "items" && controller.action_name == "new" )
+  -if ( controller.controller_name == "items" && (controller.action_name == "new"|| controller.action_name == "edit") )
 
     = yield
   - else
     = render 'shared/header'
     = yield
 
-  -if ( controller.controller_name == "items" && controller.action_name == "new" )
+  -if ( controller.controller_name == "items" && (controller.action_name == "new"|| controller.action_name == "edit") )
 
   - else
     = render 'shared/appBanner'
