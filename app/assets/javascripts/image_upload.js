@@ -6,7 +6,6 @@ $(document).on('turbolinks:load', ()=> {
                     <input class="js-file" type="file"
                     name="item[images_attributes][${index}][item_image]"
                     id="item_images_attributes_${index}_item_image"><br>
-
                     <div class="js-remove">削除</div>
                   </div>`;
     return html;
@@ -39,6 +38,7 @@ $(document).on('turbolinks:load', ()=> {
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
+    $(this).hide();
   });
 
   $('#image-box').on('click', '.js-remove', function() {
