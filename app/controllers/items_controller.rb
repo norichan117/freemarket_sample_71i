@@ -2,13 +2,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
-    @parents = Category.where(ancestry: "1/2").limit(13)
-    # def get_children
-    #   @children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
-    # end
-    # def get_grandchildren
-    # @grandchildren = Category.find("#{params[:child_id]}").children
-    # end
   end
 
   def create
@@ -38,10 +31,13 @@ class ItemsController < ApplicationController
     item.destroy
     redirect_to user_path(current_user)
   end
+
+  def get_category_children
+    @category_children = Category.find(params[:id]).children
+  end
 end
 
 def item_params
   params.require(:item).permit(:item_name, :item_info, :category_id, :brand_id, :condition, :postage_burden, :shipping_area, :days_to_ship, :price, images_attributes: [:item_image]).merge(user_id: current_user.id)
 end
-
 
