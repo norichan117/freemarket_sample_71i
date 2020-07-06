@@ -1,7 +1,6 @@
 $(document).on('turbolinks:load', ()=> {
   $("#dest").change(function() {
     var select = document.getElementById("dest").value;
-    console.log(select);
     $.ajax({
       type: 'GET',
       url: 'get_category_children',
@@ -10,25 +9,24 @@ $(document).on('turbolinks:load', ()=> {
     })
     .done(function(category_children){
       console.log(category_children)
-      var insertHTML = '';
-      children.forEach(function(child){
-        insertHTML += appendOption(child);
-      });
-      appendChidrenBox(insertHTML);
+      childSelectHtml = `<div class='new-main_product-details_category_body_bottom' id= 'children_wrapper'>
+                          <div class='new-main_product-details_category_body_bottom_box'>
+                            <select id="child_category" name="category_id">
+                      
+                            <select>
+                          </div>
+                        </div>`;
+                    console.log(childSelectHtml)
+      $('.new-main_product-details_category_body').append(childSelectHtml);
+
+      for(var i=0;i<category_children.length;i++){
+        let op = document.createElement("option");
+        op.value = category_children[i].id;  //value値
+        console.log(i)
+        op.text = category_children[i].category_name;   //テキスト値
+        document.getElementById("child_category").appendChild(op);
+        console.log(op)
+      }
     })
   });
 });
-
-function appendChidrenBox(insertHTML){
-  var childSelectHtml = '';
-  childSelectHtml = `<div class='new-main_product-details_category_body_bottom' id= 'children_wrapper'>
-                      <div class='new-main_product-details_category_body_bottom_box'>
-                        <select id="child_category" name="category_id">
-                          <option value="---" data-category="---">---</option>
-                          ${insertHTML}
-                        <select>
-                        <i class='fas fa-chevron-down listing-select-wrapper__box--arrow-down'></i>
-                      </div>
-                    </div>`;
-  $('.new-main_product-details_category_body').append(childSelectHtml);
-}

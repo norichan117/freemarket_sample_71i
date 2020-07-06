@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :items  do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
+      
     end
     resources :tradings, only:[:new, :create]
     resources :item_deliver_addresses, only:[:new, :create, :edit, :update]
