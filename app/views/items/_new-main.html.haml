@@ -47,26 +47,7 @@
               必須
           .new-main_product-details_category_body_bottom
             .new-main_product-details_category_body_bottom_box
-              - test=[]
-              - @parents.each do |parent|
-                - test2 = [parent.category_name, parent.id]
-                - test << test2
-              =f.select :category_id, test, {prompt: "選択してください" }, id: "dest"
-          -# .new-main_product-details_category_body_bottom
-          -#   .new-main_product-details_category_body_bottom_box
-          -#     - test=[]
-          -#     - parent.children.each do |child|
-          -#       - test2  =[child.category_name]
-          -#       - test << test2
-          -#     =f.select :category_id, {}, id: "est"
-
-                  -# .new-main_product-details_category_body_bottom
-                    -# .new-main_product-details_category_body_bottom_box
-                    -#   %select
-                    -#     - parent.children.each do |child|
-                    -#       %option=child.category_name
-
-
+              = select "", "", @parents, {prompt: "選択してください" }, id: "dest"
       .new-main_product-details_brand
         .new-main_product-details_brand_body
           .new-main_product-details_brand_body_top

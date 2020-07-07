@@ -2,9 +2,11 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @parents = Category.where(ancestry: nil).limit(13).pluck(:category_name, :id)
   end
 
   def create
+    binding.pry
     item = Item.new(item_params)
 
     if item.save
