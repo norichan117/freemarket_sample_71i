@@ -34,6 +34,11 @@
             background-color: #F5F5F5;
             #image-box {
               display: flex;
+              #previews {
+              }
+            }
+            #image-select{
+              display: flex;
               .js-file_group{
                 width: 100px;
                 .fas {
@@ -44,6 +49,9 @@
                 .js-file{
                   display: block;
                   outline: none;
+                  &-loaded {
+                    display: none;
+                  }
                 }
               }
             }

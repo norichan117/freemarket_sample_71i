@@ -22,7 +22,7 @@ $(document).on('turbolinks:load', ()=> {
   fileIndex.splice(0, lastIndex);
   $('.hidden-destroy').hide();
 
-  $('#image-box').on('change', '.js-file', function(e) {
+  $('#image-select').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', ()=> {
     } else {  // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('#image-box').append(buildFileField(fileIndex[0]));
+      $('#image-select').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
@@ -41,7 +41,7 @@ $(document).on('turbolinks:load', ()=> {
     $(this).hide();
   });
 
-  $('#image-box').on('click', '.js-remove', function() {
+  $('#image-select').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     // 該当indexを振られているチェックボックスを取得する
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
