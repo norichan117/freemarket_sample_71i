@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find(params[:id]).children
+    @category_children = Category.find(params[:category_id]).children
   end
 
 private
