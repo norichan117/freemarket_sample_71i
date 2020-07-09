@@ -16,9 +16,16 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @parents = Category.where(ancestry: nil).limit(13).pluck(:category_name, :id)
   end
   
-  def updata
+  def update
+    item = Item.find(params[:id])
+    if item.update (item_params)
+      redirect_to item_path(item)
+    else
+      render :edit
+    end
   end
 
   def show

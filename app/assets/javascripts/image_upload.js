@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', ()=> {
     const html = `<div data-index="${index}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="item[images_attributes][${index}][item_image]"
-                    id="item_images_attributes_${index}_item_image"><br>
+                    id="item_images_attributes_${index}_item_image">
                     <div class="js-remove">削除</div>
                   </div>`;
     return html;
@@ -38,6 +38,7 @@ $(document).on('turbolinks:load', ()=> {
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
+    $(this).next('.js-remove').show();
     $(this).hide();
   });
 
