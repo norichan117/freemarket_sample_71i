@@ -2,35 +2,83 @@ class UserCardsController < ApplicationController
   require "payjp"
   
   def new
-    if UserCard.exists?(user_id: current_user) 
-      redirect_to edit_user_card_path(UserCard.find_by(user_id: current_user))
-    else
-      @deliver_address = UserCard.new
+    @card = UserCard.where(user_id: current_user.id)
+    if @card.exists?
+      redirect_to user_card_path(current_user.id)   
     end
   end
 
   def create
     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
-
     if params["payjp_token"].blank?
       redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
     else
       customer = Payjp::Customer.create(
         email: current_user.email,
         card: params["payjp_token"],
-        metadata: {user_id: current_user.id} 
+        metadata: {user_id: current_user.id}
       )
-    end
       @card = UserCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to edit_user_card_path(current_user.user_card), notice: "クレジットカードを登録しました"
       else
-        redirect_to new_user_card_path, alert: "入力情報を確認してください"
+        redirect_to action: "create"
       end
     end
+  end
 
-  def edit
-    @user_card = UserCard.find_by(user_id: current_user)
+  def show
+    @card = UserCard.find_by(user_id: current_user.id)
+    if @card.blank?
+      redirect_to action: "new" 
+    else
+      Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @customer_card = customer.cards.retrieve(@card.card_id)
+      @card_brand = @customer_card.brand
+      case @card_brand
+      when "Visa"
+        @card_src = "visa.png"
+      when "JCB"
+        @card_src = "jcb.png"
+      when "MasterCard"
+        @card_src = "master.png"
+      when "American Express"
+        @card_src = "amex.png"
+      when "Diners Club"
+        @card_src = "diners.png"
+      when "Discover"
+        @card_src = "discover.png"
+      end
+
+      #  viewの記述を簡略化
+      ## 有効期限'月'を定義
+      @exp_month = @customer_card.exp_month.to_s
+      ## 有効期限'年'を定義
+      @exp_year = @customer_card.exp_year.to_s.slice(2,3)
+    end
+  end
+
+  def destroy
+    # ログイン中のユーザーのクレジットカード登録の有無を判断
+    @card = UserCard.find_by(user_id: current_user.id)
+    if @card.blank?
+      # 未登録なら新規登録画面に
+      redirect_to action: "new"
+    else
+      # 前前回credentials.yml.encに記載したAPI秘密鍵を呼び出します。
+      Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+      # ログインユーザーのクレジットカード情報からPay.jpに登録されているカスタマー情報を引き出す
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      # そのカスタマー情報を消す
+      customer.delete
+      @card.delete
+      # 削除が完了しているか判断
+      if @card.destroy
+      else
+        redirect_to user_card_path(current_user.id), alert: "削除できませんでした。"
+      end
+    end
   end
 end
-  
+
+

@@ -5,4 +5,5 @@
     %ul.create__frame__btns
       %li.my_page_link
         = link_to "マイページに戻る", user_path(current_user.id), class: "my_page_link__btn"
-      
+      %li.credit_cards_index_link
+        = link_to "登録カード一覧", user_card_path(current_user.id), class: "credit_cards_index_link__btn"
