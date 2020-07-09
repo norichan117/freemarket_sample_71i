@@ -6,19 +6,34 @@ class ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     item = Item.new(item_params)
     if item.save
       redirect_to item_path(item)
     else
       render :new
     end
+
   end
 
   def edit
     @item = Item.find(params[:id])
+    @grand_child = Category.find(@item.category_id)
+    @child = @grand_child.parent
+    @parent = @child.parent
+    @grand_children = @grand_child.siblings.limit(13).pluck(:category_name, :id)
+    @children = @child.siblings.limit(13).pluck(:category_name, :id)
+    @parents = @parent.siblings.limit(13).pluck(:category_name, :id)
   end
   
-  def updata
+  def update
+    binding.pry
+    item = Item.find(params[:id])
+    if item.update (item_params)
+      redirect_to item_path(item)
+    else
+      render :edit
+    end
   end
 
   def show

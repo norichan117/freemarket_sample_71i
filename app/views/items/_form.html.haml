@@ -16,9 +16,11 @@
           #image-select
             = f.fields_for :images do |image| 
               .js-file_group{data: {index: image.index}}
-                -# %i.fas.fa-camera
                 = image.file_field :item_image, class: ['js-file','js-file-loaded']
-                %span.js-remove 削除
+                -if @item.persisted?
+                  %span.js-remove.js-remove-loaded 削除
+                - else
+                  %span.js-remove 削除
               -if @item.persisted?
                 = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy' 
             -if @item.persisted?
@@ -56,7 +58,14 @@
               必須
           .new-main_product-details_category_body_bottom
             .new-main_product-details_category_body_bottom_box
-              = select "", "", @parents, {prompt: "選択して下さい" }, id: "dest"
+              = select_tag "",options_for_select(@parents ,@parent.id), id: "dest" 
+          -if @item.persisted?
+            .new-main_product-details_category_body_bottom#children_wrapper
+              .new-main_product-details_category_body_bottom_box
+                = select_tag "", options_for_select(@children,@child.id),id: "child_category"
+            .new-main_product-details_category_body_bottom#grandchildren_wrapper
+              .new-main_product-details_category_body_bottom_box
+                = select_tag :category_id,options_for_select( @grand_children ,@grand_child.id), id: "grandchild_category" , form: "edit_item" 
       .new-main_product-details_brand
         .new-main_product-details_brand_body
           .new-main_product-details_brand_body_top
