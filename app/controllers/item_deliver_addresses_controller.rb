@@ -1,4 +1,6 @@
 class ItemDeliverAddressesController < ApplicationController
+  layout 'simple'
+  
   def new
     @deliver_address = DeliverAddress.new
 
