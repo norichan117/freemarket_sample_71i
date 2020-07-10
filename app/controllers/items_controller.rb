@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
   end
   
   def update
+    binding.pry
     item = Item.find(params[:id])
     if item.update (item_params)
       redirect_to item_path(item)
@@ -54,7 +55,7 @@ class ItemsController < ApplicationController
 
 private
   def item_params
-    params.require(:item).permit(:item_name, :item_info, :brand_id, :condition, :postage_burden, :shipping_area, :days_to_ship, :price, images_attributes: [:item_image]).merge(user_id: current_user.id).merge(category_id: params[:category_id])
+    params.require(:item).permit(:item_name, :item_info, :brand_id, :condition, :postage_burden, :shipping_area, :days_to_ship, :price, images_attributes: [:item_image, :_destroy, :id]).merge(user_id: current_user.id).merge(category_id: params[:category_id])
   end
 
 end
