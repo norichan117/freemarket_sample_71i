@@ -47,7 +47,7 @@ $(document).on('turbolinks:load', ()=> {
         var formId = $('form').attr('id');
         childSelectHtml = `<div class='new-main_product-details_category_body_bottom' id= 'grandchildren_wrapper'>
                             <div class='new-main_product-details_category_body_bottom_box'>
-                              <select form= ${formId}; id="grandchild_category" name="category_id">
+                              <select form= ${formId} id="grandchild_category" name="category_id">
                                 <option value="---" data-category="---">選択して下さい</option>
                               <select>
                             </div>
