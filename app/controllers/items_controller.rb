@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     item = Item.new(item_params)
     if item.save
       redirect_to item_path(item)
@@ -27,7 +26,6 @@ class ItemsController < ApplicationController
   end
   
   def update
-    binding.pry
     item = Item.find(params[:id])
     if item.update (item_params)
       redirect_to item_path(item)
@@ -50,7 +48,7 @@ class ItemsController < ApplicationController
   end
 
   def get_category_children
-    @category_children = Category.find(params[:id]).children
+    @category_children = Category.find(params[:category_id]).children
   end
 
 private

@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', ()=> {
       $.ajax({
         type: 'GET',
         url: 'get_category_children',
-        data: { id: select},
+        data: { category_id: select},
         dataType: 'json'
       })
       .done(function(category_children){
@@ -40,7 +40,7 @@ $(document).on('turbolinks:load', ()=> {
       $.ajax({
         type: 'GET',
         url: 'get_category_children',
-        data: { id: childId},
+        data: { category_id: childId},
         dataType: 'json'
       })
       .done(function(category_children){
