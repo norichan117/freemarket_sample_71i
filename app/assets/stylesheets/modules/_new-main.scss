@@ -51,6 +51,9 @@
                   outline: none;
                   &-loaded {
                     display: none;
+                  &-new{
+                    display: block;
+                  }
                   }
                 }
               }
