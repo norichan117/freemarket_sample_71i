@@ -34,6 +34,7 @@ $(document).on('turbolinks:load', ()=> {
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       $('#image-select').append(buildFileField(fileIndex[0]));
+      $('.js-remove').last().hide()
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
