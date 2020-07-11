@@ -116,9 +116,9 @@
           販売価格
         .new-main_selling-price_box_right
           必須
+      = f.text_field :price, class: 'new-main_selling-price_box_txit', placeholder: ''
       .new-main_selling-price_box_en
         ¥
-        = f.text_field :price, class: 'new-main_selling-price_box_txit', placeholder: ''
     .new-main_btn
       .new-main_btn_box
         = f.submit "出品する", class: "new-main_btn_box_top"
