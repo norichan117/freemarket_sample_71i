@@ -17,17 +17,27 @@
             -if @item.persisted?
               = f.fields_for :images do |image| 
                 .js-file_group{data: {index: image.index}}
-                  = image.file_field :item_image, class: ['js-file','js-file-loaded']
-                  %span.js-remove.js-remove-loaded 削除
+                  .js-file.js-file-loaded
+                    %label
+                      = image.file_field :item_image, class: 'field-hidden'
+                      %i.fas.fa-camera.fa-2x
+                  .js-remove.js-remove-loaded 削除
                 = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy' 
               .js-file_group{data: {index: @item.images.count}} 
-                = file_field_tag :item_image, name: "item[images_attributes][#{@item.images.count}][item_image]", class: 'js-file'
+                .js-file
+                  %label
+                    = file_field_tag :item_image, name: "item[images_attributes][#{@item.images.count}][item_image]", class: 'field-hidden'
+                    %i.fas.fa-camera.fa-2x
                 .js-remove 削除
             -else
               = f.fields_for :images do |image| 
                 .js-file_group{data: {index: image.index}}
-                  = image.file_field :item_image, class: 'js-file'
-                  %span.js-remove 削除
+                  .js-file
+                    %label
+                      = image.file_field :item_image, class: 'field-hidden'
+                      %i.fas.fa-camera.fa-2x
+                  .js-remove 削除
+                  
     .new-main_product
       .new-main_product_top
         .new-main_product_top_body

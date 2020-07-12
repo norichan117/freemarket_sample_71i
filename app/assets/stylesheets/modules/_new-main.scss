@@ -56,9 +56,15 @@
                     display: block;
                   }
                   }
+                  .field-hidden {
+                    display: none;
+                  }
                 }
                 .js-remove {
                   display: none;
+                  margin: 15px 5px 0;
+                  background-color: darkgray;
+                  border-radius: 2px;
                   &-loaded {
                     display: block;
                   }
