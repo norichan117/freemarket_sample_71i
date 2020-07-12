@@ -10,7 +10,11 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-    resources :tradings, only:[:new, :create]
+    resources :tradings, only:[:new, :create] do
+      collection do
+        post "pay"
+      end
+    end
     resources :item_deliver_addresses, only:[:new, :create, :edit, :update]
   end
   resources :categorys, only: [:index, :show]
@@ -18,4 +22,5 @@ Rails.application.routes.draw do
   resources :user_addresses, only:[:new, :create, :edit, :update]
   resources :deliver_addresses, only:[:new, :create, :edit, :update]
 end
+
 

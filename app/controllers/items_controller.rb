@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  require "payjp"
+
   def new
     @item = Item.new
     @item.images.new
@@ -6,7 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     item = Item.new(item_params)
     if item.save
       redirect_to item_path(item)
@@ -27,7 +28,6 @@ class ItemsController < ApplicationController
   end
   
   def update
-    binding.pry
     item = Item.find(params[:id])
     if item.update (item_params)
       redirect_to item_path(item)
