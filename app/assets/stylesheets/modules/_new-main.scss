@@ -44,7 +44,6 @@
                 width: 100px;
                 .fas {
                   top: 42px;
-                  position: relative;
                   color: $furima;
                 }
                 .js-file{
@@ -58,6 +57,9 @@
                   }
                   .field-hidden {
                     display: none;
+                  }
+                  .fa-camera {
+                    margin-top: 8px;
                   }
                 }
                 .js-remove {
