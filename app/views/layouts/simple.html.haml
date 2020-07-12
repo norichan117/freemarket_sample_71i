@@ -1,4 +1,3 @@
-!!!
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -8,16 +7,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-
-  -if ( controller.controller_name == "items" && (controller.action_name == "new"|| controller.action_name == "edit") )
-
-    = yield
-  - else
-    = render 'shared/header'
-    = yield
-
-  -if ( controller.controller_name == "items" && (controller.action_name == "new"|| controller.action_name == "edit") )
-
-  - else
-    = render 'shared/appBanner'
-    = render 'shared/footer'
+    .simple_container
+      = render "shared/furima_header"
+      = yield
+      = render "shared/furima_footer"

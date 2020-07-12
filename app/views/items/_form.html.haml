@@ -9,13 +9,35 @@
             必須
         .new-main_image_body_photo
           #image-box
-            = f.fields_for :images do |image| 
-              .js-file_group{data: {index: image.index}}
-                -# %i.fas.fa-camera
-                = image.file_field :item_image, class: 'js-file'
-                %span.js-remove 削除
+            #previews
+              -if @item.persisted?
+                - @item.images.each_with_index do |image, i|
+                  = image_tag image.item_image.url, data: { index: i }, width: "100", height: '100' 
+          #image-select
+            -if @item.persisted?
+              = f.fields_for :images do |image| 
+                .js-file_group{data: {index: image.index}}
+                  .js-file.js-file-loaded
+                    %label
+                      = image.file_field :item_image, class: 'field-hidden'
+                      %i.fas.fa-camera.fa-2x
+                  .js-remove.js-remove-loaded 削除
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy' 
+              .js-file_group{data: {index: @item.images.count}} 
+                .js-file
+                  %label
+                    = file_field_tag :item_image, name: "item[images_attributes][#{@item.images.count}][item_image]", class: 'field-hidden'
+                    %i.fas.fa-camera.fa-2x
+                .js-remove 削除
+            -else
+              = f.fields_for :images do |image| 
+                .js-file_group{data: {index: image.index}}
+                  .js-file
+                    %label
+                      = image.file_field :item_image, class: 'field-hidden'
+                      %i.fas.fa-camera.fa-2x
+                  .js-remove 削除
                   
-
     .new-main_product
       .new-main_product_top
         .new-main_product_top_body
@@ -45,37 +67,20 @@
               カテゴリー
             .new-main_product-details_category_body_top_right
               必須
-          .new-main_product-details_category_body_bottom
-            .new-main_product-details_category_body_bottom_box
-              - test=[]
-              - @parents.each do |parent|
-                - test2 = [parent.category_name, parent.id]
-                - test << test2
-              =f.select :category_id, test, {}, id: "dest"
-              
-          -# .new-main_product-details_category_body_bottom
-          -#   .new-main_product-details_category_body_bottom_box
-          -#     - test=[]
-          -#     - @parents.each do |parent|
-          -#       - test2 = [parent.category_name, parent.id]
-          -#       - test << test2
-          -#     =f.select :category_id, "", {}, id: "dest2"
-
-
-              -# %select
-              -#   %option 選択して下さい
-              -#   - @parents.each do |parent| 
-              -#     %option=parent.category_name
-
-
-
-                  -# .new-main_product-details_category_body_bottom
-                    -# .new-main_product-details_category_body_bottom_box
-                    -#   %select
-                    -#     - parent.children.each do |child|
-                    -#       %option=child.category_name
-
-
+          -if @item.persisted?
+            .new-main_product-details_category_body_bottom
+              .new-main_product-details_category_body_bottom_box
+                = select_tag "",options_for_select(@parents ,@parent.id), id: "parent_category" 
+            .new-main_product-details_category_body_bottom#children_wrapper
+              .new-main_product-details_category_body_bottom_box
+                = select_tag "", options_for_select(@children,@child.id), id: "child_category"
+            .new-main_product-details_category_body_bottom#grandchildren_wrapper
+              .new-main_product-details_category_body_bottom_box
+                = select_tag :category_id,options_for_select( @grand_children ,@grand_child.id), id: "grandchild_category" , form: "edit_item_#{@item.id}" 
+          -else
+            .new-main_product-details_category_body_bottom
+              .new-main_product-details_category_body_bottom_box
+                = select "", "", @parents, {prompt: "選択して下さい" }, id: "parent_category"
       .new-main_product-details_brand
         .new-main_product-details_brand_body
           .new-main_product-details_brand_body_top
@@ -133,9 +138,12 @@
           販売価格
         .new-main_selling-price_box_right
           必須
+      = f.text_field :price, class: 'new-main_selling-price_box_txit', placeholder: ''
       .new-main_selling-price_box_en
         ¥
-        = f.text_field :price, class: 'new-main_selling-price_box_txit', placeholder: ''
     .new-main_btn
       .new-main_btn_box
-        = f.submit "出品する", class: "new-main_btn_box_top"
+        - if controller.action_name == "new"
+          = f.submit "出品する", class: "new-main_btn_box_top"
+        - else
+          = f.submit "更新する", class: "new-main_btn_box_top"
