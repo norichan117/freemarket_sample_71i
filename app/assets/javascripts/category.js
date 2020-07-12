@@ -1,11 +1,11 @@
 $(document).on('turbolinks:load', ()=> {
-  $("#dest").change(function() {
+  $("#parent_category").change(function() {
     $('#children_wrapper').remove();
     $('#grandchildren_wrapper').remove();
-    if ($("#dest option:selected").text() == "選択して下さい"){
+    if ($("#parent_category option:selected").text() == "選択して下さい"){
 
     }else {
-      var select = document.getElementById("dest").value;
+      var select = document.getElementById("parent_category").value;
       $.ajax({
         type: 'GET',
         url: 'get_category_children',
@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', ()=> {
 
   $(".new-main_product-details_category_body").on('change', "#child_category", function() {
     $('#grandchildren_wrapper').remove();
-    if ($("#dest option:selected").text() == "選択して下さい"){
+    if ($("#parent_category option:selected").text() == "選択して下さい"){
       
     }else {
       var childId = document.getElementById("child_category").value;

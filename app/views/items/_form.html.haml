@@ -70,7 +70,7 @@
           -if @item.persisted?
             .new-main_product-details_category_body_bottom
               .new-main_product-details_category_body_bottom_box
-                = select_tag "",options_for_select(@parents ,@parent.id), id: "dest" 
+                = select_tag "",options_for_select(@parents ,@parent.id), id: "parent_category" 
             .new-main_product-details_category_body_bottom#children_wrapper
               .new-main_product-details_category_body_bottom_box
                 = select_tag "", options_for_select(@children,@child.id), id: "child_category"
@@ -80,7 +80,7 @@
           -else
             .new-main_product-details_category_body_bottom
               .new-main_product-details_category_body_bottom_box
-                = select "", "", @parents, {prompt: "選択して下さい" }, id: "dest"
+                = select "", "", @parents, {prompt: "選択して下さい" }, id: "parent_category"
       .new-main_product-details_brand
         .new-main_product-details_brand_body
           .new-main_product-details_brand_body_top
