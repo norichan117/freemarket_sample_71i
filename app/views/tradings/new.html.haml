@@ -36,10 +36,10 @@
                 %p 
                   クレジットカード
                 %p
-                  ************1111
+                  = "**** **** **** " + @customer_card.last4
                 %p
-                  有効期限 01 / 01
-                =image_tag "jcb_card.svg" ,class: "card_image"
+                  = @exp_month + " / " + @exp_year
+                  = image_tag "cards/#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
         - else
           %section.trading_section
             .card_info
@@ -77,7 +77,7 @@
           .trading_btn_area
             - if DeliverAddress.exists?(user_id: current_user) && UserCard.exists?(user_id: current_user)
               -# = button_to "購入する", {controller: 'tradings', action: 'create'}, {method: :post,class: "trading_btn", params: {trading: {user_id: @item.user_id, trading_family_name: @deliver_address.deliver_family_name, trading_first_name: @deliver_address.deliver_first_name, trading_family_name_kana: @deliver_address.deliver_family_name_kana, trading_first_name_kana: @deliver_address.deliver_first_name_kana, trading_yubin_bango: @deliver_address.deliver_yubin_bango, trading_todofuken: @deliver_address.deliver_todofuken, trading_shichoson: @deliver_address.deliver_shichoson, trading_banchi: @deliver_address.deliver_banchi, trading_building: @deliver_address.deliver_building, trading_tel_no: @deliver_address.deliver_tel_no, trading_card_id: @user_card.card_id, trading_customer_id: current_user}}}
-              = button_to "購入する", pay_item_tradings_path(@item), method: :post, class: "trading_btn"
+              = button_to "購入する", item_tradings_path(@item), method: :post, class: "trading_btn"
             - else
               = button_to "購入する", "",class: "trading_btn-disabled"
 
