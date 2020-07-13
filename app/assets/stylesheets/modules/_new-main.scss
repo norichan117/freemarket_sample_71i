@@ -28,10 +28,11 @@
             }
           }
           .new-main_image_body_photo {
-            height: 100px;
+            height: 104px;
             margin-top: 16px;
             text-align: center;
-            background-color: #F5F5F5;
+            border: solid 1px darkgray;
+            border-radius: 4px;
             #image-box {
               display: flex;
               #previews {
@@ -42,10 +43,6 @@
               display: flex;
               .js-file_group{
                 width: 100px;
-                .fas {
-                  top: 42px;
-                  color: $furima;
-                }
                 .js-file{
                   display: block;
                   outline: none;
@@ -59,7 +56,10 @@
                     display: none;
                   }
                   .fa-camera {
+                    color: $furima;
                     margin-top: 15px;
+                    position: relative;
+                    top: -80px;
                   }
                 }
                 .js-remove {
