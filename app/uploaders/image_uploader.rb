@@ -18,11 +18,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.development? || Rails.env.test?
-    storage :file
-  else
-    storage :fog
-  end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:
