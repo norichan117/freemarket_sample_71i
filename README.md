@@ -18,6 +18,7 @@
 - has_many :tradings
 - has_one :user_address
 - has_one :user_card
+- has_many :favorites
 
 ## user_cardテーブル
 |Column|Type|Options|
@@ -85,6 +86,7 @@
 - belongs_to :brand
 - belongs_to :trading
 - has_many :images
+- has_many :favorites
 
 ## imageテーブル
 |Column|Type|Options|
@@ -136,6 +138,14 @@
 - belongs_to :user
 - has_one :item
 
+## favoriteテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|integer|null: false, unique: true|
+|item_id|integer|foreign_key: true|
+user_id|integer|foreign_key: true|
 
-
+### Association
+- belongs_to :user
+- belongs_to :item
 
