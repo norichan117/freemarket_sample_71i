@@ -29,9 +29,7 @@ class TradingsController < ApplicationController
   end
 
   def create
-    deliver_address = current_user.deliver_address
-    user_card = current_user.user_card
-    trading = Trading.new(user_id: current_user.id,trading_family_name: deliver_address[:deliver_family_name], trading_first_name: deliver_address[:deliver_first_name], trading_family_name_kana: deliver_address[:deliver_family_name_kana], trading_first_name_kana: deliver_address[:deliver_first_name_kana], trading_yubin_bango: deliver_address[:deliver_yubin_bango], trading_todofuken: deliver_address[:deliver_todofuken], trading_shichoson: deliver_address[:deliver_shichoson], trading_banchi: deliver_address[:deliver_banchi], trading_building: deliver_address[:deliver_building], trading_tel_no: deliver_address[:deliver_tel_no], trading_card_id: user_card[:card_id], trading_customer_id: user_card[:customer_id])
+    trading = Trading.new(trading_params)
     pay
     trading.save
     item = Item.find(params[:item_id])
