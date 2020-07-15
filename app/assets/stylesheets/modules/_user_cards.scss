@@ -15,7 +15,6 @@
   }
   .details {
     padding: 40px 139px 64px;
-
     .number-details {
       display: flex;
       .card-number {
@@ -74,7 +73,7 @@
       }
     }
     .expirationdate {
-      .expirationdate__details {
+      &__details {
         display: flex;
         margin-top: 32px;
         .date {
@@ -93,7 +92,7 @@
           vertical-align: top;
         }
       }
-      .expirationdate__choice {
+      &__choice {
         display: flex;
         .month {
           margin: 8px 0 0;
@@ -146,10 +145,10 @@
         }
     }
     .securitycode {
-      .securitycode__details {
+      &__details {
         display: flex;
         margin-top: 32px;
-        .securitycode-details__title {
+        &__title {
           width: 126px;
           height: 14px;
           font-weight: 600;
@@ -167,7 +166,7 @@
       }
     }
       .securitycode__cardsecurity {
-        .securitycode__cardsecurity__form {
+        &__form {
           height: 48px;
           padding: 10px 16px 8px;
           border-radius: 4px;
@@ -186,7 +185,7 @@
       }
     .add {
       margin-top: 32px;
-      .add__btn{
+      &__btn{
         height: 48px;
         padding: 10px 16px 8px;
         border-radius: 4px;
