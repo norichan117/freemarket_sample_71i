@@ -25,7 +25,8 @@
                         %li.item_price
                           = "#{item.price} 円"
                         %li.item_likes
-                          ★２
+                          %i.fa.fa-star
+                          =item.favorites.count
                       %p.zei
                         (税込)
               -else
