@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  require "payjp"
+
   def new
     @item = Item.new
     @item.images.new
