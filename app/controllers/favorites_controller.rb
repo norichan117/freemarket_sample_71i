@@ -1,8 +1,8 @@
 class FavoritesController < ApplicationController
   def create
-    @favorite = Favorite.new(favorite_params)
-    if @favorite.save
-      render json: @favorite
+    favorite = Favorite.new(favorite_params)
+    if favorite.save
+      render json: favorite
     else
       redirect_to item_path(params[:item_id])
     end
