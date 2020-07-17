@@ -129,8 +129,8 @@
                   margin: 1px 0 0 8px;
                 }
               }
-              #favorite{
-                &On {
+              .favorite{
+                &_on {
                   color: $furima;
                   background-color: $white;
                   border: 1px solid $furima;
@@ -138,12 +138,15 @@
                     color: $furima;
                   }
                 }
-                &Off{
+                &_off{
                   background-color: $back;
                   border: 1px solid $back;
                   .fa-star {
                     color: #ccc;
                   }
+                }
+                &_disable {
+                  pointer-events: none;
                 }
               }
             }

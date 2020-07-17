@@ -47,14 +47,20 @@
                 %th 発想日の目安
                 %td= @item.days_to_ship
           .favorite_area
-            -if user_signed_in? && @item.favorites.exists?(user_id: current_user.id)
-              %button#favoriteOn{item_id: @item.id, favorite_id: Favorite.find_by(item_id: 39, user_id: current_user).id}
+            -if (user_signed_in? && current_user.id == @item.user_id) || !user_signed_in?
+              %button#favorite.favorite_disable.favorite_off{item_id: @item.id}
+                %i.far.fa-star
+                .like いいね!
+                .count
+                  = @item.favorites.count
+            -elsif user_signed_in? && @item.favorites.exists?(user_id: current_user.id)
+              %button#favorite.favorite_on{item_id: @item.id, favorite_id: Favorite.find_by(item_id: @item, user_id: current_user).id}
                 %i.fa.fa-star
                 .like いいね!
                 .count
                   = @item.favorites.count
             -else
-              %button#favoriteOff{item_id: @item.id}
+              %button#favorite.favorite_off{item_id: @item.id}
                 %i.far.fa-star
                 .like いいね!
                 .count

@@ -1,11 +1,14 @@
 class FavoritesController < ApplicationController
   def create
 
-    favorite = Favorite.new(favorite_params)
+    @favorite = Favorite.new(favorite_params)
     puts '---------------------------------------------------'
-    puts favorite_params
-    favorite.save
-
+    puts params
+    @favorite.save
+    respond_to do |format|
+      format.html { redirect_to :root }
+      format.json { render json: @favorite}
+    end
   end
 
   def destroy
