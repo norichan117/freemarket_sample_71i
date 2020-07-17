@@ -1,13 +1,14 @@
 class FavoritesController < ApplicationController
   def create
-
     @favorite = Favorite.new(favorite_params)
-    puts '---------------------------------------------------'
-    puts params
-    @favorite.save
-    respond_to do |format|
-      format.html { redirect_to :root }
-      format.json { render json: @favorite}
+    
+    if @favorite.save
+      respond_to do |format|
+        format.html { redirect_to :root }
+        format.json { render json: @favorite}
+      end
+    else
+      redirect_to item_path(params[:item_id])
     end
   end
 
