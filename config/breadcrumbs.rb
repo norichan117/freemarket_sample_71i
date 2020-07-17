@@ -1,9 +1,9 @@
 crumb :root do
-  link "トップページ", root_path
+  link "FURIMA", root_path
 end
 
 crumb :child_category do
-  link "#{Category.find(params[:id]).category_name}", category_path
+  link "#{Category.find(params[:id]).category_name}", category_path(params[:id])
   parent :root
 end
 
