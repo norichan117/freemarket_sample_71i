@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
     resources :tradings, only:[:new, :create]
+    resources :favorites, only: [:create, :destroy],defaults: {format: 'json'}
     resources :item_deliver_addresses, only:[:new, :create, :edit, :update]
   end
   resources :categorys, only: [:index, :show]
