@@ -1,7 +1,6 @@
 class FavoritesController < ApplicationController
   def create
     @favorite = Favorite.new(favorite_params)
-    
     if @favorite.save
       respond_to do |format|
         format.html { redirect_to :root }
