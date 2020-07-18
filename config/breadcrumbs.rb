@@ -3,13 +3,25 @@ crumb :root do
 end
 
 crumb :child_category do
-  link "#{Category.find(params[:id]).category_name}", category_path(params[:id])
-  parent :root
+  category = Category.find(params[:id])
+  if category.has_children?
+    link "#{category.category_name}"
+    parent :root
+  else
+    link "#{category.parent.category_name}", category_path(category.parent)
+    parent :root
+  end
 end
 
 crumb :grandchild_category do
-  link "#{Category.find(params[:id]).category_name}"
-  parent :child_category
+  category = Category.find(params[:id])
+  if category.has_children?
+    link "#{category.category_name}"
+    parent :root
+  else
+    link "#{category.category_name}"
+    parent :child_category
+  end
 end
 
 
