@@ -112,6 +112,45 @@
                 }
               }
             }
+            .favorite_area {
+              button {
+                border-radius: 40px;
+                padding: 8px 16px;
+                font-size: 14px;
+                display: flex;
+                padding: 8px 16px;
+                line-height: 100%;
+                outline: none;
+                cursor: pointer;
+                .like {
+                  margin: 1px 0 0 8px;
+                }
+                .count {
+                  margin: 1px 0 0 8px;
+                }
+              }
+              .favorite{
+                &_on {
+                  color: $furima;
+                  background-color: $white;
+                  border: 1px solid $furima;
+                  .fa-star {
+                    color: $furima;
+                  }
+                }
+                &_off{
+                  background-color: $back;
+                  border: 1px solid $back;
+                  .fa-star {
+                    color: #ccc;
+                  }
+                }
+                &_disable {
+                  pointer-events: none;
+                }
+              }
+            }
+
             .commentbox {
               width: 100%;
               padding: 24px;

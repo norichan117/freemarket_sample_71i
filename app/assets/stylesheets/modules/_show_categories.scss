@@ -71,13 +71,19 @@
               }
               .details {
                 font-size: 16px;
-                .price_likes {
+                .price_favorites {
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
                   .item_price {
                   }
-                  .item_likes {
+                  .item_favorites {
+                    .fa-star {
+                      color: darkgray;
+                      &_on {
+                        color: $furima;
+                      }
+                    }
                   }
                 }
                 .zei{
