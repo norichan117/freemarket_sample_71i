@@ -43,6 +43,9 @@
               }
               &-input{
                 display: flex;
+                .field_with_errors {
+                  width: 100%;
+                }
                 &__box{
                   height: 48px;
                   padding: 10px 16px 8px;
