@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', ()=> {
       var select = document.getElementById("parent_category").value;
       $.ajax({
         type: 'GET',
-        url: 'get_category_children',
+        url: $('#parent_category').attr('action') + '.json',
         data: { category_id: select},
         dataType: 'json'
       })
@@ -39,7 +39,7 @@ $(document).on('turbolinks:load', ()=> {
       var childId = document.getElementById("child_category").value;
       $.ajax({
         type: 'GET',
-        url: 'get_category_children',
+        url: $('#parent_category').attr('action') + '.json',
         data: { category_id: childId},
         dataType: 'json'
       })

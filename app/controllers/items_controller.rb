@@ -3,6 +3,10 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.images.new
     @parents = Category.where(ancestry: nil).limit(13).pluck(:category_name, :id)
+    respond_to do |format|
+      format.html
+      format.json { render json: get_category_children}
+    end
   end
 
   def create
@@ -23,6 +27,10 @@ class ItemsController < ApplicationController
     @grand_children = @grand_child.siblings.limit(13).pluck(:category_name, :id)
     @children = @child.siblings.limit(13).pluck(:category_name, :id)
     @parents = @parent.siblings.limit(13).pluck(:category_name, :id)
+    respond_to do |format|
+      format.html
+      format.json { render json: get_category_children}
+    end
   end
   
   def update
