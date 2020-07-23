@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     end
     resources :tradings, only:[:new, :create]
     resources :favorites, only: [:create, :destroy],defaults: {format: 'json'}
-    resources :item_deliver_addresses, only:[:new, :create, :edit, :update]
   end
   resources :categorys, only: [:index, :show]
   resources :user_cards, only:[:new, :create, :show, :destroy]
