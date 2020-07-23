@@ -52,7 +52,7 @@
             .deliver_info
               .deliver_info-top
                 %h3.deliver_info-top-left 配送先
-                =link_to edit_item_item_deliver_address_path(@item, current_user.deliver_address) ,class: 'deliver_info-top-right' do
+                =link_to edit_deliver_address_path(current_user.deliver_address) ,class: 'deliver_info-top-right' do
                   変更する
               .deliver_info-address
                 %p 
@@ -71,7 +71,7 @@
             .deliver_info
               .deliver_info-top
                 %h3.deliver_info-top-left.needed 配送先がまだ登録されていません
-                =link_to new_item_item_deliver_address_path(@item) ,class: 'deliver_info-top-right' do
+                =link_to new_deliver_address_path ,class: 'deliver_info-top-right' do
                   登録する
         %section.trading_section
           .trading_btn_area
