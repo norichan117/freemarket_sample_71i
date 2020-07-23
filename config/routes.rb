@@ -4,8 +4,13 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
    }
+  devise_scope :user do
+    get 'users/signup_index' => 'users/registrations#index'
+    get 'users/logout' => 'users/sessions#edit'
+  end
+
   root "categorys#index"
-  resources :users, only: [:show, :edit]
+  resources :users, only: [:show]
   resources :items  do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
