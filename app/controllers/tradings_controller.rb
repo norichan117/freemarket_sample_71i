@@ -1,4 +1,5 @@
 class TradingsController < ApplicationController
+  before_action :authenticate_user!
   layout 'simple'
   require "payjp"
   def new
