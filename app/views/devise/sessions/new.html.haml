@@ -8,7 +8,6 @@
       .login-panel-by-sns
         = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
           %button.google-login
-            %i.fab.fa-google.fa-2x
             Googleでログイン
         = link_to user_facebook_omniauth_authorize_path, method: :post do
           %button.face-book-login
@@ -19,12 +18,11 @@
           .email-field
             .field-label
             .field-input
-              = f.email_field :email, autofocus: true, class: 'email-field-form'
+              = f.email_field :email, autofocus: true, class: 'email-field-form', placeholder: ' メールアドレス'
           .password-field
             .field-label
-              %i (英数字8文字以上)
             .field-input
-              = f.password_field :password, autocomplete: "off", class: 'password-field-form'
+              = f.password_field :password, autocomplete: "off", class: 'password-field-form', placeholder: ' パスワード'
           .robocheck-field
           .actions
             = f.submit "ログイン", class: 'login-btn'

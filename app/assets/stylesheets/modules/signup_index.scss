@@ -43,6 +43,8 @@
         .google-signup {
           border: #979797 solid 1px;
           background-color: $white;
+          background-image: image-url('googlelogin.svg');
+          background-repeat: no-repeat;
         }
         .face-book-signup {
           background-color: #385185;
