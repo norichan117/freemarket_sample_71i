@@ -12,5 +12,5 @@ class Item < ApplicationRecord
   validates :postage_burden, presence: true
   validates :shipping_area, presence: true
   validates :days_to_ship, presence: true
-  validates :price, numericality: { greater_than_or_equal_to: 1000 }
+  validates :price, numericality: { greater_than_or_equal_to: 100 }
 end
