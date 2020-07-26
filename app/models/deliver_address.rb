@@ -10,4 +10,5 @@ class DeliverAddress < ApplicationRecord
   validates :deliver_shichoson, presence: true
   validates :deliver_banchi, presence: true
 
+
 end

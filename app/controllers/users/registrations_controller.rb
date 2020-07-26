@@ -6,9 +6,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   layout 'simple'
-  def index
-  end
-  
   def new
     super
 
