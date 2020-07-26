@@ -9,7 +9,8 @@ class UserCardsController < ApplicationController
   end
 
   def create
-    Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+    Payjp.api_key = ('sk_test_aaea1ea08c2f1efc81505081')
+
     if params["payjp_token"].blank?
       redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
     else
@@ -31,7 +32,7 @@ class UserCardsController < ApplicationController
     if @card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+      Payjp.api_key = ('sk_test_aaea1ea08c2f1efc81505081')
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @customer_card = customer.cards.retrieve(@card.card_id)
       @card_brand = @customer_card.brand
@@ -59,7 +60,7 @@ class UserCardsController < ApplicationController
     if @card.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+      Payjp.api_key = ('sk_test_aaea1ea08c2f1efc81505081')
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
