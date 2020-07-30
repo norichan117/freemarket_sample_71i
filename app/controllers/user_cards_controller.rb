@@ -2,9 +2,9 @@ class UserCardsController < ApplicationController
   require "payjp"
   
   def new
-    @card = UserCard.where(user_id: current_user.id)
-    if @card.exists?
-      redirect_to user_card_path(current_user.id)   
+    @card = UserCard.find_by(user_id: current_user.id)
+    if @card.present?
+      redirect_to user_card_path(@card)
     end
   end
 
