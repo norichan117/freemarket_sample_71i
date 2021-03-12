@@ -1,25 +1,26 @@
-.session-new
-  %main.session-new-main
-    .login-panel
-      .login-panel-no-account
-        %p.login-panel-no-account__info
-          アカウントをお持ちでない方はこちら
-        = link_to '新規会員登録',new_user_registration_path, class: 'login-panel-no-account__make-account'
-      .login-panel-by-sns
-      .login-panel-by-email
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .email-field
-            .field-label
-              -# = f.label :メールアドレス
-            .field-input
-              = f.email_field :email, autofocus: true, class: 'email-field-form'
-          .password-field
-            .field-label
-              -# = f.label :パスワード
-              %i (英数字8文字以上)
-            .field-input
-              = f.password_field :password, autocomplete: "off", class: 'password-field-form'
-          .robocheck-field
-          .actions
-            = f.submit "ログイン", class: 'login-btn'
-          = link_to 'パスワードを忘れた方', '#', class: 'to-password-reminder'
+.sessions-new
+  .sessions-new__wrapper
+    .sessions-new__wrapper__registrations
+      .sessions-new__wrapper__registrations__nav
+        アカウントをお持ちでない方はこちら
+      .sessions-new__wrapper__registrations__button
+        = link_to "新規会員登録", new_user_registration_path
+
+    .sessions-new__wrapper__form
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス'
+        .field
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード'
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions--red
+          = f.submit "ログイン"
+    -# .sessions-new__wrapper__passwordreminder
+    -#   パスワードをお忘れの方
