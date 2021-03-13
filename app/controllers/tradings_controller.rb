@@ -33,8 +33,8 @@ class TradingsController < ApplicationController
     trading = Trading.new(trading_params)
     pay
     trading.save
-    item = Item.find(params[:item_id])
-    item.update(trading_id: trading.id)
+    @item = Item.find(params[:item_id])
+    @item.update(trading_id: trading.id)
   end
 
   def pay
