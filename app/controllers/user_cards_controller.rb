@@ -2,14 +2,14 @@ class UserCardsController < ApplicationController
   require "payjp"
   
   def new
-    @card = UserCard.find_by(user_id: current_user.id)
-    if @card.present?
-      redirect_to user_card_path(@card)
+    @card = UserCard.where(user_id: current_user.id)
+    if @card.exists?
+      redirect_to user_card_path(current_user.id)   
     end
   end
 
   def create
-    Payjp.api_key = Rails.application.secrets.payjp_access_key
+    Payjp.api_key = ('sk_test_aaea1ea08c2f1efc81505081')
 
     if params["payjp_token"].blank?
       redirect_to action: "new", alert: "クレジットカードを登録できませんでした。"
@@ -32,7 +32,7 @@ class UserCardsController < ApplicationController
     if @card.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = Rails.application.secrets.payjp_access_key
+      Payjp.api_key = ('sk_test_aaea1ea08c2f1efc81505081')
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @customer_card = customer.cards.retrieve(@card.card_id)
       @card_brand = @customer_card.brand
@@ -60,7 +60,7 @@ class UserCardsController < ApplicationController
     if @card.blank?
       redirect_to action: "new"
     else
-      Payjp.api_key = Rails.application.secrets.payjp_access_key
+      Payjp.api_key = ('sk_test_aaea1ea08c2f1efc81505081')
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
@@ -71,5 +71,3 @@ class UserCardsController < ApplicationController
     end
   end
 end
-
-

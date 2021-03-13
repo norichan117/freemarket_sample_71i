@@ -1,16 +1,12 @@
 class TradingsController < ApplicationController
-  before_action :authenticate_user!
   layout 'simple'
   require "payjp"
   def new
-
     @item = Item.find(params[:item_id])
     @deliver_address = current_user.deliver_address
     @user_card = current_user.user_card
-
-    # @card = UserCard.find_by(user_id: current_user.id)
-
-    # Payjp.api_key = Rails.application.secrets.payjp_access_key
+    @card = UserCard.find_by(user_id: current_user.id)
+    # Payjp.api_key = ('sk_test_aaea1ea08c2f1efc81505081')
     #   # customer = Payjp::Customer.retrieve(@card.customer_id)
     #   @customer_card = customer.cards.retrieve(@card.card_id)
     #   @card_brand = @customer_card.brand
@@ -46,7 +42,7 @@ class TradingsController < ApplicationController
     @item.with_lock do
       if current_user.user_card.present?
         @card = UserCard.find_by(user_id: current_user.id)
-        Payjp.api_key = Rails.application.secrets.payjp_access_key
+        Payjp.api_key = ('sk_test_aaea1ea08c2f1efc81505081')
         charge = Payjp::Charge.create(
         amount: @item.price,
         customer: Payjp::Customer.retrieve(@card.customer_id),
