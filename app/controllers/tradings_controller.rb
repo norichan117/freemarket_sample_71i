@@ -7,6 +7,21 @@ class TradingsController < ApplicationController
     @deliver_address = current_user.deliver_address
     @user_card = current_user.user_card
     @card = UserCard.find_by(user_id: current_user.id)
+    　if current_user.user_card.present?
+      　@card = UserCard.find_by(user_id: current_user.id)
+      　Payjp.api_key = Rails.application.secrets.payjp_access_key
+      　charge = Payjp::Charge.create(
+      　amount: @item.price,
+      　customer: Payjp::Customer.retrieve(@card.customer_id),
+      　currency: 'jpy'
+      　)
+    　else
+      　Payjp::Charge.create(
+      　amount: @item.price,
+      　card: params['payjp-token'], 
+      　currency: 'jpy'
+      　)
+    　end
     Payjp.api_key = Rails.application.secrets.payjp_access_key
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @customer_card = customer.cards.retrieve(@card.card_id)
