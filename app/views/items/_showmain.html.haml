@@ -16,6 +16,10 @@
                 -@images.each do |image|
                   %li.itembox_item_sub_list
                     =link_to image_tag src= image.item_image, class: "itembox_item_sub_list"
+            -if @item.trading_id.present? 
+              .items-box_photo__sold
+                .items-box_photo__sold__inner
+                  SOLD
           .itembox__price
             .price= "¥#{@item.price}"
             .itembox__price__detail
