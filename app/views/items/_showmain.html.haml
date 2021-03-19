@@ -81,6 +81,11 @@
                   出品を取り消す
           - else 
             .commentbox
-              = link_to new_item_trading_path(@item) do
-                %button.commentbtn
-                  購入画面に進む
+              - if @item.trading_id.present? 
+                = link_to new_item_trading_path(@item) do
+                  %button.commentbtn
+                    売り切れました
+              - else
+                = link_to new_item_trading_path(@item) do
+                  %button.commentbtn
+                    購入画面に進む
