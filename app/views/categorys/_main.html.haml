@@ -115,6 +115,10 @@
           = link_to item_path(item), class: "productList" do
             .productList--img
               = image_tag src=Image.find_by(item_id: item).item_image, class: "productList--img__img"
+              -if item.trading_id.present? 
+                .items-box_photo__sold
+                  .items-box_photo__sold__inner
+                    SOLD
             .productList__body
               .name
                 =item.item_name
